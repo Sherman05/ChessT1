@@ -1,0 +1,12 @@
+.bottom-bar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px 6px;
+  background: linear-gradient(to top, #6b9cc9, #4a7ba7);
+  border-top: 1px solid #3a6a97;
+}
+
+.bottom-bar .spacer {
+  flex: 1;
+}

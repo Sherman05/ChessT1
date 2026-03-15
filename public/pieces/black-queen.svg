@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="14" ry="3" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Body -->
+  <path d="M12 46 L14 28 L10 14 L17 22 L22.5 10 L28 22 L35 14 L31 28 L33 46 Z" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Crown points circles -->
+  <circle cx="10" cy="13" r="2" fill="#222" stroke="#ccc" stroke-width="1"/>
+  <circle cx="22.5" cy="9" r="2" fill="#222" stroke="#ccc" stroke-width="1"/>
+  <circle cx="35" cy="13" r="2" fill="#222" stroke="#ccc" stroke-width="1"/>
+  <!-- Letter -->
+  <text x="22.5" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#ccc">Q</text>
+</svg>

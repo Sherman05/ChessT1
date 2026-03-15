@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <rect x="10" y="42" width="25" height="5" rx="1" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Body -->
+  <path d="M13 42 L14 22 L31 22 L32 42 Z" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Top platform -->
+  <rect x="12" y="18" width="21" height="4" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Battlements -->
+  <rect x="12" y="10" width="5" height="8" fill="white" stroke="#333" stroke-width="1.5"/>
+  <rect x="20" y="10" width="5" height="8" fill="white" stroke="#333" stroke-width="1.5"/>
+  <rect x="28" y="10" width="5" height="8" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Letter -->
+  <text x="22.5" y="37" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#333">R</text>
+</svg>

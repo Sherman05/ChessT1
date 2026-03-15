@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="14" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Body -->
+  <path d="M12 46 L14 28 L16 22 L22.5 12 L29 22 L31 28 L33 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Cross on top -->
+  <line x1="22.5" y1="4" x2="22.5" y2="14" stroke="#333" stroke-width="2.5"/>
+  <line x1="18" y1="8" x2="27" y2="8" stroke="#333" stroke-width="2.5"/>
+  <!-- Letter -->
+  <text x="22.5" y="38" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#333">K</text>
+</svg>

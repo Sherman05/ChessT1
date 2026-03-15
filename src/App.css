@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #5a8ab5;
+  position: relative;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  padding: 8px;
+}
+
+.game-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 100%;
+  max-height: 100%;
+}
+
+.board-container {
+  flex: 0 0 auto;
+}
+
+.board-wrapper {
+  position: relative;
+}
+
+.board-grid {
+  width: min(calc(100vh - 100px), calc(100vw - 160px));
+  height: min(calc(100vh - 100px), calc(100vw - 160px));
+}
+
+.analysis-setup .board-grid {
+  width: min(calc(100vh - 100px), calc(100vw - 300px));
+  height: min(calc(100vh - 100px), calc(100vw - 300px));
+}
+
+.turn-indicator {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.resize-handle {
+  cursor: nwse-resize;
+  color: white;
+  font-size: 14px;
+  padding: 2px 6px;
+  user-select: none;
+}

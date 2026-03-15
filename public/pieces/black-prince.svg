@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="12" ry="3" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Body -->
+  <path d="M14 46 L16 28 L18 22 L22.5 16 L27 22 L29 28 L31 46 Z" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Small crown -->
+  <path d="M16 16 L19 12 L22.5 8 L26 12 L29 16 Z" fill="#222" stroke="#ccc" stroke-width="1.5"/>
+  <!-- Letter -->
+  <text x="22.5" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#ccc">Pr</text>
+</svg>

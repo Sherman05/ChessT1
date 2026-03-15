@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="12" ry="3" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Body -->
+  <path d="M15 46 L17 30 L22.5 14 L28 30 L30 46 Z" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Pointed hat top -->
+  <path d="M19 18 L22.5 6 L26 18 Z" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Tip circle -->
+  <circle cx="22.5" cy="5" r="2" fill="#222" stroke="#ccc" stroke-width="1.5"/>
+  <!-- Diagonal slit -->
+  <line x1="19" y1="28" x2="26" y2="22" stroke="#ccc" stroke-width="1.5"/>
+  <!-- Letter -->
+  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#ccc">B</text>
+</svg>

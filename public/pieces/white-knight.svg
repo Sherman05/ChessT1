@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="13" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Body/neck -->
+  <path d="M14 46 L15 32 L13 24 L15 16 L20 10 L24 8 L28 10 L30 14 L32 20 L30 28 L31 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Ear -->
+  <path d="M20 10 L18 5 L22 8" fill="white" stroke="#333" stroke-width="1.2"/>
+  <!-- Eye -->
+  <circle cx="24" cy="14" r="1.5" fill="#333"/>
+  <!-- Nostril -->
+  <circle cx="14" cy="20" r="1" fill="#333"/>
+  <!-- Letter -->
+  <text x="23" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#333">N</text>
+</svg>

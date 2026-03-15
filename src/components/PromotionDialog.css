@@ -1,0 +1,45 @@
+.promotion-dialog {
+  position: absolute;
+  z-index: 100;
+  background: #f0f0f0;
+  border: 2px solid #555;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.promotion-dialog.top-right {
+  top: 0;
+  right: 0;
+}
+
+.promotion-dialog.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.promotion-option {
+  width: 48px;
+  height: 48px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.promotion-option:hover {
+  border-color: #4a90d9;
+  background: #d0e0f0;
+}
+
+.promotion-option img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}

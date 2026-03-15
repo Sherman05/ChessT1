@@ -1,0 +1,88 @@
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-page {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px 32px;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.intro-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #666;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.intro-close-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.intro-page h1 {
+  font-size: 20px;
+  margin: 0 0 16px;
+  color: #333;
+}
+
+.intro-page p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin: 0 0 12px;
+}
+
+.intro-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: center;
+}
+
+.intro-btn {
+  padding: 8px 20px;
+  border: 1px solid #4a7ba7;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background 0.15s;
+}
+
+.intro-btn.primary {
+  background: #4a7ba7;
+  color: white;
+}
+
+.intro-btn.primary:hover {
+  background: #3a6a97;
+}
+
+.intro-btn.secondary {
+  background: white;
+  color: #4a7ba7;
+}
+
+.intro-btn.secondary:hover {
+  background: #f0f5fa;
+}
