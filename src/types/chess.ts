@@ -81,9 +81,9 @@ export const PIECE_NAMES: Record<PieceKind, string> = {
   king: 'Король',
   queen: 'Ферзь',
   prince: 'Принц',
-  rook: 'Ладья',
-  bishop: 'Слон',
-  knight: 'Конь',
+  rook: 'Коннет',
+  bishop: 'Разведчик',
+  knight: 'Риттер',
   pawn: 'Кнехт',
   veteran: 'Вер Кнехт',
 };
@@ -92,11 +92,11 @@ export const PIECE_SHORT: Record<PieceKind, string> = {
   king: 'Кр',
   queen: 'Ф',
   prince: 'Пр',
-  rook: 'Л',
-  bishop: 'С',
-  knight: 'К',
-  pawn: 'п',
-  veteran: 'вп',
+  rook: 'Кт',
+  bishop: 'Рк',
+  knight: 'Рт',
+  pawn: 'Кн',
+  veteran: 'ВК',
 };
 
 export function getPieceImagePath(kind: PieceKind, color: Color): string {

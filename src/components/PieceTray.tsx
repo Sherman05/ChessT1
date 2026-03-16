@@ -57,8 +57,12 @@ const LeftControls: React.FC = () => {
       <button className="analysis-btn reset-btn" onClick={clearBoard} title="Сброс">
         ✕ Сброс
       </button>
-      <button className="analysis-btn" onClick={confirmAnalysisSetup} title="Готово/Ok">
-        ✓ Готово/Ok
+      <button className="analysis-btn ok-btn" onClick={confirmAnalysisSetup} title="Готово/Ok">
+        <svg viewBox="0 0 110 110" width="20" height="20" style={{ verticalAlign: 'middle', marginRight: 4 }}>
+          <circle cx="55" cy="55" r="50" fill="#b3b3b3" fillOpacity="0.15" stroke="#1f1203" strokeWidth="3.3"/>
+          <text x="55" y="70" textAnchor="middle" fill="#0028fa" fontSize="50" fontFamily="serif">Ok</text>
+        </svg>
+        Готово
       </button>
     </div>
   );

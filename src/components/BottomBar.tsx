@@ -24,7 +24,12 @@ export const BottomBar: React.FC = () => {
         onClick={toggleMenu}
         title="Меню"
       >
-        ☰
+        <svg viewBox="0 0 110 110" width="22" height="22">
+          <circle cx="55" cy="55" r="50" fill="#b3b3b3" fillOpacity="0.39" stroke="#1f1203" strokeWidth="3.3"/>
+          <line x1="27" y1="40" x2="83" y2="40" stroke="#0028fa" strokeWidth="6.7"/>
+          <line x1="27" y1="55" x2="83" y2="55" stroke="#0028fa" strokeWidth="6.7"/>
+          <line x1="27" y1="70" x2="83" y2="70" stroke="#0028fa" strokeWidth="6.7"/>
+        </svg>
       </button>
 
       <button
