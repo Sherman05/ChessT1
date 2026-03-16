@@ -23,6 +23,7 @@ interface GameStoreState {
   isFlipped: boolean;
   historyState: HistoryState;
   promotionContext: PromotionContext | null;
+  boardBeforePromotion: BoardMap | null;
   lastMoveFrom: string | null;
   lastMoveTo: string | null;
   analysisFirstMove: Color;
@@ -51,6 +52,7 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
   isFlipped: false,
   historyState: createHistory(),
   promotionContext: null,
+  boardBeforePromotion: null,
   lastMoveFrom: null,
   lastMoveTo: null,
   analysisFirstMove: 'white',
@@ -61,6 +63,7 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       turn: 'white',
       historyState: createHistory(),
       promotionContext: null,
+      boardBeforePromotion: null,
       lastMoveFrom: null,
       lastMoveTo: null,
     });
@@ -83,8 +86,20 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
     const promo = checkPromotion(piece, from, to, captured);
 
     if (promo.dialog) {
-      // Need user choice - show dialog, don't commit move yet
-      set({ promotionContext: promo.dialog });
+      // Need user choice - show dialog
+      // Visually move piece to target square while dialog is shown
+      const boardBeforePromotion = cloneBoard(state.board);
+      const tempBoard = cloneBoard(state.board);
+      delete tempBoard[fromKey];
+      const toKey = squareKey(to.file, to.rank);
+      tempBoard[toKey] = { ...piece };
+      set({
+        promotionContext: promo.dialog,
+        boardBeforePromotion,
+        board: tempBoard,
+        lastMoveFrom: fromKey,
+        lastMoveTo: toKey,
+      });
       return true;
     }
 
@@ -110,8 +125,10 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
     const ctx = state.promotionContext;
     if (!ctx) return;
 
+    // Use the board state from BEFORE the visual move for history snapshot
+    const boardForHistory = state.boardBeforePromotion || state.board;
     const { newHistory, newBoard } = addMove(
-      state.historyState, state.board, ctx.piece, ctx.from, ctx.to, ctx.captured,
+      state.historyState, boardForHistory, ctx.piece, ctx.from, ctx.to, ctx.captured,
       chosenKind, false, state.turn
     );
 
@@ -120,13 +137,22 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       turn: state.turn === 'white' ? 'black' : 'white',
       historyState: newHistory,
       promotionContext: null,
+      boardBeforePromotion: null,
       lastMoveFrom: squareKey(ctx.from.file, ctx.from.rank),
       lastMoveTo: squareKey(ctx.to.file, ctx.to.rank),
     });
   },
 
   cancelPromotion: () => {
-    set({ promotionContext: null });
+    const state = get();
+    // Restore board to state before the visual promotion move
+    set({
+      promotionContext: null,
+      board: state.boardBeforePromotion || state.board,
+      boardBeforePromotion: null,
+      lastMoveFrom: null,
+      lastMoveTo: null,
+    });
   },
 
   goToPreviousMove: () => {

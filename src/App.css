@@ -22,20 +22,20 @@ html, body, #root {
 .main-area {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  align-items: stretch;
   overflow: hidden;
   position: relative;
-  padding: 8px;
 }
 
 .game-layout {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 100%;
-  max-height: 100%;
+  padding: 8px;
+  min-width: 0;
 }
 
 .board-container {

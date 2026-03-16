@@ -5,6 +5,7 @@ import './Square.css';
 interface SquareProps {
   file: number;
   rank: number;
+  isFlipped: boolean;
   isHighlighted: boolean;
   isLastMove: boolean;
   isDragOver: boolean;
@@ -14,6 +15,7 @@ interface SquareProps {
 export const Square: React.FC<SquareProps> = ({
   file,
   rank,
+  isFlipped,
   isHighlighted,
   isLastMove,
   isDragOver,
@@ -37,12 +39,22 @@ export const Square: React.FC<SquareProps> = ({
   if (isLastMove) classes.push('last-move');
   if (isDragOver) classes.push('drag-over');
 
-  // Double lines between rows 3-4 (rank 2 top border) and 5-6 (rank 5 bottom border)
-  if (rank === 3) classes.push('double-line-top'); // top of rank 4 = between 3-4
-  if (rank === 5) classes.push('double-line-bottom'); // bottom of rank 6 = between 5-6
-
-  // Thicker center line between rows 4-5
-  if (rank === 4) classes.push('center-line-top'); // top of rank 5 = between 4-5
+  // Special lines between горизонтали:
+  // Double line between горизонтали 3-4 (rank 2/3 boundary)
+  // Thick line between горизонтали 4-5 (rank 3/4 boundary)
+  // Double line between горизонтали 5-6 (rank 4/5 boundary)
+  //
+  // When NOT flipped: higher ranks are at top, use border-bottom on higher rank
+  // When flipped: lower ranks are at top, use border-bottom on lower rank
+  if (!isFlipped) {
+    if (rank === 3) classes.push('special-line-bottom', 'double-line'); // between горизонтали 3-4
+    if (rank === 4) classes.push('special-line-bottom', 'thick-line');  // between горизонтали 4-5
+    if (rank === 5) classes.push('special-line-bottom', 'double-line'); // between горизонтали 5-6
+  } else {
+    if (rank === 2) classes.push('special-line-bottom', 'double-line'); // between горизонтали 3-4
+    if (rank === 3) classes.push('special-line-bottom', 'thick-line');  // between горизонтали 4-5
+    if (rank === 4) classes.push('special-line-bottom', 'double-line'); // between горизонтали 5-6
+  }
 
   return (
     <div className={classes.join(' ')} data-file={file} data-rank={rank}>

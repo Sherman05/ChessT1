@@ -95,7 +95,6 @@ function App() {
 
       <div className={`main-area ${isSetup ? 'analysis-setup' : ''}`}>
         {showMenu && <MenuPanel />}
-
         <div className="game-layout">
           {isSetup && (
             <PieceTray

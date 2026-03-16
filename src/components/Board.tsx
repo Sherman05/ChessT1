@@ -54,6 +54,7 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
           key={key}
           file={file}
           rank={rank}
+          isFlipped={isFlipped}
           isHighlighted={false}
           isLastMove={isLastMove}
           isDragOver={isDragOver}

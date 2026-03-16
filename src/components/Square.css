@@ -39,17 +39,11 @@
   background-color: rgba(100, 200, 100, 0.4) !important;
 }
 
-/* Double line between rows 3-4 (rank index 2-3) */
-.square.double-line-top {
-  border-top: 3px double #555;
-}
-
-/* Double line between rows 5-6 (rank index 4-5) */
-.square.double-line-bottom {
+/* Special board lines between горизонтали */
+.square.special-line-bottom.double-line {
   border-bottom: 3px double #555;
 }
 
-/* Thicker line between rows 4-5 (rank index 3-4) */
-.square.center-line-top {
-  border-top: 2px solid #333;
+.square.special-line-bottom.thick-line {
+  border-bottom: 2.5px solid #333;
 }
