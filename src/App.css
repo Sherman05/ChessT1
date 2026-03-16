@@ -73,3 +73,53 @@ html, body, #root {
   padding: 2px 6px;
   user-select: none;
 }
+
+/* Game Over Overlay */
+.game-over-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  pointer-events: all;
+}
+
+.game-over-panel {
+  background: #fff;
+  border-radius: 10px;
+  padding: 24px 36px;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+  min-width: 220px;
+}
+
+.game-over-panel h2 {
+  margin: 0 0 8px;
+  font-size: 20px;
+  color: #333;
+}
+
+.game-over-panel p {
+  margin: 0 0 16px;
+  font-size: 14px;
+  color: #555;
+}
+
+.game-over-panel button {
+  background: #4a7ab5;
+  color: #fff;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.game-over-panel button:hover {
+  background: #3a6a9f;
+}

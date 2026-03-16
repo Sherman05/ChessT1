@@ -25,6 +25,13 @@ function App() {
   const makeMove = useGameStore(s => s.makeMove);
   const removePieceFromBoard = useGameStore(s => s.removePieceFromBoard);
   const board = useGameStore(s => s.board);
+  const gameOver = useGameStore(s => s.gameOver);
+  const winner = useGameStore(s => s.winner);
+  const gameOverReason = useGameStore(s => s.gameOverReason);
+  const isDraw = useGameStore(s => s.isDraw);
+  const setInitialPosition = useGameStore(s => s.setInitialPosition);
+  const whiteInCheck = useGameStore(s => s.whiteInCheck);
+  const blackInCheck = useGameStore(s => s.blackInCheck);
 
   const drag = useDragStore(s => s.drag);
   const updateDrag = useDragStore(s => s.updateDrag);
@@ -85,6 +92,18 @@ function App() {
   const boardEl = boardRef.current;
   const cellSize = boardEl ? boardEl.getBoundingClientRect().width / 8 : 60;
 
+  // Turn indicator text
+  let turnText = '';
+  if (isSetup) {
+    turnText = 'Расстановка фигур';
+  } else if (gameOver) {
+    turnText = isDraw ? 'Ничья' : (winner === 'white' ? 'Победа белых' : 'Победа чёрных');
+  } else {
+    const checkStr = (turn === 'white' && whiteInCheck) || (turn === 'black' && blackInCheck)
+      ? ' (ШАХ!)' : '';
+    turnText = (turn === 'white' ? 'Ход белых' : 'Ход чёрных') + checkStr;
+  }
+
   return (
     <div
       className="app"
@@ -107,8 +126,17 @@ function App() {
           <div style={{ position: 'relative' }}>
             <Board ref={boardRef} />
             {promotionContext && <PromotionDialog />}
+            {gameOver && (
+              <div className="game-over-overlay">
+                <div className="game-over-panel">
+                  <h2>{isDraw ? 'Ничья' : (winner === 'white' ? 'Белые победили!' : 'Чёрные победили!')}</h2>
+                  <p>{gameOverReason}</p>
+                  <button onClick={setInitialPosition}>Новая партия</button>
+                </div>
+              </div>
+            )}
             <div className="turn-indicator">
-              {isSetup ? 'Расстановка фигур' : (turn === 'white' ? 'Ход белых' : 'Ход чёрных')}
+              {turnText}
             </div>
           </div>
 

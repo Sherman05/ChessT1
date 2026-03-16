@@ -19,7 +19,8 @@ export function addMove(
   captured: Piece | null,
   promotion: Piece['kind'] | null,
   autoPromotion: boolean,
-  turn: Color
+  turn: Color,
+  scoutExchange: boolean = false
 ): { newHistory: HistoryState; newBoard: BoardMap } {
   // Truncate future moves if we're in the middle of history
   const truncated = state.history.slice(0, state.moveIndex + 1);
@@ -35,6 +36,7 @@ export function addMove(
     autoPromotion,
     boardSnapshot: snapshot,
     turnAfter: turn === 'white' ? 'black' : 'white',
+    scoutExchange,
   };
 
   // Apply the move to the board
@@ -44,8 +46,10 @@ export function addMove(
 
   delete newBoard[fromKey];
 
-  // Place piece (possibly promoted)
-  if (promotion) {
+  if (scoutExchange) {
+    // Both pieces removed from the board
+    delete newBoard[toKey];
+  } else if (promotion) {
     newBoard[toKey] = { ...piece, kind: promotion };
   } else {
     newBoard[toKey] = { ...piece };
@@ -88,7 +92,9 @@ export function goForward(state: HistoryState): { board: BoardMap; turn: Color; 
   const toKey = squareKey(nextMove.to.file, nextMove.to.rank);
 
   delete newBoard[fromKey];
-  if (nextMove.promotion) {
+  if (nextMove.scoutExchange) {
+    delete newBoard[toKey];
+  } else if (nextMove.promotion) {
     newBoard[toKey] = { ...nextMove.piece, kind: nextMove.promotion };
   } else {
     newBoard[toKey] = { ...nextMove.piece };

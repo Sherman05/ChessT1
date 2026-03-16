@@ -1,4 +1,4 @@
-export type PieceKind = 'king' | 'queen' | 'prince' | 'rook' | 'bishop' | 'knight' | 'pawn' | 'veteran';
+export type PieceKind = 'king' | 'prince' | 'rook' | 'bishop' | 'knight' | 'pawn' | 'veteran';
 export type Color = 'white' | 'black';
 export type GameMode = 'party' | 'analysis';
 export type AnalysisStage = 'setup' | 'play';
@@ -23,6 +23,7 @@ export interface Move {
   autoPromotion: boolean;
   boardSnapshot: Record<string, Piece>;
   turnAfter: Color;
+  scoutExchange: boolean; // Scout exchange on castle square
 }
 
 export interface PromotionContext {
@@ -77,9 +78,42 @@ export function isCastleSquare(file: number, rank: number): boolean {
   return CASTLE_WHITE.includes(key) || CASTLE_BLACK.includes(key);
 }
 
+export function isWhiteCastle(file: number, rank: number): boolean {
+  return CASTLE_WHITE.includes(squareKey(file, rank));
+}
+
+export function isBlackCastle(file: number, rank: number): boolean {
+  return CASTLE_BLACK.includes(squareKey(file, rank));
+}
+
+export function getCastleSquares(color: Color): string[] {
+  return color === 'white' ? CASTLE_WHITE : CASTLE_BLACK;
+}
+
+export function getEnemyCastleSquares(color: Color): string[] {
+  return color === 'white' ? CASTLE_BLACK : CASTLE_WHITE;
+}
+
+export const ROYAL_PIECES: PieceKind[] = ['king', 'prince', 'rook'];
+
+export function isRoyalPiece(kind: PieceKind): boolean {
+  return ROYAL_PIECES.includes(kind);
+}
+
+// Force values for each piece type
+// Scout (bishop) has 0 — handled specially (infinite direct attack, 0 support/defense)
+export const PIECE_FORCE: Record<PieceKind, number> = {
+  pawn: 1,
+  veteran: 1.5,
+  prince: 1.5,
+  king: 1.5,
+  knight: 2,    // Ritter
+  rook: 3,      // Connet
+  bishop: 0,    // Scout — special rules
+};
+
 export const PIECE_NAMES: Record<PieceKind, string> = {
   king: 'Король',
-  queen: 'Ферзь',
   prince: 'Принц',
   rook: 'Коннет',
   bishop: 'Разведчик',
@@ -90,7 +124,6 @@ export const PIECE_NAMES: Record<PieceKind, string> = {
 
 export const PIECE_SHORT: Record<PieceKind, string> = {
   king: 'Кр',
-  queen: 'Ф',
   prince: 'Пр',
   rook: 'Кт',
   bishop: 'Рк',
@@ -103,4 +136,4 @@ export function getPieceImagePath(kind: PieceKind, color: Color): string {
   return `/pieces/${color}-${kind}.svg`;
 }
 
-export const ALL_PIECE_KINDS: PieceKind[] = ['king', 'queen', 'prince', 'rook', 'bishop', 'knight', 'pawn', 'veteran'];
+export const ALL_PIECE_KINDS: PieceKind[] = ['king', 'prince', 'rook', 'bishop', 'knight', 'pawn', 'veteran'];

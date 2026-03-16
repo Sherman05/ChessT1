@@ -4,7 +4,7 @@ import { PieceComponent } from './Piece';
 import { BoardLabels } from './BoardLabels';
 import { useGameStore } from '../store/gameStore';
 import { useDragStore } from '../store/dragStore';
-import { squareKey } from '../types/chess';
+import { squareKey, keyToSquare } from '../types/chess';
 import './Board.css';
 
 export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
@@ -16,11 +16,25 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
   const lastMoveFrom = useGameStore(s => s.lastMoveFrom);
   const lastMoveTo = useGameStore(s => s.lastMoveTo);
   const promotionContext = useGameStore(s => s.promotionContext);
+  const gameOver = useGameStore(s => s.gameOver);
+  const whiteInCheck = useGameStore(s => s.whiteInCheck);
+  const blackInCheck = useGameStore(s => s.blackInCheck);
 
   const drag = useDragStore(s => s.drag);
   const startDrag = useDragStore(s => s.startDrag);
 
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
+
+  // Find king positions for check highlighting
+  let whiteKingKey: string | null = null;
+  let blackKingKey: string | null = null;
+  for (const key in board) {
+    const p = board[key];
+    if (p.kind === 'king') {
+      if (p.color === 'white') whiteKingKey = key;
+      else blackKingKey = key;
+    }
+  }
 
   const handlePiecePointerDown = useCallback((
     piece: import('../types/chess').Piece,
@@ -30,9 +44,10 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
   ) => {
     e.preventDefault();
     if (promotionContext) return;
+    if (gameOver) return;
     if (!isSetup && piece.color !== turn) return;
     startDrag(piece, { file, rank }, e.clientX, e.clientY);
-  }, [promotionContext, isSetup, turn, startDrag]);
+  }, [promotionContext, gameOver, isSetup, turn, startDrag]);
 
   // Build grid cells
   const ranks = isFlipped ? [0, 1, 2, 3, 4, 5, 6, 7] : [7, 6, 5, 4, 3, 2, 1, 0];
@@ -49,6 +64,9 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
         ? (drag.sourceSquare.file === file && drag.sourceSquare.rank === rank)
         : false;
 
+      // Check highlight on king square
+      const isCheck = (whiteInCheck && key === whiteKingKey) || (blackInCheck && key === blackKingKey);
+
       cells.push(
         <Square
           key={key}
@@ -58,6 +76,7 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
           isHighlighted={false}
           isLastMove={isLastMove}
           isDragOver={isDragOver}
+          isCheck={isCheck}
         >
           {piece && (
             <PieceComponent

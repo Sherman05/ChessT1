@@ -1,11 +1,16 @@
-import { Piece, Color, squareKey } from '../types/chess';
+import { Piece, Color, Square, squareKey, keyToSquare, isCastleSquare, isRoyalPiece, isWhiteCastle, isBlackCastle, getCastleSquares } from '../types/chess';
 import { BoardMap } from './board';
+import { getMovementSquares } from './movement';
+import { computeForceMap, canCaptureByForce, ForceMap } from './force';
+
+export interface MoveValidation {
+  valid: boolean;
+  captured: Piece | null;
+  scoutExchange: boolean; // Scout exchange on castle square (both removed)
+}
 
 /**
- * Check if a move is valid according to Chess-T1 basic rules:
- * - Correct turn (piece color matches current turn)
- * - Cannot move to a square occupied by own piece
- * - Can capture opponent's piece
+ * Validate a single move according to full Chess-T1 rules.
  */
 export function validateMove(
   board: BoardMap,
@@ -14,33 +19,137 @@ export function validateMove(
   fromRank: number,
   toFile: number,
   toRank: number,
-  currentTurn: Color
-): { valid: boolean; captured: Piece | null } {
+  currentTurn: Color,
+  princeToConnetUsed?: { white: boolean; black: boolean }
+): MoveValidation {
+  const invalid: MoveValidation = { valid: false, captured: null, scoutExchange: false };
+
   // Must be this player's turn
-  if (piece.color !== currentTurn) {
-    return { valid: false, captured: null };
-  }
+  if (piece.color !== currentTurn) return invalid;
 
   // Cannot stay on same square
-  if (fromFile === toFile && fromRank === toRank) {
-    return { valid: false, captured: null };
-  }
+  if (fromFile === toFile && fromRank === toRank) return invalid;
 
   // Must be within board bounds
-  if (toFile < 0 || toFile > 7 || toRank < 0 || toRank > 7) {
-    return { valid: false, captured: null };
+  if (toFile < 0 || toFile > 7 || toRank < 0 || toRank > 7) return invalid;
+
+  // Check movement pattern
+  const reachable = getMovementSquares(board, piece, fromFile, fromRank);
+  const canReach = reachable.some(sq => sq.file === toFile && sq.rank === toRank);
+  if (!canReach) return invalid;
+
+  // Castle square restriction: only royal pieces can enter
+  if (isCastleSquare(toFile, toRank) && !isRoyalPiece(piece.kind)) {
+    return invalid;
+  }
+
+  // Castle exit restriction
+  if (!canLeaveCastle(board, piece, fromFile, fromRank)) {
+    return invalid;
   }
 
   const targetKey = squareKey(toFile, toRank);
   const targetPiece = board[targetKey];
 
   // Cannot move to a square with own piece
-  if (targetPiece && targetPiece.color === piece.color) {
-    return { valid: false, captured: null };
+  if (targetPiece && targetPiece.color === piece.color) return invalid;
+
+  // Capture validation
+  if (targetPiece && targetPiece.color !== piece.color) {
+    const fm = computeForceMap(board);
+    if (!canCaptureByForce(board, fm, piece.color, toFile, toRank, piece)) {
+      return invalid;
+    }
+
+    // Scout exchange on castle square
+    if (piece.kind === 'bishop' && isCastleSquare(toFile, toRank)) {
+      return { valid: true, captured: targetPiece, scoutExchange: true };
+    }
+
+    return { valid: true, captured: targetPiece, scoutExchange: false };
   }
 
-  // Can capture opponent's piece
-  const captured = targetPiece && targetPiece.color !== piece.color ? targetPiece : null;
+  return { valid: true, captured: null, scoutExchange: false };
+}
 
-  return { valid: true, captured };
+/**
+ * Castle exit restriction: if an enemy royal piece is in your castle
+ * and you have only one of your pieces there, that piece cannot leave.
+ */
+function canLeaveCastle(board: BoardMap, piece: Piece, fromFile: number, fromRank: number): boolean {
+  const fromKey = squareKey(fromFile, fromRank);
+  const myCastle = getCastleSquares(piece.color);
+
+  // Only applies if the piece is in its own castle
+  if (!myCastle.includes(fromKey)) return true;
+
+  const enemyColor: Color = piece.color === 'white' ? 'black' : 'white';
+
+  // Check if there's an enemy royal piece in my castle
+  let enemyRoyalInCastle = false;
+  let myPiecesInCastle = 0;
+
+  for (const cKey of myCastle) {
+    const p = board[cKey];
+    if (!p) continue;
+    if (p.color === piece.color) myPiecesInCastle++;
+    if (p.color === enemyColor && isRoyalPiece(p.kind)) enemyRoyalInCastle = true;
+  }
+
+  // If enemy royal is in my castle and I'm the only defender, can't leave
+  if (enemyRoyalInCastle && myPiecesInCastle <= 1) return false;
+
+  return true;
+}
+
+/**
+ * Get all legal moves for a specific piece.
+ */
+export function getLegalMovesForPiece(
+  board: BoardMap,
+  piece: Piece,
+  file: number,
+  rank: number,
+  turn: Color
+): Square[] {
+  const reachable = getMovementSquares(board, piece, file, rank);
+  const fm = computeForceMap(board);
+  const legal: Square[] = [];
+
+  for (const sq of reachable) {
+    const toKey = squareKey(sq.file, sq.rank);
+    const targetPiece = board[toKey];
+
+    // Can't move to square with own piece
+    if (targetPiece && targetPiece.color === piece.color) continue;
+
+    // Castle restriction: non-royal can't enter
+    if (isCastleSquare(sq.file, sq.rank) && !isRoyalPiece(piece.kind)) continue;
+
+    // Castle exit restriction
+    if (!canLeaveCastle(board, piece, file, rank)) continue;
+
+    // Capture check
+    if (targetPiece && targetPiece.color !== piece.color) {
+      if (!canCaptureByForce(board, fm, piece.color, sq.file, sq.rank, piece)) continue;
+    }
+
+    legal.push(sq);
+  }
+
+  return legal;
+}
+
+/**
+ * Check if the given color has any legal move.
+ */
+export function hasAnyLegalMove(board: BoardMap, color: Color): boolean {
+  for (const key in board) {
+    const piece = board[key];
+    if (piece.color !== color) continue;
+    const { file, rank } = keyToSquare(key);
+    const moves = getLegalMovesForPiece(board, piece, file, rank, color);
+    if (moves.length > 0) return true;
+  }
+  return false;
 }

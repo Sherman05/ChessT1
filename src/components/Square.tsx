@@ -9,6 +9,7 @@ interface SquareProps {
   isHighlighted: boolean;
   isLastMove: boolean;
   isDragOver: boolean;
+  isCheck?: boolean;
   children?: React.ReactNode;
 }
 
@@ -19,6 +20,7 @@ export const Square: React.FC<SquareProps> = ({
   isHighlighted,
   isLastMove,
   isDragOver,
+  isCheck,
   children,
 }) => {
   const isLight = (file + rank) % 2 === 1;
@@ -38,6 +40,7 @@ export const Square: React.FC<SquareProps> = ({
   if (isHighlighted) classes.push('highlighted');
   if (isLastMove) classes.push('last-move');
   if (isDragOver) classes.push('drag-over');
+  if (isCheck) classes.push('in-check');
 
   // Special lines between горизонтали:
   // Double line between горизонтали 3-4 (rank 2/3 boundary)

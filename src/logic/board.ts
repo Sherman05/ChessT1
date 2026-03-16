@@ -13,17 +13,20 @@ export function resetPieceCounter(): void {
 export type BoardMap = Record<string, Piece>;
 
 /**
- * Standard chess-like initial setup as placeholder.
- * Will be replaced with exact Chess-T1 layout later.
+ * Chess-T1 initial setup:
+ * Back row: Ritter-Scout-Prince-Connet-King-Prince-Scout-Ritter
+ *           knight-bishop-prince-rook-king-prince-bishop-knight
+ * Front row: 8 Knechts (pawns)
  */
 export function createInitialBoard(): BoardMap {
   resetPieceCounter();
   const board: BoardMap = {};
 
+  const backRow: PieceKind[] = ['knight', 'bishop', 'prince', 'rook', 'king', 'prince', 'bishop', 'knight'];
+
   // White pieces - rank 0 (row 1)
-  const whiteBackRow: PieceKind[] = ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook'];
   for (let file = 0; file < 8; file++) {
-    board[squareKey(file, 0)] = createPiece(whiteBackRow[file], 'white');
+    board[squareKey(file, 0)] = createPiece(backRow[file], 'white');
   }
   // White pawns - rank 1 (row 2)
   for (let file = 0; file < 8; file++) {
@@ -31,9 +34,8 @@ export function createInitialBoard(): BoardMap {
   }
 
   // Black pieces - rank 7 (row 8)
-  const blackBackRow: PieceKind[] = ['rook', 'knight', 'bishop', 'queen', 'king', 'bishop', 'knight', 'rook'];
   for (let file = 0; file < 8; file++) {
-    board[squareKey(file, 7)] = createPiece(blackBackRow[file], 'black');
+    board[squareKey(file, 7)] = createPiece(backRow[file], 'black');
   }
   // Black pawns - rank 6 (row 7)
   for (let file = 0; file < 8; file++) {
@@ -53,4 +55,17 @@ export function cloneBoard(board: BoardMap): BoardMap {
     clone[key] = { ...board[key] };
   }
   return clone;
+}
+
+/**
+ * Get a string representation of the board for position comparison (threefold repetition).
+ */
+export function boardPositionKey(board: BoardMap): string {
+  const entries: string[] = [];
+  for (const key in board) {
+    const p = board[key];
+    entries.push(`${key}:${p.color[0]}${p.kind}`);
+  }
+  entries.sort();
+  return entries.join('|');
 }
