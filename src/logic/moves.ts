@@ -40,13 +40,13 @@ export function validateMove(
 
   // Castle square restriction: only royal pieces can enter
   // Exceptions:
-  //   - Veteran can enter castle squares on last rank for promotion
+  //   - Veteran can enter EMPTY castle squares on last rank for promotion (book2 lines 803-806)
   //   - Scout can enter castle square if enemy piece there (exchange)
   if (isCastleSquare(toFile, toRank) && !isRoyalPiece(piece.kind)) {
-    const isVeteranPromotion = piece.kind === 'veteran' &&
-      ((piece.color === 'white' && toRank === 7) || (piece.color === 'black' && toRank === 0));
     const targetKey = squareKey(toFile, toRank);
     const target = board[targetKey];
+    const isVeteranPromotion = piece.kind === 'veteran' && !target &&
+      ((piece.color === 'white' && toRank === 7) || (piece.color === 'black' && toRank === 0));
     const isScoutExchange = piece.kind === 'bishop' && target && target.color !== piece.color;
     if (!isVeteranPromotion && !isScoutExchange) {
       return invalid;
@@ -144,9 +144,9 @@ export function getLegalMovesForPiece(
     // Can't move to square with own piece
     if (targetPiece && targetPiece.color === piece.color) continue;
 
-    // Castle restriction: non-royal can't enter (except Veteran promotion, Scout exchange)
+    // Castle restriction: non-royal can't enter (except Veteran promotion on EMPTY square, Scout exchange)
     if (isCastleSquare(sq.file, sq.rank) && !isRoyalPiece(piece.kind)) {
-      const isVeteranPromotion = piece.kind === 'veteran' &&
+      const isVeteranPromotion = piece.kind === 'veteran' && !targetPiece &&
         ((piece.color === 'white' && sq.rank === 7) || (piece.color === 'black' && sq.rank === 0));
       const isScoutExchange = piece.kind === 'bishop' && targetPiece && targetPiece.color !== piece.color;
       if (!isVeteranPromotion && !isScoutExchange) continue;

@@ -37,7 +37,7 @@ export function checkPromotion(
   captured: Piece | null,
   board: BoardMap,
   promoState: PromotionState
-): { auto: Piece | null; dialog: PromotionContext | null } {
+): { auto: Piece | null; dialog: PromotionContext | null; moveBlocked?: boolean } {
   // B6: Pawn auto-promotion to Veteran
   if (piece.kind === 'pawn') {
     if (piece.color === 'white' && to.rank === 5) {
@@ -69,8 +69,9 @@ export function checkPromotion(
       if (isCastle) {
         // Castle squares: Prince, Connet (with limits)
         // Veteran can enter castle for promotion (exception to non-royal restriction)
+        // If no options available, moveBlocked=true signals the move should be invalid
         const options = buildPromotionOptions(board, piece.color, ['prince', 'rook']);
-        if (options.length === 0) return { auto: null, dialog: null };
+        if (options.length === 0) return { auto: null, dialog: null, moveBlocked: true };
         if (options.length === 1) return { auto: { ...piece, kind: options[0] }, dialog: null };
         return {
           auto: null,

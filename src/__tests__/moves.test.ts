@@ -67,13 +67,23 @@ describe('Castle square restrictions', () => {
     expect(result.valid).toBe(false);
   });
 
-  it('veteran can enter castle square on last rank for promotion', () => {
+  it('veteran can enter EMPTY castle square on last rank for promotion', () => {
     const board = setupBoard([
       { kind: 'veteran', color: 'white', file: 4, rank: 6 },
     ]);
-    // e8 = (4,7) is a black castle square, rank 7 = last rank for white
+    // e8 = (4,7) is a black castle square, rank 7 = last rank for white, square is EMPTY
     const result = validateMove(board, board[squareKey(4, 6)], 4, 6, 4, 7, 'white');
     expect(result.valid).toBe(true);
+  });
+
+  it('veteran cannot enter OCCUPIED castle square even on last rank', () => {
+    const board = setupBoard([
+      { kind: 'veteran', color: 'white', file: 4, rank: 6 },
+      { kind: 'prince', color: 'black', file: 4, rank: 7 }, // e8 occupied by enemy
+    ]);
+    // Castle square is occupied → veteran cannot enter (spec: "клетка замка должна быть свободна")
+    const result = validateMove(board, board[squareKey(4, 6)], 4, 6, 4, 7, 'white');
+    expect(result.valid).toBe(false);
   });
 
   it('veteran cannot enter castle square on non-last rank', () => {

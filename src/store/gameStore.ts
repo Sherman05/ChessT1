@@ -121,6 +121,9 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
     };
     const promo = checkPromotion(piece, from, to, captured, state.board, promoState);
 
+    // Move blocked (e.g., veteran can't enter castle if no promotion options)
+    if (promo.moveBlocked) return false;
+
     if (promo.dialog) {
       // Need user choice - show dialog
       const boardBeforePromotion = cloneBoard(state.board);

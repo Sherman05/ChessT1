@@ -137,6 +137,24 @@ describe('Prince auto-promotion to Connet', () => {
     expect(result.auto).toBeNull();
   });
 
+  it('veteran cannot enter castle if no promotion options (3 princes + 3 connets)', () => {
+    const board = setupBoard([
+      { kind: 'veteran', color: 'white', file: 3, rank: 6 },
+      { kind: 'prince', color: 'white', file: 0, rank: 3 },
+      { kind: 'prince', color: 'white', file: 1, rank: 3 },
+      { kind: 'prince', color: 'white', file: 2, rank: 3 },
+      { kind: 'rook', color: 'white', file: 0, rank: 4 },
+      { kind: 'rook', color: 'white', file: 1, rank: 4 },
+      { kind: 'rook', color: 'white', file: 2, rank: 4 },
+    ]);
+    const piece = board[squareKey(3, 6)];
+    // d8 = castle square, both prince and connet at max → moveBlocked
+    const result = checkPromotion(piece, { file: 3, rank: 6 }, { file: 3, rank: 7 }, null, board, defaultPromoState);
+    expect(result.moveBlocked).toBe(true);
+    expect(result.auto).toBeNull();
+    expect(result.dialog).toBeNull();
+  });
+
   it('max 3 connets blocks prince auto-promotion', () => {
     const board = setupBoard([
       { kind: 'prince', color: 'white', file: 3, rank: 1 },
