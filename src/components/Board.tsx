@@ -4,7 +4,7 @@ import { PieceComponent } from './Piece';
 import { BoardLabels } from './BoardLabels';
 import { useGameStore } from '../store/gameStore';
 import { useDragStore } from '../store/dragStore';
-import { squareKey, keyToSquare } from '../types/chess';
+import { squareKey } from '../types/chess';
 import './Board.css';
 
 export const Board = forwardRef<HTMLDivElement>((_props, ref) => {

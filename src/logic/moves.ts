@@ -1,4 +1,4 @@
-import { Piece, Color, Square, squareKey, keyToSquare, isCastleSquare, isRoyalPiece, isWhiteCastle, isBlackCastle, getCastleSquares } from '../types/chess';
+import { Piece, Color, Square, squareKey, keyToSquare, isCastleSquare, isRoyalPiece, getCastleSquares } from '../types/chess';
 import { BoardMap } from './board';
 import { getMovementSquares } from './movement';
 import { computeForceMap, canCaptureByForce, ForceMap } from './force';
@@ -39,17 +39,22 @@ export function validateMove(
   if (!canReach) return invalid;
 
   // Castle square restriction: only royal pieces can enter
-  // Exception: Veteran can enter enemy castle squares on last rank for promotion
+  // Exceptions:
+  //   - Veteran can enter castle squares on last rank for promotion
+  //   - Scout can enter castle square if enemy piece there (exchange)
   if (isCastleSquare(toFile, toRank) && !isRoyalPiece(piece.kind)) {
     const isVeteranPromotion = piece.kind === 'veteran' &&
       ((piece.color === 'white' && toRank === 7) || (piece.color === 'black' && toRank === 0));
-    if (!isVeteranPromotion) {
+    const targetKey = squareKey(toFile, toRank);
+    const target = board[targetKey];
+    const isScoutExchange = piece.kind === 'bishop' && target && target.color !== piece.color;
+    if (!isVeteranPromotion && !isScoutExchange) {
       return invalid;
     }
   }
 
   // Castle exit restriction
-  if (!canLeaveCastle(board, piece, fromFile, fromRank)) {
+  if (!canLeaveCastle(board, piece, fromFile, fromRank, toFile, toRank)) {
     return invalid;
   }
 
@@ -79,14 +84,21 @@ export function validateMove(
 
 /**
  * Castle exit restriction: if an enemy royal piece is in your castle
- * and you have only one of your pieces there, that piece cannot leave.
+ * and you have only one of your pieces there, that piece cannot leave the castle.
+ * Moving within the castle (between castle squares) is allowed.
  */
-function canLeaveCastle(board: BoardMap, piece: Piece, fromFile: number, fromRank: number): boolean {
+function canLeaveCastle(board: BoardMap, piece: Piece, fromFile: number, fromRank: number, toFile?: number, toRank?: number): boolean {
   const fromKey = squareKey(fromFile, fromRank);
   const myCastle = getCastleSquares(piece.color);
 
   // Only applies if the piece is in its own castle
   if (!myCastle.includes(fromKey)) return true;
+
+  // Moving within the castle is always allowed
+  if (toFile !== undefined && toRank !== undefined) {
+    const toKey = squareKey(toFile, toRank);
+    if (myCastle.includes(toKey)) return true;
+  }
 
   const enemyColor: Color = piece.color === 'white' ? 'black' : 'white';
 
@@ -128,15 +140,16 @@ export function getLegalMovesForPiece(
     // Can't move to square with own piece
     if (targetPiece && targetPiece.color === piece.color) continue;
 
-    // Castle restriction: non-royal can't enter (except Veteran promotion)
+    // Castle restriction: non-royal can't enter (except Veteran promotion, Scout exchange)
     if (isCastleSquare(sq.file, sq.rank) && !isRoyalPiece(piece.kind)) {
       const isVeteranPromotion = piece.kind === 'veteran' &&
         ((piece.color === 'white' && sq.rank === 7) || (piece.color === 'black' && sq.rank === 0));
-      if (!isVeteranPromotion) continue;
+      const isScoutExchange = piece.kind === 'bishop' && targetPiece && targetPiece.color !== piece.color;
+      if (!isVeteranPromotion && !isScoutExchange) continue;
     }
 
     // Castle exit restriction
-    if (!canLeaveCastle(board, piece, file, rank)) continue;
+    if (!canLeaveCastle(board, piece, file, rank, sq.file, sq.rank)) continue;
 
     // Capture check
     if (targetPiece && targetPiece.color !== piece.color) {

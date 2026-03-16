@@ -125,6 +125,8 @@ export function isKingInCheck(board: BoardMap, color: Color): boolean {
   const enemyColor: Color = color === 'white' ? 'black' : 'white';
 
   // Check if any enemy Scout can reach the king
+  // Scout has infinite direct attack. On castle squares it exchanges (both die).
+  // Either way, the king is threatened.
   for (const key in board) {
     const p = board[key];
     if (p.kind === 'bishop' && p.color === enemyColor) {
@@ -132,11 +134,7 @@ export function isKingInCheck(board: BoardMap, color: Color): boolean {
       const squares = getMovementSquares(board, p, file, rank);
       const canReach = squares.some(sq => sq.file === kingFile && sq.rank === kingRank);
       if (canReach) {
-        // Scout can reach king — but can Scout enter that square?
-        // Scout is not royal, so can't enter castle squares
-        if (!isCastleSquare(kingFile, kingRank)) {
-          return true;
-        }
+        return true;
       }
     }
   }
