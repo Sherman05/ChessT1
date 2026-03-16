@@ -10,3 +10,8 @@
 .bottom-bar .spacer {
   flex: 1;
 }
+
+.draw-btn {
+  font-size: 16px !important;
+  font-weight: bold;
+}

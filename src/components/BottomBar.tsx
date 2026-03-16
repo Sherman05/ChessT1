@@ -11,11 +11,14 @@ export const BottomBar: React.FC = () => {
   const goToPreviousMove = useGameStore(s => s.goToPreviousMove);
   const goToNextMove = useGameStore(s => s.goToNextMove);
   const flipBoard = useGameStore(s => s.flipBoard);
+  const offerDraw = useGameStore(s => s.offerDraw);
+  const gameOver = useGameStore(s => s.gameOver);
   const toggleMenu = useUIStore(s => s.toggleMenu);
 
   const canBack = canGoBack(historyState);
   const canForward = canGoForward(historyState);
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
+  const isPlaying = !isSetup && !gameOver;
 
   return (
     <div className="bottom-bar">
@@ -51,6 +54,16 @@ export const BottomBar: React.FC = () => {
       >
         ▶
       </button>
+
+      {isPlaying && (
+        <button
+          className="toolbar-btn draw-btn"
+          onClick={offerDraw}
+          title="Ничья по соглашению"
+        >
+          ½
+        </button>
+      )}
 
       <div className="spacer" />
 

@@ -39,8 +39,13 @@ export function validateMove(
   if (!canReach) return invalid;
 
   // Castle square restriction: only royal pieces can enter
+  // Exception: Veteran can enter enemy castle squares on last rank for promotion
   if (isCastleSquare(toFile, toRank) && !isRoyalPiece(piece.kind)) {
-    return invalid;
+    const isVeteranPromotion = piece.kind === 'veteran' &&
+      ((piece.color === 'white' && toRank === 7) || (piece.color === 'black' && toRank === 0));
+    if (!isVeteranPromotion) {
+      return invalid;
+    }
   }
 
   // Castle exit restriction
@@ -123,8 +128,12 @@ export function getLegalMovesForPiece(
     // Can't move to square with own piece
     if (targetPiece && targetPiece.color === piece.color) continue;
 
-    // Castle restriction: non-royal can't enter
-    if (isCastleSquare(sq.file, sq.rank) && !isRoyalPiece(piece.kind)) continue;
+    // Castle restriction: non-royal can't enter (except Veteran promotion)
+    if (isCastleSquare(sq.file, sq.rank) && !isRoyalPiece(piece.kind)) {
+      const isVeteranPromotion = piece.kind === 'veteran' &&
+        ((piece.color === 'white' && sq.rank === 7) || (piece.color === 'black' && sq.rank === 0));
+      if (!isVeteranPromotion) continue;
+    }
 
     // Castle exit restriction
     if (!canLeaveCastle(board, piece, file, rank)) continue;
