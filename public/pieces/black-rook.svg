@@ -1,14 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
-  <!-- Base -->
-  <rect x="10" y="42" width="25" height="5" rx="1" fill="#222" stroke="#111" stroke-width="1.5"/>
-  <!-- Body -->
-  <path d="M13 42 L14 22 L31 22 L32 42 Z" fill="#222" stroke="#111" stroke-width="1.5"/>
-  <!-- Top platform -->
-  <rect x="12" y="18" width="21" height="4" fill="#222" stroke="#111" stroke-width="1.5"/>
-  <!-- Battlements -->
-  <rect x="12" y="10" width="5" height="8" fill="#222" stroke="#111" stroke-width="1.5"/>
-  <rect x="20" y="10" width="5" height="8" fill="#222" stroke="#111" stroke-width="1.5"/>
-  <rect x="28" y="10" width="5" height="8" fill="#222" stroke="#111" stroke-width="1.5"/>
-  <!-- Letter -->
-  <text x="22.5" y="37" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#ccc">R</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2069.01 1759.65 64.28 65.99">
+<g transform="matrix(0.82472257,0,0,0.72490576,-940.72962,886.39819)">
+
+      <path d="m -485.68535,553.17214 -23.6524,-44.45319 v -26.26076 l 76.85729,-0.11227 v 27.4919 l -21.84392,43.33432 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.78775;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
+      <path d="m -479.53103,478.17285 v -0.002 l -11.58948,-8.59908 v -9.04416 h 0.29632 a 20.779818,12.897083 0 0 1 -0.0612,-0.87351 20.779818,12.897083 0 0 1 6.29662,-9.23015 h 28.99223 a 20.779818,12.897083 0 0 1 6.27069,9.23015 20.779818,12.897083 0 0 1 -0.0703,0.84914 h 0.1926 v 9.43538 l -10.51165,8.23351 h -19.81584 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.78775;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
+      <g style="stroke-width:1.03939">
+        <path style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.89262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -480.47883,488.89602 v 57.78952"/>
+        <path style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.89262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -469.11713,488.89602 v 57.78952"/>
+      </g>
+    
+</g>
 </svg>

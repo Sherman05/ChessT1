@@ -1,14 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
-  <!-- Base -->
-  <ellipse cx="22.5" cy="46" rx="13" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Body trapezoid -->
-  <path d="M14 46 L18 30 L27 30 L31 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Neck -->
-  <rect x="19" y="24" width="7" height="6" rx="1" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Head circle -->
-  <circle cx="22.5" cy="16" r="9" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Star on head -->
-  <polygon points="22.5,8 24,13 29,13 25,16 26.5,21 22.5,18 18.5,21 20,16 16,13 21,13" fill="#333" stroke="#333" stroke-width="0.5"/>
-  <!-- Letter -->
-  <text x="22.5" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" font-weight="bold" fill="#333">V</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3001.94 1528.24 66.34 71.21">
+<g transform="matrix(0.90913873,0,0,0.79484868,-1446.5193,653.79939)">
+
+      <path style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.39128;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" d="m -263.27905,664.75205 -20.23412,-40.86784 v -24.14272 l 65.74975,-0.10321 v 25.27456 l -18.687,39.83921 z"/>
+      <path d="m -254.1416,571.03631 -11.27037,24.21325 31.36927,0.0529 -10.70163,-24.26628 h -9.39727 z" style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.39128;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
+      <g style="stroke-width:0.953317">
+        <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.40464;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -255.30378,604.8267 v 53.22449"/>
+        <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.40464;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -244.24233,604.8599 v 26.61225"/>
+      </g>
+    
+</g>
 </svg>

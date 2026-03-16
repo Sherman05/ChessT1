@@ -1,14 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
-  <!-- Base -->
-  <ellipse cx="22.5" cy="46" rx="13" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Body/neck -->
-  <path d="M14 46 L15 32 L13 24 L15 16 L20 10 L24 8 L28 10 L30 14 L32 20 L30 28 L31 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Ear -->
-  <path d="M20 10 L18 5 L22 8" fill="white" stroke="#333" stroke-width="1.2"/>
-  <!-- Eye -->
-  <circle cx="24" cy="14" r="1.5" fill="#333"/>
-  <!-- Nostril -->
-  <circle cx="14" cy="20" r="1" fill="#333"/>
-  <!-- Letter -->
-  <text x="23" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#333">N</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1988.59 1964.16 73.48 57.43">
+<g transform="matrix(0.89441102,0,0,0.60249695,-495.20887,1132.302)">
+
+      <path d="m -1281.9653,553.93028 -23.6524,-44.45319 v -26.26076 l 76.8573,-0.11227 v 27.4919 l -21.8439,43.33432 z" style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.74171;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
+      <path transform="matrix(0.30555935,0,0,0.28716596,-1136.8291,326.8755)" d="m -387.04819,420.73569 -75.96984,-0.11469 38.08425,-65.73446 z" style="opacity:0.904;fill:#ffffff;fill-opacity:0.941176;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:13.5448;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
+      <path d="m -1280.1861,449.01938 a 18.984688,14.334122 0 0 0 -5.5628,10.1252 18.984688,14.334122 0 0 0 5.7533,10.25945 h 26.4875 a 18.984688,14.334122 0 0 0 5.7293,-10.25945 18.984688,14.334122 0 0 0 -5.5627,-10.1252 z" style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.01222;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
+      <g transform="translate(-541.15726,-0.19423693)" style="stroke-width:1.02938">
+        <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.83595;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -731.04811,490.48201 v 57.7744"/>
+        <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.83595;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -743.00664,490.72581 v 32.8808"/>
+      </g>
+      <path d="m -1235.5024,508.23369 v -1.45934 l -8.1874,-6.77852 8.1874,-6.73169 v -1.50453 h -27.3327 v 16.47408 z" style="opacity:0.884;fill:#aaaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:3.64748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
+      <path d="m -1284.8358,481.74714 -0.9182,-0.32991 v -3.93449 h 0.2654 a 18.668625,5.610559 0 0 1 -0.054,-0.38022 18.668625,5.610559 0 0 1 5.6566,-4.0152 h 26.0473 a 18.668625,5.610559 0 0 1 5.6333,4.0152 18.668625,5.610559 0 0 1 -0.063,0.3697 h 0.1728 v 4.1047 l -0.4487,0.17024 h -36.2914 z" style="opacity:0.884;fill:#646464;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.01222;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
+    
+</g>
 </svg>

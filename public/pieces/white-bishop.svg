@@ -1,14 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
-  <!-- Base -->
-  <ellipse cx="22.5" cy="46" rx="12" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Body -->
-  <path d="M15 46 L17 30 L22.5 14 L28 30 L30 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Pointed hat top -->
-  <path d="M19 18 L22.5 6 L26 18 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Tip circle -->
-  <circle cx="22.5" cy="5" r="2" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Diagonal slit -->
-  <line x1="19" y1="28" x2="26" y2="22" stroke="#333" stroke-width="1.5"/>
-  <!-- Letter -->
-  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" font-weight="bold" fill="#333">B</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2876.76 1503.48 71.42 68.31">
+<g transform="matrix(0.94386747,0,0,0.75603059,-1258.3725,595.97707)">
+
+      <path d="m -447.32066,809.90778 -9.47136,25.36679 26.362,0.0554 -8.9934,-25.42234 h -7.89724 z" style="opacity:0.88399999;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.6062994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.53149605;stroke-opacity:1"/>
+      <path d="m -463.56923,840.42837 -13.09739,67.99123 66.70152,-0.1156 -13.11232,-67.87639 h -40.49181 z" style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.6062994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.53149605;stroke-opacity:1"/>
+    
+</g>
 </svg>
