@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+# Документация chess-T1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Книги с правилами
 
-Currently, two official plugins are available:
+### Книга 1: "Другие «шахматы» — логическая игра chess-t1"
+- **Текст:** `book1_text.txt`
+- **Страницы с диаграммами:** `book1_diagrams/` (page_NNN.jpg)
+- Автор: Шамиль Хасанов, 2021
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Книга 2: "Тактико-стратегическая игра chess-Т1. Основы"
+- **Текст:** `book2_text.txt`
+- **Страницы с диаграммами:** `book2_diagrams/` (page_NNN.jpg)
 
-## React Compiler
+## Как читать
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Текстовые файлы содержат полный текст книг. Диаграммы (рисунки шахматных позиций) 
+сохранены как изображения страниц. Когда в тексте встречается ссылка на "Рис. X.Y", 
+соответствующая диаграмма находится в папке с изображениями.
 
-## Expanding the ESLint configuration
+## Краткое содержание правил chess-T1
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Фигуры (7 типов)
+- **Королевские:** Король (Кр), Коннет (Кт, "Ферзь"), Принц (Пр)
+- **Некоролевские:** Риттер (Рт), Кнехт (Кн, "пешка"), Вер Кнехт (ВК, "пешка-ветеран"), Разведчик (Рк)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Ключевые отличия от шахмат
+1. **Сила фигур** — каждая фигура (кроме Разведчика) имеет числовое значение силы (1, 1.5, 2, 3 ед.)
+2. **Взятие по перевесу** — взятие возможно только если суммарная атакующая сила > суммарной защитной силы
+3. **Замки** — c1-f1 (белые) и c8-f8 (чёрные), захват замка = победа
+4. **Превращения** — Кнехт→Вер Кнехт (на 6-й/3-й горизонтали), Вер Кнехт и Принц→другие фигуры (на крайних горизонталях)
+5. **Разведчик** — особая фигура с Г-образным ходом, взятие с разменом (обе фигуры снимаются)
+6. **Три условия победы:** взятие Короля, блокада всех фигур, захват замка
