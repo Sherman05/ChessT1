@@ -51,17 +51,23 @@ export function checkGameEnd(
     }
   }
 
-  // 2. Royal piece on enemy castle square
+  // 2. Castle capture: mover has a royal piece on enemy castle,
+  //    AND the opponent has NO royal piece defending the castle.
   const enemyCastle = getEnemyCastleSquares(moverColor);
+  let moverRoyalInEnemyCastle = false;
+  let defenderRoyalInOwnCastle = false;
   for (const cKey of enemyCastle) {
     const p = board[cKey];
-    if (p && p.color === moverColor && isRoyalPiece(p.kind)) {
-      return {
-        gameOver: true,
-        winner: moverColor,
-        reason: moverColor === 'white' ? 'Белые захватили замок!' : 'Чёрные захватили замок!',
-      };
-    }
+    if (!p) continue;
+    if (p.color === moverColor && isRoyalPiece(p.kind)) moverRoyalInEnemyCastle = true;
+    if (p.color === opponentColor && isRoyalPiece(p.kind)) defenderRoyalInOwnCastle = true;
+  }
+  if (moverRoyalInEnemyCastle && !defenderRoyalInOwnCastle) {
+    return {
+      gameOver: true,
+      winner: moverColor,
+      reason: moverColor === 'white' ? 'Белые захватили замок!' : 'Чёрные захватили замок!',
+    };
   }
 
   // 3. Blockade — opponent has no legal moves

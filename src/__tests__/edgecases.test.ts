@@ -85,25 +85,35 @@ describe('Edge: Prince diagonal range', () => {
 });
 
 describe('Edge: Victory by castle capture from initial-like position', () => {
-  it('white king on c8 (enemy castle) = victory', () => {
+  it('white king on c8 (undefended enemy castle) = victory', () => {
     const board = setupBoard([
       { kind: 'king', color: 'white', file: 2, rank: 7 }, // c8 = black castle
-      { kind: 'king', color: 'black', file: 0, rank: 4 },
+      { kind: 'king', color: 'black', file: 0, rank: 4 }, // NOT in castle
     ]);
     const result = checkGameEnd(board, 'white', null, false);
     expect(result.gameOver).toBe(true);
     expect(result.winner).toBe('white');
   });
 
-  it('white connet on f8 (enemy castle) = victory', () => {
+  it('white connet on f8 (undefended enemy castle) = victory', () => {
     const board = setupBoard([
       { kind: 'rook', color: 'white', file: 5, rank: 7 }, // f8 = black castle
       { kind: 'king', color: 'white', file: 4, rank: 4 },
-      { kind: 'king', color: 'black', file: 0, rank: 4 },
+      { kind: 'king', color: 'black', file: 0, rank: 4 }, // NOT in castle
     ]);
     const result = checkGameEnd(board, 'white', null, false);
     expect(result.gameOver).toBe(true);
     expect(result.winner).toBe('white');
+  });
+
+  it('white connet on f8 but black king on e8: NO victory', () => {
+    const board = setupBoard([
+      { kind: 'rook', color: 'white', file: 5, rank: 7 }, // f8 = black castle
+      { kind: 'king', color: 'white', file: 4, rank: 4 },
+      { kind: 'king', color: 'black', file: 4, rank: 7 }, // e8 = black castle, defending!
+    ]);
+    const result = checkGameEnd(board, 'white', null, false);
+    expect(result.gameOver).toBe(false); // castle is defended
   });
 });
 

@@ -84,10 +84,14 @@ export function validateMove(
 
 /**
  * Castle exit restriction: if an enemy royal piece is in your castle
- * and you have only one of your pieces there, that piece cannot leave the castle.
+ * and you have only one own ROYAL piece there, that royal piece cannot leave.
  * Moving within the castle (between castle squares) is allowed.
+ * Only applies to royal pieces — non-royal pieces are never restricted.
  */
 function canLeaveCastle(board: BoardMap, piece: Piece, fromFile: number, fromRank: number, toFile?: number, toRank?: number): boolean {
+  // Only royal pieces can be restricted
+  if (!isRoyalPiece(piece.kind)) return true;
+
   const fromKey = squareKey(fromFile, fromRank);
   const myCastle = getCastleSquares(piece.color);
 
@@ -104,17 +108,17 @@ function canLeaveCastle(board: BoardMap, piece: Piece, fromFile: number, fromRan
 
   // Check if there's an enemy royal piece in my castle
   let enemyRoyalInCastle = false;
-  let myPiecesInCastle = 0;
+  let myRoyalPiecesInCastle = 0;
 
   for (const cKey of myCastle) {
     const p = board[cKey];
     if (!p) continue;
-    if (p.color === piece.color) myPiecesInCastle++;
+    if (p.color === piece.color && isRoyalPiece(p.kind)) myRoyalPiecesInCastle++;
     if (p.color === enemyColor && isRoyalPiece(p.kind)) enemyRoyalInCastle = true;
   }
 
-  // If enemy royal is in my castle and I'm the only defender, can't leave
-  if (enemyRoyalInCastle && myPiecesInCastle <= 1) return false;
+  // If enemy royal is in my castle and I'm the only royal defender, can't leave
+  if (enemyRoyalInCastle && myRoyalPiecesInCastle <= 1) return false;
 
   return true;
 }

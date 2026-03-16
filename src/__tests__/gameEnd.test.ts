@@ -34,26 +34,34 @@ describe('checkGameEnd', () => {
     expect(result.winner).not.toBe('white'); // or could be null
   });
 
-  it('royal piece on enemy castle = victory', () => {
+  it('royal piece on undefended enemy castle = victory', () => {
     const board = setupBoard([
       { kind: 'king', color: 'white', file: 4, rank: 7 }, // e8 = black castle!
-      { kind: 'king', color: 'black', file: 0, rank: 5 },
+      { kind: 'king', color: 'black', file: 0, rank: 5 }, // black king NOT in castle
     ]);
     const result = checkGameEnd(board, 'white', null, false);
     expect(result.gameOver).toBe(true);
     expect(result.winner).toBe('white');
   });
 
+  it('royal piece on enemy castle defended by enemy royal: NO victory', () => {
+    const board = setupBoard([
+      { kind: 'prince', color: 'white', file: 4, rank: 7 }, // e8 = black castle
+      { kind: 'king', color: 'black', file: 3, rank: 7 },   // d8 = black castle, defending
+      { kind: 'king', color: 'white', file: 4, rank: 4 },
+    ]);
+    const result = checkGameEnd(board, 'white', null, false);
+    // Castle still has defending royal piece → no victory
+    expect(result.gameOver).toBe(false);
+  });
+
   it('non-royal piece on enemy castle: no victory', () => {
-    // This scenario shouldn't normally happen (non-royal can't enter castle)
-    // but test the logic
     const board = setupBoard([
       { kind: 'pawn', color: 'white', file: 4, rank: 7 }, // e8 = black castle
       { kind: 'king', color: 'white', file: 4, rank: 4 },
       { kind: 'king', color: 'black', file: 0, rank: 5 },
     ]);
     const result = checkGameEnd(board, 'white', null, false);
-    // Pawn is not royal, so no castle victory
     expect(result.winner).not.toBe('white');
   });
 

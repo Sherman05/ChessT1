@@ -249,8 +249,19 @@ describe('Integration: Castle capture victory', () => {
       { kind: 'king', color: 'black', file: 4, rank: 7 },
     ]);
     const result = checkGameEnd(board, 'white', null, false);
-    // King on own castle is not victory
+    // King on own castle is not victory (it's the white castle, not enemy)
     expect(result.gameOver).toBe(false);
+  });
+
+  it('royal on enemy castle with defender: no victory', () => {
+    const board = setupBoard([
+      { kind: 'prince', color: 'white', file: 4, rank: 7 }, // e8 = black castle
+      { kind: 'prince', color: 'black', file: 5, rank: 7 }, // f8 = black castle, defending
+      { kind: 'king', color: 'white', file: 0, rank: 0 },
+      { kind: 'king', color: 'black', file: 0, rank: 4 },
+    ]);
+    const result = checkGameEnd(board, 'white', null, false);
+    expect(result.gameOver).toBe(false); // defender present
   });
 });
 
