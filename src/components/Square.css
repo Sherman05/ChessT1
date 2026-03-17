@@ -52,3 +52,20 @@
 .square.special-line-bottom.thick-line {
   border-bottom: 2.5px solid #333;
 }
+
+/* Legal move indicators */
+.legal-move-dot {
+  width: 26%;
+  height: 26%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.legal-move-ring {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}

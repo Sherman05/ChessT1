@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { Piece, PieceKind, Color, Square } from '../types/chess';
+import { Piece, PieceKind, Color, Square, squareKey } from '../types/chess';
 
 export interface DragState {
   piece: Piece;
@@ -8,6 +8,7 @@ export interface DragState {
   currentX: number;
   currentY: number;
   hoveredSquare: Square | null;
+  legalMoveKeys: Set<string>; // keys of squares where the piece can legally move
 }
 
 interface DragStoreState {
@@ -18,7 +19,8 @@ interface DragStoreState {
     sourceSquare: Square | null,
     clientX: number,
     clientY: number,
-    traySource?: { kind: PieceKind; color: Color }
+    traySource?: { kind: PieceKind; color: Color },
+    legalMoves?: Square[]
   ) => void;
   updateDrag: (clientX: number, clientY: number, hoveredSquare: Square | null) => void;
   endDrag: () => DragState | null;
@@ -27,7 +29,13 @@ interface DragStoreState {
 export const useDragStore = create<DragStoreState>((set, get) => ({
   drag: null,
 
-  startDrag: (piece, sourceSquare, clientX, clientY, traySource) => {
+  startDrag: (piece, sourceSquare, clientX, clientY, traySource, legalMoves) => {
+    const legalMoveKeys = new Set<string>();
+    if (legalMoves) {
+      for (const sq of legalMoves) {
+        legalMoveKeys.add(squareKey(sq.file, sq.rank));
+      }
+    }
     set({
       drag: {
         piece,
@@ -36,6 +44,7 @@ export const useDragStore = create<DragStoreState>((set, get) => ({
         currentX: clientX,
         currentY: clientY,
         hoveredSquare: sourceSquare,
+        legalMoveKeys,
       },
     });
   },

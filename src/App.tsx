@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useEffect, useState } from 'react';
 import { Board } from './components/Board';
 import { TopBar } from './components/TopBar';
 import { BottomBar } from './components/BottomBar';
@@ -6,7 +6,10 @@ import { IntroPage } from './components/IntroPage';
 import { MenuPanel } from './components/MenuPanel';
 import { PieceTray } from './components/PieceTray';
 import { PromotionDialog } from './components/PromotionDialog';
+import { MoveList } from './components/MoveList';
+import { ChessClock } from './components/ChessClock';
 import { useGameStore } from './store/gameStore';
+import { useChessClock } from './hooks/useChessClock';
 import { useUIStore } from './store/uiStore';
 import { useDragStore } from './store/dragStore';
 import { Color, squareKey } from './types/chess';
@@ -39,6 +42,43 @@ function App() {
 
   const boardRef = useRef<HTMLDivElement>(null);
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
+
+  // Chess clock
+  const [clockEnabled, setClockEnabled] = useState(false);
+  const [clockMinutes, setClockMinutes] = useState(10);
+  const clock = useChessClock(clockMinutes);
+  const historyState = useGameStore(s => s.historyState);
+  const moveCount = historyState.history.length;
+
+  // Switch clock when turn changes
+  useEffect(() => {
+    if (!clockEnabled || gameOver || isSetup) {
+      clock.stop();
+      return;
+    }
+    if (moveCount > 0) {
+      clock.switchTo(turn);
+    }
+  }, [turn, moveCount, clockEnabled, gameOver, isSetup]);
+
+  // Stop clock on game over
+  useEffect(() => {
+    if (gameOver) clock.stop();
+  }, [gameOver]);
+
+  // Reset clock when game resets
+  useEffect(() => {
+    if (moveCount === 0) clock.reset(clockMinutes);
+  }, [moveCount, clockMinutes]);
+
+  // Time out detection
+  useEffect(() => {
+    if (clockEnabled && !gameOver) {
+      if (clock.whiteTime <= 0 || clock.blackTime <= 0) {
+        // Time ran out - handled by UI indication only (no auto-loss in casual play)
+      }
+    }
+  }, [clock.whiteTime, clock.blackTime, clockEnabled, gameOver]);
 
   const getSquareFromPoint = useCallback((clientX: number, clientY: number) => {
     const boardEl = boardRef.current;
@@ -123,6 +163,15 @@ function App() {
             />
           )}
 
+          {clockEnabled && (
+            <ChessClock
+              whiteTime={clock.whiteTime}
+              blackTime={clock.blackTime}
+              activeSide={clock.activeSide}
+              isFlipped={isFlipped}
+            />
+          )}
+
           <div style={{ position: 'relative' }}>
             <Board ref={boardRef} />
             {promotionContext && <PromotionDialog />}
@@ -140,17 +189,24 @@ function App() {
             </div>
           </div>
 
-          {isSetup && (
+          {isSetup ? (
             <PieceTray
               color={rightTrayColor}
               side="right"
               boardRef={boardRef}
             />
+          ) : (
+            <MoveList />
           )}
         </div>
       </div>
 
-      <BottomBar />
+      <BottomBar
+        clockEnabled={clockEnabled}
+        onToggleClock={() => setClockEnabled(!clockEnabled)}
+        clockMinutes={clockMinutes}
+        onSetClockMinutes={setClockMinutes}
+      />
 
       {showIntro && <IntroPage />}
 

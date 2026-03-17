@@ -15,3 +15,18 @@
   font-size: 16px !important;
   font-weight: bold;
 }
+
+.clock-select {
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  padding: 2px 4px;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.clock-select option {
+  background: #4a7ba7;
+  color: white;
+}

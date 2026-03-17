@@ -5,6 +5,7 @@ import { BoardLabels } from './BoardLabels';
 import { useGameStore } from '../store/gameStore';
 import { useDragStore } from '../store/dragStore';
 import { squareKey } from '../types/chess';
+import { getLegalMovesForPiece } from '../logic/moves';
 import './Board.css';
 
 export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
@@ -46,7 +47,8 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
     if (promotionContext) return;
     if (gameOver) return;
     if (!isSetup && piece.color !== turn) return;
-    startDrag(piece, { file, rank }, e.clientX, e.clientY);
+    const legalMoves = isSetup ? [] : getLegalMovesForPiece(board, piece, file, rank, turn);
+    startDrag(piece, { file, rank }, e.clientX, e.clientY, undefined, legalMoves);
   }, [promotionContext, gameOver, isSetup, turn, startDrag]);
 
   // Build grid cells
@@ -67,6 +69,9 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
       // Check highlight on king square
       const isCheck = (whiteInCheck && key === whiteKingKey) || (blackInCheck && key === blackKingKey);
 
+      // Legal move indicator
+      const isLegalTarget = drag?.legalMoveKeys?.has(key) ?? false;
+
       cells.push(
         <Square
           key={key}
@@ -77,6 +82,7 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
           isLastMove={isLastMove}
           isDragOver={isDragOver}
           isCheck={isCheck}
+          isLegalTarget={isLegalTarget}
         >
           {piece && (
             <PieceComponent

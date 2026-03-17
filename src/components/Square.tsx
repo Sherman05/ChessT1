@@ -10,6 +10,7 @@ interface SquareProps {
   isLastMove: boolean;
   isDragOver: boolean;
   isCheck?: boolean;
+  isLegalTarget?: boolean;
   children?: React.ReactNode;
 }
 
@@ -21,6 +22,7 @@ export const Square: React.FC<SquareProps> = ({
   isLastMove,
   isDragOver,
   isCheck,
+  isLegalTarget,
   children,
 }) => {
   const isLight = (file + rank) % 2 === 1;
@@ -62,6 +64,8 @@ export const Square: React.FC<SquareProps> = ({
   return (
     <div className={classes.join(' ')} data-file={file} data-rank={rank}>
       {children}
+      {isLegalTarget && !children && <div className="legal-move-dot" />}
+      {isLegalTarget && children && <div className="legal-move-ring" />}
     </div>
   );
 };

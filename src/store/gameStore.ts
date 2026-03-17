@@ -14,6 +14,7 @@ import { checkPromotion, PromotionState } from '../logic/promotion';
 import { HistoryState, createHistory, addMove, goBack, goForward, canGoBack, canGoForward } from '../logic/history';
 import { checkGameEnd, checkDraw } from '../logic/gameEnd';
 import { isKingInCheck } from '../logic/force';
+import { playMoveSound, playCaptureSound, playCheckSound, playGameOverSound } from '../sounds';
 
 export type GameMode = 'party' | 'analysis';
 export type AnalysisStage = 'setup' | 'play';
@@ -190,6 +191,13 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       whiteInCheck,
       blackInCheck,
     });
+
+    // Sound effects
+    if (endResult.gameOver || drawResult.isDraw) playGameOverSound();
+    else if (whiteInCheck || blackInCheck) playCheckSound();
+    else if (captured) playCaptureSound();
+    else playMoveSound();
+
     return true;
   },
 
@@ -237,6 +245,12 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       whiteInCheck,
       blackInCheck,
     });
+
+    // Sound effects
+    if (endResult.gameOver || drawResult.isDraw) playGameOverSound();
+    else if (whiteInCheck || blackInCheck) playCheckSound();
+    else if (ctx.captured) playCaptureSound();
+    else playMoveSound();
   },
 
   cancelPromotion: () => {

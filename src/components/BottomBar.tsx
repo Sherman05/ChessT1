@@ -4,7 +4,19 @@ import { useUIStore } from '../store/uiStore';
 import { canGoBack, canGoForward } from '../logic/history';
 import './BottomBar.css';
 
-export const BottomBar: React.FC = () => {
+interface BottomBarProps {
+  clockEnabled?: boolean;
+  onToggleClock?: () => void;
+  clockMinutes?: number;
+  onSetClockMinutes?: (m: number) => void;
+}
+
+export const BottomBar: React.FC<BottomBarProps> = ({
+  clockEnabled,
+  onToggleClock,
+  clockMinutes,
+  onSetClockMinutes,
+}) => {
   const historyState = useGameStore(s => s.historyState);
   const mode = useGameStore(s => s.mode);
   const analysisStage = useGameStore(s => s.analysisStage);
@@ -65,6 +77,34 @@ export const BottomBar: React.FC = () => {
         </button>
       )}
 
+      {onToggleClock && (
+        <button
+          className={`toolbar-btn ${clockEnabled ? 'active' : ''}`}
+          onClick={onToggleClock}
+          title="Часы"
+        >
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </button>
+      )}
+
+      {clockEnabled && onSetClockMinutes && (
+        <select
+          className="clock-select"
+          value={clockMinutes}
+          onChange={e => onSetClockMinutes(Number(e.target.value))}
+          title="Время на партию"
+        >
+          <option value={5}>5 мин</option>
+          <option value={10}>10 мин</option>
+          <option value={15}>15 мин</option>
+          <option value={30}>30 мин</option>
+          <option value={60}>60 мин</option>
+        </select>
+      )}
+
       <div className="spacer" />
 
       <button
@@ -72,7 +112,9 @@ export const BottomBar: React.FC = () => {
         onClick={flipBoard}
         title="Перевернуть доску (Реверс)"
       >
-        🔄
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/>
+        </svg>
       </button>
 
       <div className="resize-handle" title="Изменить размер">
