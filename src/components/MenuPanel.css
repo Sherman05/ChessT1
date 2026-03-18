@@ -1,49 +1,38 @@
+/* Q24: Menu extends LEFT beyond the interface, does not overlap the board */
+.menu-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 49;
+}
+
 .menu-panel {
-  flex-shrink: 0;
-  width: 200px;
-  background: #f8f8f8;
-  border-right: 2px solid #4a7ba7;
+  position: absolute;
+  left: 0;
+  bottom: 34px; /* above the bottom bar */
+  transform: translateX(-100%);
+  background: #f0ede6;
+  border: 2px solid #4a7ba7;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.15);
-  overflow-y: auto;
+  box-shadow: -4px 2px 12px rgba(0, 0, 0, 0.2);
   z-index: 50;
-}
-
-.menu-panel-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 12px;
-  background: #4a7ba7;
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.menu-panel-close {
-  background: none;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  padding: 2px 6px;
-}
-
-.menu-panel-close:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 3px;
+  min-width: 180px;
+  padding: 4px 0;
 }
 
 .menu-item {
-  padding: 10px 16px;
-  font-size: 13px;
+  padding: 10px 20px;
+  font-size: 14px;
   color: #333;
   cursor: pointer;
-  border-bottom: 1px solid #e0e0e0;
+  white-space: nowrap;
   transition: background 0.15s;
 }
 
 .menu-item:hover {
-  background: #e8f0f8;
+  background: #d8e8f5;
 }

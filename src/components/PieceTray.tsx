@@ -51,11 +51,15 @@ const TrayPiece: React.FC<{ kind: PieceKind; color: Color }> = ({ kind, color })
 const LeftControls: React.FC = () => {
   const clearBoard = useGameStore(s => s.clearBoard);
   const confirmAnalysisSetup = useGameStore(s => s.confirmAnalysisSetup);
+  const loadInitialPositionInSetup = useGameStore(s => s.loadInitialPositionInSetup);
 
   return (
     <div className="analysis-controls">
       <button className="analysis-btn reset-btn" onClick={clearBoard} title="Сброс">
         ✕ Сброс
+      </button>
+      <button className="analysis-btn initial-btn" onClick={loadInitialPositionInSetup} title="Начальная расстановка">
+        ⟲ Начальная
       </button>
       <button className="analysis-btn ok-btn" onClick={confirmAnalysisSetup} title="Готово/Ok">
         <svg viewBox="0 0 110 110" width="20" height="20" style={{ verticalAlign: 'middle', marginRight: 4 }}>

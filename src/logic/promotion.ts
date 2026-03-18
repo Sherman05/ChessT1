@@ -71,7 +71,7 @@ export function checkPromotion(
         // Veteran can enter castle for promotion (exception to non-royal restriction)
         // If no options available, moveBlocked=true signals the move should be invalid
         const options = buildPromotionOptions(board, piece.color, ['prince', 'rook']);
-        if (options.length === 0) return { auto: null, dialog: null, moveBlocked: true };
+        if (options.length === 0) return { auto: null, dialog: null };
         if (options.length === 1) return { auto: { ...piece, kind: options[0] }, dialog: null };
         return {
           auto: null,

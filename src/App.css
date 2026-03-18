@@ -56,14 +56,58 @@ html, body, #root {
   height: min(calc(100vh - 100px), calc(100vw - 300px));
 }
 
+/* Turn indicator with lamp circles (Q29) */
 .turn-indicator {
   position: absolute;
-  bottom: -20px;
+  bottom: -28px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px;
   color: #fff;
   white-space: nowrap;
+}
+
+.turn-lamps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.turn-lamp {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s;
+}
+
+.turn-lamp.active {
+  border-color: #ffd700;
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.7);
+}
+
+.lamp-inner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.lamp-inner.white {
+  background: #ffffff;
+  border: 1px solid #999;
+}
+
+.lamp-inner.black {
+  background: #444;
+  border: 1px solid #222;
+}
+
+.turn-text {
+  font-size: 12px;
+  color: #fff;
 }
 
 .resize-handle {

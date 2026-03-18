@@ -5,7 +5,6 @@ import { BoardLabels } from './BoardLabels';
 import { useGameStore } from '../store/gameStore';
 import { useDragStore } from '../store/dragStore';
 import { squareKey } from '../types/chess';
-import { getLegalMovesForPiece } from '../logic/moves';
 import './Board.css';
 
 export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
@@ -18,24 +17,14 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
   const lastMoveTo = useGameStore(s => s.lastMoveTo);
   const promotionContext = useGameStore(s => s.promotionContext);
   const gameOver = useGameStore(s => s.gameOver);
-  const whiteInCheck = useGameStore(s => s.whiteInCheck);
-  const blackInCheck = useGameStore(s => s.blackInCheck);
+  const deletePieceMode = useGameStore(s => s.deletePieceMode);
+  const selectedForDelete = useGameStore(s => s.selectedForDelete);
+  const selectForDelete = useGameStore(s => s.selectForDelete);
 
   const drag = useDragStore(s => s.drag);
   const startDrag = useDragStore(s => s.startDrag);
 
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
-
-  // Find king positions for check highlighting
-  let whiteKingKey: string | null = null;
-  let blackKingKey: string | null = null;
-  for (const key in board) {
-    const p = board[key];
-    if (p.kind === 'king') {
-      if (p.color === 'white') whiteKingKey = key;
-      else blackKingKey = key;
-    }
-  }
 
   const handlePiecePointerDown = useCallback((
     piece: import('../types/chess').Piece,
@@ -46,10 +35,17 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
     e.preventDefault();
     if (promotionContext) return;
     if (gameOver) return;
+
+    // In delete mode (analysis setup), select piece for deletion
+    if (isSetup && deletePieceMode) {
+      selectForDelete(squareKey(file, rank));
+      return;
+    }
+
+    // In setup mode, allow dragging any piece; in play mode, only current turn
     if (!isSetup && piece.color !== turn) return;
-    const legalMoves = isSetup ? [] : getLegalMovesForPiece(board, piece, file, rank, turn);
-    startDrag(piece, { file, rank }, e.clientX, e.clientY, undefined, legalMoves);
-  }, [promotionContext, gameOver, isSetup, turn, startDrag]);
+    startDrag(piece, { file, rank }, e.clientX, e.clientY, undefined, []);
+  }, [promotionContext, gameOver, isSetup, deletePieceMode, turn, startDrag, selectForDelete]);
 
   // Build grid cells
   const ranks = isFlipped ? [0, 1, 2, 3, 4, 5, 6, 7] : [7, 6, 5, 4, 3, 2, 1, 0];
@@ -65,12 +61,7 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
       const isDragging = drag?.sourceSquare
         ? (drag.sourceSquare.file === file && drag.sourceSquare.rank === rank)
         : false;
-
-      // Check highlight on king square
-      const isCheck = (whiteInCheck && key === whiteKingKey) || (blackInCheck && key === blackKingKey);
-
-      // Legal move indicator
-      const isLegalTarget = drag?.legalMoveKeys?.has(key) ?? false;
+      const isSelectedDelete = selectedForDelete === key;
 
       cells.push(
         <Square
@@ -78,11 +69,11 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
           file={file}
           rank={rank}
           isFlipped={isFlipped}
-          isHighlighted={false}
+          isHighlighted={isSelectedDelete}
           isLastMove={isLastMove}
           isDragOver={isDragOver}
-          isCheck={isCheck}
-          isLegalTarget={isLegalTarget}
+          isCheck={false}
+          isLegalTarget={false}
         >
           {piece && (
             <PieceComponent

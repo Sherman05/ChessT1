@@ -4,19 +4,7 @@ import { useUIStore } from '../store/uiStore';
 import { canGoBack, canGoForward } from '../logic/history';
 import './BottomBar.css';
 
-interface BottomBarProps {
-  clockEnabled?: boolean;
-  onToggleClock?: () => void;
-  clockMinutes?: number;
-  onSetClockMinutes?: (m: number) => void;
-}
-
-export const BottomBar: React.FC<BottomBarProps> = ({
-  clockEnabled,
-  onToggleClock,
-  clockMinutes,
-  onSetClockMinutes,
-}) => {
+export const BottomBar: React.FC = () => {
   const historyState = useGameStore(s => s.historyState);
   const mode = useGameStore(s => s.mode);
   const analysisStage = useGameStore(s => s.analysisStage);
@@ -26,6 +14,10 @@ export const BottomBar: React.FC<BottomBarProps> = ({
   const offerDraw = useGameStore(s => s.offerDraw);
   const gameOver = useGameStore(s => s.gameOver);
   const toggleMenu = useUIStore(s => s.toggleMenu);
+  const deletePieceMode = useGameStore(s => s.deletePieceMode);
+  const toggleDeletePieceMode = useGameStore(s => s.toggleDeletePieceMode);
+  const confirmDelete = useGameStore(s => s.confirmDelete);
+  const selectedForDelete = useGameStore(s => s.selectedForDelete);
 
   const canBack = canGoBack(historyState);
   const canForward = canGoForward(historyState);
@@ -77,35 +69,33 @@ export const BottomBar: React.FC<BottomBarProps> = ({
         </button>
       )}
 
-      {onToggleClock && (
-        <button
-          className={`toolbar-btn ${clockEnabled ? 'active' : ''}`}
-          onClick={onToggleClock}
-          title="Часы"
-        >
-          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
-          </svg>
-        </button>
-      )}
-
-      {clockEnabled && onSetClockMinutes && (
-        <select
-          className="clock-select"
-          value={clockMinutes}
-          onChange={e => onSetClockMinutes(Number(e.target.value))}
-          title="Время на партию"
-        >
-          <option value={5}>5 мин</option>
-          <option value={10}>10 мин</option>
-          <option value={15}>15 мин</option>
-          <option value={30}>30 мин</option>
-          <option value={60}>60 мин</option>
-        </select>
-      )}
-
       <div className="spacer" />
+
+      {/* C2a: Delete piece button in analysis setup mode */}
+      {isSetup && (
+        <>
+          <button
+            className={`toolbar-btn ${deletePieceMode ? 'active' : ''}`}
+            onClick={toggleDeletePieceMode}
+            title="Удалить фигуру"
+          >
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14"/>
+              <line x1="10" y1="11" x2="10" y2="17"/>
+              <line x1="14" y1="11" x2="14" y2="17"/>
+            </svg>
+          </button>
+          {deletePieceMode && selectedForDelete && (
+            <button
+              className="toolbar-btn delete-confirm-btn"
+              onClick={confirmDelete}
+              title="Подтвердить удаление"
+            >
+              ✓
+            </button>
+          )}
+        </>
+      )}
 
       <button
         className="toolbar-btn"

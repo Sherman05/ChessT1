@@ -1,3 +1,4 @@
+/* Intro page design per "Дизайн Вводной страницы.pdf" */
 .intro-overlay {
   position: fixed;
   top: 0;
@@ -12,77 +13,175 @@
 }
 
 .intro-page {
-  background: #fff;
-  border-radius: 8px;
-  padding: 24px 32px;
-  max-width: 600px;
-  max-height: 80vh;
-  overflow-y: auto;
-  position: relative;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-.intro-close-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #666;
-  padding: 4px 8px;
-  border-radius: 4px;
-}
-
-.intro-close-btn:hover {
-  background: #f0f0f0;
-  color: #333;
-}
-
-.intro-page h1 {
-  font-size: 20px;
-  margin: 0 0 16px;
-  color: #333;
-}
-
-.intro-page p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  margin: 0 0 12px;
-}
-
-.intro-buttons {
+  /* Width matches main interface */
+  width: min(calc(100vh - 40px), calc(100vw - 40px));
+  max-width: 560px;
+  height: 80vh;
+  max-height: 700px;
   display: flex;
-  gap: 12px;
-  margin-top: 24px;
-  justify-content: center;
+  flex-direction: column;
+  /* Blue frame like the PDF */
+  border: 4px solid #3070a0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  /* Linen/fabric background texture */
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(180, 160, 120, 0.08) 3px,
+      rgba(180, 160, 120, 0.08) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 3px,
+      rgba(180, 160, 120, 0.08) 3px,
+      rgba(180, 160, 120, 0.08) 4px
+    ),
+    linear-gradient(135deg, #d4c8a0 0%, #c8bb94 30%, #d0c498 60%, #c4b88e 100%);
+  position: relative;
 }
 
-.intro-btn {
-  padding: 8px 20px;
-  border: 1px solid #4a7ba7;
+/* Top bar with "Основной режим" button and window controls */
+.intro-top-bar {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.intro-main-btn {
+  background: #e8e0d0;
+  border: 2px solid #8a7a60;
   border-radius: 4px;
+  padding: 4px 14px;
+  font-size: 12px;
   cursor: pointer;
+  color: #333;
+  font-weight: bold;
+}
+
+.intro-main-btn:hover {
+  background: #d8d0c0;
+}
+
+.intro-top-spacer {
+  flex: 1;
+}
+
+.intro-window-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid #8a7a60;
+  border-radius: 3px;
+  background: #e8e0d0;
+  color: #555;
   font-size: 13px;
+  cursor: pointer;
+}
+
+.intro-window-btn:hover {
+  background: #d8d0c0;
+}
+
+/* Skip buttons bar */
+.intro-skip-bar {
+  display: flex;
+  gap: 8px;
+  padding: 6px 12px;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.intro-skip-btn {
+  background: #5a9cc0;
+  color: white;
+  border: 1px solid #3a7aa0;
+  border-radius: 4px;
+  padding: 6px 12px;
+  font-size: 11px;
+  cursor: pointer;
   transition: background 0.15s;
 }
 
-.intro-btn.primary {
-  background: #4a7ba7;
-  color: white;
+.intro-skip-btn:hover {
+  background: #4a8cb0;
 }
 
-.intro-btn.primary:hover {
-  background: #3a6a97;
+/* Scrollable content area */
+.intro-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 24px;
+  margin: 0 12px;
+  /* Inner "window" with light background */
+  background: rgba(255, 255, 250, 0.6);
+  border: 1px solid #a09070;
+  border-radius: 4px;
 }
 
-.intro-btn.secondary {
-  background: white;
-  color: #4a7ba7;
+.intro-content h2 {
+  font-size: 16px;
+  text-align: center;
+  margin: 0 0 4px;
+  color: #333;
 }
 
-.intro-btn.secondary:hover {
-  background: #f0f5fa;
+.intro-subtitle {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  font-size: 12px;
+  margin: 0 0 16px;
+}
+
+.intro-content h3 {
+  font-size: 14px;
+  margin: 14px 0 6px;
+  color: #444;
+}
+
+.intro-content p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0 0 10px;
+}
+
+/* Scrollbar styling */
+.intro-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.intro-content::-webkit-scrollbar-track {
+  background: #d4c8a0;
+  border-radius: 4px;
+}
+
+.intro-content::-webkit-scrollbar-thumb {
+  background: #b0a070;
+  border-radius: 4px;
+  border: 2px solid #d4c8a0;
+}
+
+.intro-content::-webkit-scrollbar-thumb:hover {
+  background: #9a8a60;
+}
+
+/* Resize handle at bottom */
+.intro-resize-handle {
+  position: absolute;
+  bottom: 2px;
+  right: 6px;
+  font-size: 14px;
+  color: #8a7a60;
+  cursor: nwse-resize;
+  user-select: none;
 }
