@@ -41,6 +41,14 @@ export const TopBar: React.FC = () => {
       </button>
 
       <button
+        className="toolbar-btn kvetka-btn"
+        title="К"
+        style={{ fontWeight: 'bold', fontSize: '14px' }}
+      >
+        К
+      </button>
+
+      <button
         className={`toolbar-btn ${mode === 'party' ? 'active' : ''}`}
         onClick={() => setMode('party')}
         title="Партия"

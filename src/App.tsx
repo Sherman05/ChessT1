@@ -1,4 +1,4 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef, useCallback, useState } from 'react';
 import { Board } from './components/Board';
 import { TopBar } from './components/TopBar';
 import { BottomBar } from './components/BottomBar';
@@ -37,6 +37,7 @@ function App() {
 
   const boardRef = useRef<HTMLDivElement>(null);
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
+  const [outOfBoundsArrow, setOutOfBoundsArrow] = useState<{ x: number; y: number; side: string } | null>(null);
 
   const getSquareFromPoint = useCallback((clientX: number, clientY: number) => {
     const boardEl = boardRef.current;
@@ -62,8 +63,42 @@ function App() {
     const dragData = endDrag();
     if (!dragData) return;
 
-    const targetSquare = getSquareFromPoint(e.clientX, e.clientY);
-    if (!targetSquare) return;
+    let targetSquare = getSquareFromPoint(e.clientX, e.clientY);
+
+    // If dropped outside the board
+    if (!targetSquare) {
+      // Check if cursor is completely outside the board area
+      const boardEl = boardRef.current;
+      if (boardEl) {
+        const rect = boardEl.getBoundingClientRect();
+        const isOutside = e.clientX < rect.left || e.clientX > rect.right ||
+                          e.clientY < rect.top || e.clientY > rect.bottom;
+
+        if (isOutside && dragData.sourceSquare) {
+          // Figure dragged outside board — remove it, show arrow indicator
+          removePieceFromBoard(dragData.sourceSquare);
+          // Determine which side the piece left from
+          let side = 'right';
+          if (e.clientX < rect.left) side = 'left';
+          else if (e.clientX > rect.right) side = 'right';
+          else if (e.clientY < rect.top) side = 'top';
+          else side = 'bottom';
+          // Show arrow at the edge
+          const arrowX = Math.max(rect.left, Math.min(e.clientX, rect.right));
+          const arrowY = Math.max(rect.top, Math.min(e.clientY, rect.bottom));
+          setOutOfBoundsArrow({ x: arrowX, y: arrowY, side });
+          setTimeout(() => setOutOfBoundsArrow(null), 1500);
+          return;
+        }
+      }
+
+      // Dropped between cells — "stick" to last valid square
+      if (dragData.lastValidSquare) {
+        targetSquare = dragData.lastValidSquare;
+      } else {
+        return;
+      }
+    }
 
     if (dragData.traySource) {
       placePieceFromTray(dragData.traySource.kind, dragData.traySource.color, targetSquare);
@@ -98,7 +133,6 @@ function App() {
       <TopBar />
 
       <div className={`main-area ${isSetup ? 'analysis-setup' : ''}`}>
-        {showMenu && <MenuPanel />}
         <div className="game-layout">
           {isSetup && (
             <PieceTray
@@ -110,6 +144,7 @@ function App() {
 
           <div style={{ position: 'relative' }}>
             <Board ref={boardRef} />
+            {showMenu && <MenuPanel />}
             {promotionContext && <PromotionDialog />}
             {gameOver && (
               <div className="game-over-overlay">
@@ -164,6 +199,18 @@ function App() {
           y={drag.currentY}
           size={cellSize * 0.9}
         />
+      )}
+
+      {outOfBoundsArrow && (
+        <div
+          className="out-of-bounds-arrow"
+          style={{
+            left: outOfBoundsArrow.x,
+            top: outOfBoundsArrow.y,
+          }}
+        >
+          ↔
+        </div>
       )}
     </div>
   );

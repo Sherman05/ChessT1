@@ -8,6 +8,7 @@ export interface DragState {
   currentX: number;
   currentY: number;
   hoveredSquare: Square | null;
+  lastValidSquare: Square | null; // last square the piece passed through (for "sticking")
   legalMoveKeys: Set<string>; // keys of squares where the piece can legally move
 }
 
@@ -44,6 +45,7 @@ export const useDragStore = create<DragStoreState>((set, get) => ({
         currentX: clientX,
         currentY: clientY,
         hoveredSquare: sourceSquare,
+        lastValidSquare: sourceSquare,
         legalMoveKeys,
       },
     });
@@ -53,7 +55,13 @@ export const useDragStore = create<DragStoreState>((set, get) => ({
     const current = get().drag;
     if (!current) return;
     set({
-      drag: { ...current, currentX: clientX, currentY: clientY, hoveredSquare },
+      drag: {
+        ...current,
+        currentX: clientX,
+        currentY: clientY,
+        hoveredSquare,
+        lastValidSquare: hoveredSquare || current.lastValidSquare,
+      },
     });
   },
 

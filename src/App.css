@@ -33,8 +33,8 @@ html, body, #root {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 8px;
+  gap: 4px;
+  padding: 4px;
   min-width: 0;
 }
 
@@ -47,13 +47,13 @@ html, body, #root {
 }
 
 .board-grid {
-  width: min(calc(100vh - 100px), calc(100vw - 160px));
-  height: min(calc(100vh - 100px), calc(100vw - 160px));
+  width: min(calc(100vh - 90px), calc(100vw - 80px));
+  height: min(calc(100vh - 90px), calc(100vw - 80px));
 }
 
 .analysis-setup .board-grid {
-  width: min(calc(100vh - 100px), calc(100vw - 300px));
-  height: min(calc(100vh - 100px), calc(100vw - 300px));
+  width: min(calc(100vh - 90px), calc(100vw - 280px));
+  height: min(calc(100vh - 90px), calc(100vw - 280px));
 }
 
 /* Turn indicator with lamp circles (Q29) */
@@ -166,4 +166,22 @@ html, body, #root {
 
 .game-over-panel button:hover {
   background: #3a6a9f;
+}
+
+/* Out-of-bounds arrow indicator (Q28) */
+.out-of-bounds-arrow {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #cc3333;
+  pointer-events: none;
+  z-index: 1001;
+  animation: arrow-fade 1.5s ease-out forwards;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes arrow-fade {
+  0% { opacity: 1; }
+  70% { opacity: 1; }
+  100% { opacity: 0; }
 }
