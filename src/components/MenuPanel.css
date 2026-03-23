@@ -37,3 +37,12 @@
 .menu-item:hover {
   background: #d8e8f5;
 }
+
+.menu-item.disabled {
+  color: #aaa;
+  cursor: default;
+}
+
+.menu-item.disabled:hover {
+  background: transparent;
+}

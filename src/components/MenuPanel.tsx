@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useUIStore } from '../store/uiStore';
 import { useGameStore } from '../store/gameStore';
 import './MenuPanel.css';
@@ -7,6 +7,38 @@ export const MenuPanel: React.FC = () => {
   const closeMenu = useUIStore(s => s.closeMenu);
   const openIntro = useUIStore(s => s.openIntro);
   const setMode = useGameStore(s => s.setMode);
+  const [shortcutExists, setShortcutExists] = useState(false);
+
+  useEffect(() => {
+    // Check if desktop shortcut already exists
+    if (window.electronAPI) {
+      window.electronAPI.checkDesktopShortcut().then(setShortcutExists);
+    }
+  }, []);
+
+  const handleCreateShortcut = async () => {
+    if (window.electronAPI) {
+      const result = await window.electronAPI.createDesktopShortcut();
+      if (result.success) {
+        setShortcutExists(true);
+        closeMenu();
+      } else {
+        alert(result.reason || 'Не удалось создать ярлык');
+        closeMenu();
+      }
+    } else {
+      alert('Функция "Создать ярлык" доступна в десктопной версии приложения.');
+      closeMenu();
+    }
+  };
+
+  const handleClose = () => {
+    if (window.electronAPI) {
+      window.electronAPI.close();
+    } else {
+      window.close();
+    }
+  };
 
   return (
     <>
@@ -34,22 +66,15 @@ export const MenuPanel: React.FC = () => {
         </div>
 
         <div
-          className="menu-item"
-          onClick={() => {
-            alert('Функция "Создать ярлык" доступна в десктопной версии приложения.');
-            closeMenu();
-          }}
+          className={`menu-item ${shortcutExists ? 'disabled' : ''}`}
+          onClick={shortcutExists ? undefined : handleCreateShortcut}
         >
           Создать ярлык
         </div>
 
         <div
           className="menu-item"
-          onClick={() => {
-            if (confirm('Выйти из программы?')) {
-              window.close();
-            }
-          }}
+          onClick={handleClose}
         >
           Выход
         </div>

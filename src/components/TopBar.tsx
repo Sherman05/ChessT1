@@ -14,7 +14,6 @@ export const TopBar: React.FC = () => {
 
   const handleReset = () => {
     if (isSetup) {
-      // Q17: Stay in analysis setup with initial position
       loadInitialPositionInSetup();
     } else {
       setInitialPosition();
@@ -24,10 +23,19 @@ export const TopBar: React.FC = () => {
   const handleAlwaysOnTop = () => {
     const newVal = !alwaysOnTop;
     setAlwaysOnTop(newVal);
-    try {
-      // @ts-expect-error Electron API
-      window.electronAPI?.setAlwaysOnTop(newVal);
-    } catch { /* browser - ignore */ }
+    window.electronAPI?.setAlwaysOnTop(newVal);
+  };
+
+  const handleMinimize = () => {
+    window.electronAPI?.minimize();
+  };
+
+  const handleClose = () => {
+    if (window.electronAPI) {
+      window.electronAPI.close();
+    } else {
+      window.close();
+    }
   };
 
   return (
@@ -68,12 +76,7 @@ export const TopBar: React.FC = () => {
 
       <button
         className="toolbar-btn"
-        onClick={() => {
-          try {
-            // @ts-expect-error Electron API
-            window.electronAPI?.minimize();
-          } catch { /* browser - ignore */ }
-        }}
+        onClick={handleMinimize}
         title="Свернуть"
       >
         ─
@@ -89,11 +92,7 @@ export const TopBar: React.FC = () => {
 
       <button
         className="toolbar-btn"
-        onClick={() => {
-          if (confirm('Закрыть программу?')) {
-            window.close();
-          }
-        }}
+        onClick={handleClose}
         title="Закрыть"
       >
         ✕

@@ -19,12 +19,14 @@ export const IntroPage: React.FC = () => {
             Основной режим
           </button>
           <div className="intro-top-spacer" />
-          <button className="intro-window-btn" onClick={dismissIntro} title="Свернуть">─</button>
+          <button className="intro-window-btn" onClick={() => window.electronAPI?.minimize()} title="Свернуть">─</button>
           <button className="intro-window-btn" title="Поверх всех окон">📌</button>
           <button
             className="intro-window-btn"
             onClick={() => {
-              if (confirm('Закрыть программу?')) {
+              if (window.electronAPI) {
+                window.electronAPI.close();
+              } else {
                 window.close();
               }
             }}
