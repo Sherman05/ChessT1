@@ -13,6 +13,7 @@ import {
 import { BoardMap, createInitialBoard, createEmptyBoard, cloneBoard, createPiece, boardPositionKey } from '../logic/board';
 import { checkPromotion, PromotionState } from '../logic/promotion';
 import { HistoryState, createHistory, addMove, goBack, goForward, canGoBack, canGoForward } from '../logic/history';
+import { checkGameEnd, checkDraw } from '../logic/gameEnd';
 
 export type GameMode = 'party' | 'analysis';
 export type AnalysisStage = 'setup' | 'play';
@@ -30,11 +31,15 @@ interface GameStoreState {
   lastMoveTo: string | null;
   analysisFirstMove: Color;
 
-  // Game end state (manual only — draw by agreement)
+  // Game end state
   gameOver: boolean;
   winner: Color | null;
   gameOverReason: string | null;
   isDraw: boolean;
+
+  // Draw tracking
+  movesSinceCapture: number;
+  positionHistory: string[];
 
   // Promotion tracking
   whitePrinceToConnetUsed: boolean;
@@ -83,6 +88,8 @@ function initialState() {
     winner: null as Color | null,
     gameOverReason: null as string | null,
     isDraw: false,
+    movesSinceCapture: 0,
+    positionHistory: [boardPositionKey(board) + '|white'] as string[],
     whitePrinceToConnetUsed: false,
     blackPrinceToConnetUsed: false,
     deletePieceMode: false,
@@ -164,6 +171,15 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       else bPtC = true;
     }
 
+    // Check game end
+    const endResult = checkGameEnd(newBoard, state.turn, captured, scoutExchange);
+    const newMovesSinceCapture = captured ? 0 : state.movesSinceCapture + 1;
+    const newPosKey = boardPositionKey(newBoard) + '|' + nextTurn;
+    const newPosHistory = [...state.positionHistory, newPosKey];
+    const drawResult = endResult.gameOver
+      ? { isDraw: false, reason: null }
+      : checkDraw(newBoard, nextTurn, newMovesSinceCapture, newPosHistory);
+
     set({
       board: newBoard,
       turn: nextTurn,
@@ -172,6 +188,19 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       lastMoveTo: toKey,
       whitePrinceToConnetUsed: wPtC,
       blackPrinceToConnetUsed: bPtC,
+      movesSinceCapture: newMovesSinceCapture,
+      positionHistory: newPosHistory,
+      ...(endResult.gameOver ? {
+        gameOver: true,
+        winner: endResult.winner,
+        gameOverReason: endResult.reason,
+        isDraw: false,
+      } : drawResult.isDraw ? {
+        gameOver: true,
+        isDraw: true,
+        winner: null,
+        gameOverReason: drawResult.reason,
+      } : {}),
     });
 
     return true;
@@ -191,6 +220,15 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
 
     const nextTurn: Color = state.turn === 'white' ? 'black' : 'white';
 
+    // Check game end after promotion
+    const endResult = checkGameEnd(newBoard, state.turn, ctx.captured, false);
+    const newMovesSinceCapture = ctx.captured ? 0 : state.movesSinceCapture + 1;
+    const newPosKey = boardPositionKey(newBoard) + '|' + nextTurn;
+    const newPosHistory = [...state.positionHistory, newPosKey];
+    const drawResult = endResult.gameOver
+      ? { isDraw: false, reason: null }
+      : checkDraw(newBoard, nextTurn, newMovesSinceCapture, newPosHistory);
+
     set({
       board: newBoard,
       turn: nextTurn,
@@ -199,6 +237,19 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       boardBeforePromotion: null,
       lastMoveFrom: squareKey(ctx.from.file, ctx.from.rank),
       lastMoveTo: squareKey(ctx.to.file, ctx.to.rank),
+      movesSinceCapture: newMovesSinceCapture,
+      positionHistory: newPosHistory,
+      ...(endResult.gameOver ? {
+        gameOver: true,
+        winner: endResult.winner,
+        gameOverReason: endResult.reason,
+        isDraw: false,
+      } : drawResult.isDraw ? {
+        gameOver: true,
+        isDraw: true,
+        winner: null,
+        gameOverReason: drawResult.reason,
+      } : {}),
     });
   },
 

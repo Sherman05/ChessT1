@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState } from 'react';
+import React, { useRef, useCallback, useState, useEffect } from 'react';
 import { Board } from './components/Board';
 import { TopBar } from './components/TopBar';
 import { BottomBar } from './components/BottomBar';
@@ -6,9 +6,11 @@ import { IntroPage } from './components/IntroPage';
 import { MenuPanel } from './components/MenuPanel';
 import { PieceTray } from './components/PieceTray';
 import { PromotionDialog } from './components/PromotionDialog';
+import { ChessClock } from './components/ChessClock';
 import { useGameStore } from './store/gameStore';
 import { useUIStore } from './store/uiStore';
 import { useDragStore } from './store/dragStore';
+import { useChessClock } from './hooks/useChessClock';
 import { Color, squareKey } from './types/chess';
 import { FloatingPiece } from './components/Piece';
 import './App.css';
@@ -35,8 +37,29 @@ function App() {
   const updateDrag = useDragStore(s => s.updateDrag);
   const endDrag = useDragStore(s => s.endDrag);
 
+  const clock = useChessClock(10);
+  const historyState = useGameStore(s => s.historyState);
+
   const boardRef = useRef<HTMLDivElement>(null);
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
+  const isPartyPlay = mode === 'party' && !gameOver && !isDraw;
+
+  // Start/switch clock on turn change in party mode
+  useEffect(() => {
+    if (isPartyPlay && historyState.moveIndex >= 0) {
+      clock.switchTo(turn);
+    }
+    if (gameOver || isDraw) {
+      clock.stop();
+    }
+  }, [turn, isPartyPlay, gameOver, isDraw, historyState.moveIndex]);
+
+  // Reset clock when game resets
+  useEffect(() => {
+    if (historyState.moveIndex === -1) {
+      clock.reset(10);
+    }
+  }, [historyState.moveIndex]);
   const [outOfBoundsArrow, setOutOfBoundsArrow] = useState<{ x: number; y: number; side: string } | null>(null);
 
   const getSquareFromPoint = useCallback((clientX: number, clientY: number) => {
@@ -139,6 +162,15 @@ function App() {
               color={leftTrayColor}
               side="left"
               boardRef={boardRef}
+            />
+          )}
+
+          {mode === 'party' && (
+            <ChessClock
+              whiteTime={clock.whiteTime}
+              blackTime={clock.blackTime}
+              activeSide={clock.activeSide}
+              isFlipped={isFlipped}
             />
           )}
 

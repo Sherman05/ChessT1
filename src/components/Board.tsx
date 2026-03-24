@@ -1,10 +1,11 @@
-import React, { forwardRef, useCallback } from 'react';
+import React, { forwardRef, useCallback, useMemo } from 'react';
 import { Square } from './Square';
 import { PieceComponent } from './Piece';
 import { BoardLabels } from './BoardLabels';
 import { useGameStore } from '../store/gameStore';
 import { useDragStore } from '../store/dragStore';
 import { squareKey } from '../types/chess';
+import { getLegalMovesForPiece } from '../logic/moves';
 import './Board.css';
 
 export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
@@ -26,6 +27,12 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
 
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
 
+  // Compute legal moves for the currently dragged piece
+  const legalMoveKeys = useMemo(() => {
+    if (!drag || !drag.sourceSquare || isSetup) return new Set<string>();
+    return drag.legalMoveKeys;
+  }, [drag, isSetup]);
+
   const handlePiecePointerDown = useCallback((
     piece: import('../types/chess').Piece,
     file: number,
@@ -44,8 +51,11 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
 
     // In setup mode, allow dragging any piece; in play mode, only current turn
     if (!isSetup && piece.color !== turn) return;
-    startDrag(piece, { file, rank }, e.clientX, e.clientY, undefined, []);
-  }, [promotionContext, gameOver, isSetup, deletePieceMode, turn, startDrag, selectForDelete]);
+
+    // Compute legal moves for highlighting
+    const legalMoves = isSetup ? [] : getLegalMovesForPiece(board, piece, file, rank, turn);
+    startDrag(piece, { file, rank }, e.clientX, e.clientY, undefined, legalMoves);
+  }, [promotionContext, gameOver, isSetup, deletePieceMode, turn, board, startDrag, selectForDelete]);
 
   // Build grid cells
   const ranks = isFlipped ? [0, 1, 2, 3, 4, 5, 6, 7] : [7, 6, 5, 4, 3, 2, 1, 0];
@@ -62,6 +72,7 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
         ? (drag.sourceSquare.file === file && drag.sourceSquare.rank === rank)
         : false;
       const isSelectedDelete = selectedForDelete === key;
+      const isLegal = legalMoveKeys.has(key);
 
       cells.push(
         <Square
@@ -73,7 +84,7 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
           isLastMove={isLastMove}
           isDragOver={isDragOver}
           isCheck={false}
-          isLegalTarget={false}
+          isLegalTarget={isLegal}
         >
           {piece && (
             <PieceComponent
