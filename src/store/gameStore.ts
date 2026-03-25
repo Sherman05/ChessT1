@@ -11,6 +11,7 @@ import {
   CASTLE_BLACK,
 } from '../types/chess';
 import { BoardMap, createInitialBoard, createEmptyBoard, cloneBoard, createPiece, boardPositionKey } from '../logic/board';
+import { validateMove } from '../logic/moves';
 import { checkPromotion, PromotionState } from '../logic/promotion';
 import { HistoryState, createHistory, addMove, goBack, goForward, canGoBack, canGoForward } from '../logic/history';
 import { checkGameEnd, checkDraw } from '../logic/gameEnd';
@@ -114,22 +115,15 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
     const piece = state.board[fromKey];
     if (!piece) return false;
 
-    // Level 1: no move validation — any piece can go anywhere
-    // Only basic checks:
-    // - Must be current player's piece
-    if (piece.color !== state.turn) return false;
-    // - Can't move to a square occupied by own piece
-    const targetPiece = state.board[toKey];
-    if (targetPiece && targetPiece.color === piece.color) return false;
-    // - Can't stay on same square
-    if (fromKey === toKey) return false;
+    // Validate the move using full Chess-T1 rules
+    const validation = validateMove(
+      state.board, piece, from.file, from.rank, to.file, to.rank, state.turn,
+      { white: state.whitePrinceToConnetUsed, black: state.blackPrinceToConnetUsed }
+    );
+    if (!validation.valid) return false;
 
-    const captured = targetPiece || null;
-
-    // B9: Scout exchange on castle squares
-    const allCastle = [...CASTLE_WHITE, ...CASTLE_BLACK];
-    const scoutExchange = piece.kind === 'bishop' && captured && captured.color !== piece.color
-      && allCastle.includes(toKey);
+    const captured = validation.captured;
+    const scoutExchange = validation.scoutExchange;
 
     // Check for promotions
     const promoState: PromotionState = {
