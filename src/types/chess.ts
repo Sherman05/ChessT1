@@ -133,7 +133,7 @@ export const PIECE_SHORT: Record<PieceKind, string> = {
 };
 
 export function getPieceImagePath(kind: PieceKind, color: Color): string {
-  return `/pieces/${color}-${kind}.svg`;
+  return `${import.meta.env.BASE_URL}pieces/${color}-${kind}.svg`;
 }
 
 export const ALL_PIECE_KINDS: PieceKind[] = ['king', 'prince', 'rook', 'bishop', 'knight', 'pawn', 'veteran'];
