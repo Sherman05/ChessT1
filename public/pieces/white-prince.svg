@@ -1,10 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
+  <!-- Принц / Prince - bell/dome shape with small crown -->
   <!-- Base -->
-  <ellipse cx="22.5" cy="46" rx="12" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Body -->
-  <path d="M14 46 L16 28 L18 22 L22.5 16 L27 22 L29 28 L31 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Small crown -->
-  <path d="M16 16 L19 12 L22.5 8 L26 12 L29 16 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Letter -->
-  <text x="22.5" y="40" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#333">Pr</text>
+  <path d="M14 52 Q14 49 18 48 L32 48 Q36 49 36 52 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Body - bell shape -->
+  <path d="M18 48 L16 36 Q15 28 25 20 Q35 28 34 36 L32 48 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Small crown on top -->
+  <path d="M20 20 L22 14 L25 17 L28 14 L30 20" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Small ball on top -->
+  <circle cx="25" cy="12" r="2.5" fill="white" stroke="#222" stroke-width="1.5"/>
+  <!-- Single vertical line -->
+  <line x1="25" y1="26" x2="25" y2="46" stroke="#222" stroke-width="1.5"/>
 </svg>

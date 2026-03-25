@@ -1,10 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
+  <!-- Кнехт / Knecht (pawn) - simple rounded shape with single line -->
   <!-- Base -->
-  <ellipse cx="22.5" cy="46" rx="11" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Body -->
-  <path d="M15 46 L17 30 L19 24 L26 24 L28 30 L30 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Head -->
-  <circle cx="22.5" cy="17" r="7" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Letter -->
-  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#333">Кн</text>
+  <path d="M15 52 Q15 49 19 48 L31 48 Q35 49 35 52 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Body - simple bell -->
+  <path d="M19 48 L18 34 Q17 26 25 18 Q33 26 32 34 L31 48 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Round head -->
+  <circle cx="25" cy="15" r="4" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Single vertical line -->
+  <line x1="25" y1="24" x2="25" y2="46" stroke="#222" stroke-width="1.5"/>
 </svg>

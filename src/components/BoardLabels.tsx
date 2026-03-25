@@ -11,14 +11,26 @@ export const BoardLabels: React.FC<BoardLabelsProps> = ({ isFlipped }) => {
 
   return (
     <>
+      {/* File labels (top) */}
+      <div className="board-labels-files board-labels-files-top">
+        {files.map(f => (
+          <div key={f} className="board-label">{fileToLetter(f)}</div>
+        ))}
+      </div>
       {/* File labels (bottom) */}
-      <div className="board-labels-files">
+      <div className="board-labels-files board-labels-files-bottom">
         {files.map(f => (
           <div key={f} className="board-label">{fileToLetter(f)}</div>
         ))}
       </div>
       {/* Rank labels (left) */}
-      <div className="board-labels-ranks">
+      <div className="board-labels-ranks board-labels-ranks-left">
+        {ranks.map(r => (
+          <div key={r} className="board-label">{rankToNumber(r)}</div>
+        ))}
+      </div>
+      {/* Rank labels (right) */}
+      <div className="board-labels-ranks board-labels-ranks-right">
         {ranks.map(r => (
           <div key={r} className="board-label">{rankToNumber(r)}</div>
         ))}

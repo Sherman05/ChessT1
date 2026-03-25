@@ -1,14 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
+  <!-- Риттер / Ritter - helmet shape with double lines -->
   <!-- Base -->
-  <ellipse cx="22.5" cy="46" rx="12" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Body - armored look for Ritter -->
-  <path d="M13 46 L15 26 L18 20 L27 20 L30 26 L32 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Helmet -->
-  <path d="M16 20 L16 12 L18 8 L27 8 L29 12 L29 20 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Visor slit -->
-  <line x1="18" y1="14" x2="27" y2="14" stroke="#333" stroke-width="1.5"/>
-  <!-- Plume -->
-  <path d="M22.5 8 L22.5 3 L26 5" fill="none" stroke="#333" stroke-width="1.5"/>
-  <!-- Letter -->
-  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#333">Рт</text>
+  <path d="M13 52 Q13 49 17 48 L33 48 Q37 49 37 52 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Body -->
+  <path d="M17 48 L19 30 L31 30 L33 48 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Helmet dome -->
+  <path d="M19 30 Q18 20 25 14 Q32 20 31 30 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Visor/plume -->
+  <path d="M25 14 Q27 10 30 12" fill="none" stroke="#222" stroke-width="2"/>
+  <!-- Double vertical lines (II) -->
+  <line x1="23" y1="32" x2="22.5" y2="46" stroke="#222" stroke-width="1.8"/>
+  <line x1="27" y1="32" x2="27.5" y2="46" stroke="#222" stroke-width="1.8"/>
 </svg>

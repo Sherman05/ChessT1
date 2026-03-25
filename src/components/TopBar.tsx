@@ -8,6 +8,7 @@ export const TopBar: React.FC = () => {
   const setInitialPosition = useGameStore(s => s.setInitialPosition);
   const loadInitialPositionInSetup = useGameStore(s => s.loadInitialPositionInSetup);
   const setMode = useGameStore(s => s.setMode);
+  const confirmAnalysisSetup = useGameStore(s => s.confirmAnalysisSetup);
   const [alwaysOnTop, setAlwaysOnTop] = useState(false);
 
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
@@ -40,63 +41,47 @@ export const TopBar: React.FC = () => {
 
   return (
     <div className="top-bar">
-      <button
-        className="toolbar-btn"
-        onClick={handleReset}
-        title="Начальная расстановка"
-      >
-        ⟲
-      </button>
+      <div className="top-bar-left">
+        <button
+          className="tab-btn reset-btn"
+          onClick={handleReset}
+          title="Начальная расстановка"
+        >
+          Начальная<br/>расстановка
+        </button>
 
-      <button
-        className="toolbar-btn kvetka-btn"
-        title="К"
-        style={{ fontWeight: 'bold', fontSize: '14px' }}
-      >
-        К
-      </button>
+        <span className="tab-separator">К</span>
 
-      <button
-        className={`toolbar-btn ${mode === 'party' ? 'active' : ''}`}
-        onClick={() => setMode('party')}
-        title="Партия"
-      >
-        ♟
-      </button>
+        <button
+          className={`tab-btn ${mode === 'party' ? 'tab-active' : ''}`}
+          onClick={() => setMode('party')}
+        >
+          Партия
+        </button>
 
-      <button
-        className={`toolbar-btn ${mode === 'analysis' ? 'active' : ''}`}
-        onClick={() => setMode('analysis')}
-        title="Анализ"
-      >
-        🔍
-      </button>
+        <button
+          className={`tab-btn ${mode === 'analysis' ? 'tab-active' : ''}`}
+          onClick={() => setMode('analysis')}
+        >
+          Анализ
+        </button>
 
-      <div className="spacer" />
+        {isSetup && (
+          <button
+            className="tab-btn confirm-setup-btn"
+            onClick={confirmAnalysisSetup}
+            title="Начать игру"
+          >
+            ▶ Играть
+          </button>
+        )}
+      </div>
 
-      <button
-        className="toolbar-btn"
-        onClick={handleMinimize}
-        title="Свернуть"
-      >
-        ─
-      </button>
-
-      <button
-        className={`toolbar-btn ${alwaysOnTop ? 'active' : ''}`}
-        onClick={handleAlwaysOnTop}
-        title="Поверх всех окон"
-      >
-        📌
-      </button>
-
-      <button
-        className="toolbar-btn"
-        onClick={handleClose}
-        title="Закрыть"
-      >
-        ✕
-      </button>
+      <div className="top-bar-right">
+        <button className="window-btn" onClick={handleMinimize} title="Свернуть">─</button>
+        <button className={`window-btn ${alwaysOnTop ? 'active' : ''}`} onClick={handleAlwaysOnTop} title="Поверх всех окон">📌</button>
+        <button className="window-btn close-btn" onClick={handleClose} title="Закрыть">✕</button>
+      </div>
     </div>
   );
 };

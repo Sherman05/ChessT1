@@ -8,6 +8,7 @@ export const BottomBar: React.FC = () => {
   const historyState = useGameStore(s => s.historyState);
   const mode = useGameStore(s => s.mode);
   const analysisStage = useGameStore(s => s.analysisStage);
+  const turn = useGameStore(s => s.turn);
   const goToPreviousMove = useGameStore(s => s.goToPreviousMove);
   const goToNextMove = useGameStore(s => s.goToNextMove);
   const flipBoard = useGameStore(s => s.flipBoard);
@@ -26,56 +27,67 @@ export const BottomBar: React.FC = () => {
 
   return (
     <div className="bottom-bar">
-      <button
-        className="toolbar-btn"
-        onClick={toggleMenu}
-        title="Меню"
-      >
-        <svg viewBox="0 0 110 110" width="22" height="22">
-          <circle cx="55" cy="55" r="50" fill="#b3b3b3" fillOpacity="0.39" stroke="#1f1203" strokeWidth="3.3"/>
-          <line x1="27" y1="40" x2="83" y2="40" stroke="#0028fa" strokeWidth="6.7"/>
-          <line x1="27" y1="55" x2="83" y2="55" stroke="#0028fa" strokeWidth="6.7"/>
-          <line x1="27" y1="70" x2="83" y2="70" stroke="#0028fa" strokeWidth="6.7"/>
+      {/* Hamburger menu */}
+      <button className="bar-btn menu-btn" onClick={toggleMenu} title="Меню">
+        <svg viewBox="0 0 24 24" width="22" height="22">
+          <line x1="4" y1="7" x2="20" y2="7" stroke="#0040cc" strokeWidth="2.5" strokeLinecap="round"/>
+          <line x1="4" y1="12" x2="20" y2="12" stroke="#0040cc" strokeWidth="2.5" strokeLinecap="round"/>
+          <line x1="4" y1="17" x2="20" y2="17" stroke="#0040cc" strokeWidth="2.5" strokeLinecap="round"/>
         </svg>
       </button>
 
-      <button
-        className="toolbar-btn"
-        onClick={goToPreviousMove}
-        disabled={!canBack || isSetup}
-        title="Предыдущий ход"
-        style={{ opacity: (!canBack || isSetup) ? 0.4 : 1 }}
-      >
-        ◀
-      </button>
+      {/* Turn indicator */}
+      <div className="turn-dot-container">
+        <div className={`turn-dot ${turn}`} />
+      </div>
 
-      <button
-        className="toolbar-btn"
-        onClick={goToNextMove}
-        disabled={!canForward || isSetup}
-        title="Следующий ход"
-        style={{ opacity: (!canForward || isSetup) ? 0.4 : 1 }}
-      >
-        ▶
-      </button>
+      {/* Navigation arrows */}
+      <div className="nav-buttons">
+        <button
+          className="bar-btn nav-btn"
+          onClick={goToPreviousMove}
+          disabled={!canBack || isSetup}
+          title="Назад"
+        >
+          ◀◀
+        </button>
+        <button
+          className="bar-btn nav-btn"
+          onClick={goToPreviousMove}
+          disabled={!canBack || isSetup}
+          title="Предыдущий ход"
+        >
+          ◀
+        </button>
+        <button
+          className="bar-btn nav-btn"
+          onClick={goToNextMove}
+          disabled={!canForward || isSetup}
+          title="Следующий ход"
+        >
+          ▶
+        </button>
+        <button
+          className="bar-btn nav-btn"
+          onClick={goToNextMove}
+          disabled={!canForward || isSetup}
+          title="Вперёд"
+        >
+          ▶▶
+        </button>
+      </div>
 
       {isPlaying && (
-        <button
-          className="toolbar-btn draw-btn"
-          onClick={offerDraw}
-          title="Ничья по соглашению"
-        >
-          ½
-        </button>
+        <button className="bar-btn draw-btn" onClick={offerDraw} title="Ничья по соглашению">½</button>
       )}
 
       <div className="spacer" />
 
-      {/* C2a: Delete piece button in analysis setup mode */}
+      {/* Delete piece button in analysis setup mode */}
       {isSetup && (
         <>
           <button
-            className={`toolbar-btn ${deletePieceMode ? 'active' : ''}`}
+            className={`bar-btn ${deletePieceMode ? 'active' : ''}`}
             onClick={toggleDeletePieceMode}
             title="Удалить фигуру"
           >
@@ -86,30 +98,17 @@ export const BottomBar: React.FC = () => {
             </svg>
           </button>
           {deletePieceMode && selectedForDelete && (
-            <button
-              className="toolbar-btn delete-confirm-btn"
-              onClick={confirmDelete}
-              title="Подтвердить удаление"
-            >
-              ✓
-            </button>
+            <button className="bar-btn confirm-btn" onClick={confirmDelete} title="Подтвердить удаление">✓</button>
           )}
         </>
       )}
 
-      <button
-        className="toolbar-btn"
-        onClick={flipBoard}
-        title="Перевернуть доску (Реверс)"
-      >
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+      {/* Reverse button */}
+      <button className="bar-btn reverse-btn" onClick={flipBoard} title="Реверс">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M7 16V4m0 0L3 8m4-4l4 4M17 8v12m0 0l4-4m-4 4l-4-4"/>
         </svg>
       </button>
-
-      <div className="resize-handle" title="Изменить размер">
-        ⤡
-      </div>
     </div>
   );
 };

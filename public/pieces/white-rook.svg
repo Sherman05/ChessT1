@@ -1,12 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
+  <!-- Коннет / Connet - tower/rook shape with triple lines -->
   <!-- Base -->
-  <ellipse cx="22.5" cy="46" rx="12" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Body -->
-  <path d="M13 46 L15 28 L17 20 L28 20 L30 28 L32 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Head - horse-like for Konnet -->
-  <path d="M17 20 L15 14 L17 10 L22 7 L28 10 L30 14 L28 20 Z" fill="white" stroke="#333" stroke-width="1.5"/>
-  <!-- Ear -->
-  <path d="M19 10 L20 5 L23 7" fill="white" stroke="#333" stroke-width="1.2"/>
-  <!-- Letter -->
-  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#333">Кт</text>
+  <path d="M13 52 Q13 49 17 48 L33 48 Q37 49 37 52 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Body - wider trapezoid -->
+  <path d="M17 48 L19 30 L31 30 L33 48 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Tower top with battlements -->
+  <path d="M16 30 L16 18 L18 18 L18 22 L21 22 L21 18 L23 18 L23 22 L27 22 L27 18 L29 18 L29 22 L32 22 L32 18 L34 18 L34 30 Z" fill="white" stroke="#222" stroke-width="1.8"/>
+  <!-- Triple vertical lines (III) -->
+  <line x1="22" y1="32" x2="21.5" y2="46" stroke="#222" stroke-width="1.8"/>
+  <line x1="25" y1="32" x2="25" y2="46" stroke="#222" stroke-width="1.8"/>
+  <line x1="28" y1="32" x2="28.5" y2="46" stroke="#222" stroke-width="1.8"/>
 </svg>

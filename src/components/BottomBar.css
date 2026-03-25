@@ -1,14 +1,88 @@
 .bottom-bar {
   display: flex;
   align-items: center;
-  gap: 2px;
-  padding: 3px 6px;
-  background: linear-gradient(to top, #6b9cc9, #4a7ba7);
-  border-top: 1px solid #3a6a97;
+  gap: 4px;
+  padding: 4px 8px;
+  background: linear-gradient(to top, #7ec8e3, #4a9ec9);
+  border-top: 1px solid #3a8ab0;
+  min-height: 38px;
 }
 
 .bottom-bar .spacer {
   flex: 1;
+}
+
+.bar-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  height: 32px;
+  padding: 2px 6px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  background: rgba(200, 210, 220, 0.5);
+  color: #1a3a5c;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.bar-btn:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.bar-btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.bar-btn.active {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.25);
+}
+
+.menu-btn {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+.turn-dot-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+}
+
+.turn-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #333;
+  transition: background 0.2s;
+}
+
+.turn-dot.white {
+  background: #f0f0f0;
+}
+
+.turn-dot.black {
+  background: #222;
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.nav-btn {
+  font-size: 11px;
+  min-width: 34px;
+  height: 34px;
+  border-radius: 50%;
 }
 
 .draw-btn {
@@ -16,8 +90,13 @@
   font-weight: bold;
 }
 
-.delete-confirm-btn {
-  color: #4ade80 !important;
+.confirm-btn {
+  color: #16a34a !important;
   font-size: 16px !important;
   font-weight: bold;
+}
+
+.reverse-btn {
+  width: 36px;
+  height: 36px;
 }

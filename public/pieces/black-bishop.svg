@@ -1,12 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
+  <!-- Разведчик / Scout - tall narrow shape -->
   <!-- Base -->
-  <ellipse cx="22.5" cy="46" rx="11" ry="3" fill="#222" stroke="#111" stroke-width="1.5"/>
-  <!-- Body -->
-  <path d="M14 46 L16 30 L18 22 L22.5 14 L27 22 L29 30 L31 46 Z" fill="#222" stroke="#111" stroke-width="1.5"/>
-  <!-- Hat/Scout cap -->
-  <path d="M18 14 L22.5 4 L27 14 Z" fill="#222" stroke="#ccc" stroke-width="1.5"/>
-  <!-- Eye/visor -->
-  <line x1="19" y1="13" x2="26" y2="13" stroke="#ccc" stroke-width="1.5"/>
-  <!-- Letter -->
-  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#ccc">Рк</text>
+  <path d="M15 52 Q15 49 19 48 L31 48 Q35 49 35 52 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
+  <!-- Body - narrow tall -->
+  <path d="M19 48 L21 28 L29 28 L31 48 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
+  <!-- Head - pointed hood -->
+  <path d="M21 28 Q20 20 25 12 Q30 20 29 28 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
+  <!-- Top ball -->
+  <circle cx="25" cy="11" r="2" fill="#1a1a1a" stroke="#555" stroke-width="1.5"/>
+  <!-- Diagonal cross on body -->
+  <line x1="22" y1="32" x2="28" y2="44" stroke="#555" stroke-width="1.2"/>
+  <line x1="28" y1="32" x2="22" y2="44" stroke="#555" stroke-width="1.2"/>
 </svg>

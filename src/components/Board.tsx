@@ -105,7 +105,6 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
         <div
           ref={ref}
           className="board-grid"
-          style={{ gridColumn: 2, gridRow: 1 }}
         >
           {cells}
         </div>
