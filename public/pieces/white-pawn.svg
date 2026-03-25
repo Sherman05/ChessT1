@@ -1,9 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2736.45 1621.18 66.41 71.06">
-<g transform="matrix(0.90970135,0,0,0.79278724,-1262.2713,746.4603)">
-
-      <path style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.38994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" d="m -366.30846,553.68453 -20.23412,-40.86784 v -24.14272 l 65.74975,-0.10321 v 25.27456 l -18.687,39.83921 z"/>
-      <path d="m -359.17101,459.71093 -11.27037,24.21325 31.36927,0.0529 -10.70163,-24.26628 h -9.39727 z" style="opacity:0.904;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.38994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
-      <path d="m -361.17712,493.76857 v 53.22449" style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.403;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
-    
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="11" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Body -->
+  <path d="M15 46 L17 30 L19 24 L26 24 L28 30 L30 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Head -->
+  <circle cx="22.5" cy="17" r="7" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Letter -->
+  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#333">Кн</text>
 </svg>

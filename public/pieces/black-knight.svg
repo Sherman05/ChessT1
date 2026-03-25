@@ -1,13 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1493.61 1890.30 73.50 57.43">
-<g transform="matrix(0.89455297,0,0,0.60249703,-233.4097,1050.1652)">
-
-      <path d="m -1282.7308,713.06779 -23.6524,-44.45318 v -26.26076 l 76.8573,-0.11227 v 27.4919 l -21.8439,43.33431 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.74132;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
-      <path transform="matrix(0.30555935,0,0,0.28716596,-1137.5946,486.01301)" d="m -387.04819,420.73569 -75.96984,-0.11469 38.08425,-65.73446 z" style="opacity:0.904;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:13.5436;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
-      <path d="m -1280.9516,608.1569 a 18.984688,14.334122 0 0 0 -5.5628,10.1252 18.984688,14.334122 0 0 0 5.7533,10.25945 h 26.4875 a 18.984688,14.334122 0 0 0 5.7293,-10.25945 18.984688,14.334122 0 0 0 -5.5627,-10.1252 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.01189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
-      <path d="m -1272.9709,649.42528 v 57.7744" style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.83547;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
-      <path d="m -1284.9294,649.66908 v 32.8808" style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.83547;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
-      <path d="m -1236.2679,667.37121 v -1.45934 l -8.1874,-6.77852 8.1874,-6.73169 v -1.50453 h -27.3327 v 16.47408 z" style="opacity:0.884;fill:#646464;fill-opacity:1;fill-rule:nonzero;stroke:#fffef7;stroke-width:3.64717;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
-      <path d="m -1285.6013,640.8846 -0.9182,-0.3434 v -4.09551 h 0.2654 a 18.668625,5.8401113 0 0 1 -0.054,-0.39576 18.668625,5.8401113 0 0 1 5.6566,-4.17947 h 26.0473 a 18.668625,5.8401113 0 0 1 5.6333,4.17947 18.668625,5.8401113 0 0 1 -0.063,0.38481 h 0.1728 v 4.27264 l -0.4487,0.17725 h -36.2914 z" style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.01189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
-    
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="12" ry="3" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Body - armored look for Ritter -->
+  <path d="M13 46 L15 26 L18 20 L27 20 L30 26 L32 46 Z" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Helmet -->
+  <path d="M16 20 L16 12 L18 8 L27 8 L29 12 L29 20 Z" fill="#222" stroke="#ccc" stroke-width="1.5"/>
+  <!-- Visor slit -->
+  <line x1="18" y1="14" x2="27" y2="14" stroke="#ccc" stroke-width="1.5"/>
+  <!-- Plume -->
+  <path d="M22.5 8 L22.5 3 L26 5" fill="none" stroke="#ccc" stroke-width="1.5"/>
+  <!-- Letter -->
+  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#ccc">Рт</text>
 </svg>

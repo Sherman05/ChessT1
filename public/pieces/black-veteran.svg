@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2514.64 1634.18 66.37 71.25">
-<g transform="matrix(0.90938074,0,0,0.79512097,-1191.5252,751.61886)">
-
-      <path style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.38995;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" d="m -262.20158,553.89801 -20.23412,-40.86784 v -24.14272 l 65.74975,-0.10321 v 25.27456 l -18.687,39.83921 z"/>
-      <path d="m -253.06413,460.18227 -11.27037,24.21325 31.36927,0.0529 -10.70163,-24.26628 h -9.39727 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.38995;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
-      <g style="stroke-width:0.953034">
-        <path style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.40303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -254.22631,493.97266 v 53.22449"/>
-        <path style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.40303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -242.93655,494.14587 v 26.61224"/>
-      </g>
-    
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="11" ry="3" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Body -->
+  <path d="M15 46 L17 30 L19 24 L26 24 L28 30 L30 46 Z" fill="#222" stroke="#111" stroke-width="1.5"/>
+  <!-- Head with veteran mark -->
+  <circle cx="22.5" cy="17" r="7" fill="#222" stroke="#ccc" stroke-width="1.5"/>
+  <!-- Star badge -->
+  <path d="M22.5 9 L23.5 12 L26.5 12 L24 14 L25 17 L22.5 15 L20 17 L21 14 L18.5 12 L21.5 12 Z" fill="#ccc" stroke="none"/>
+  <!-- Letter -->
+  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="9" font-weight="bold" fill="#ccc">ВК</text>
 </svg>

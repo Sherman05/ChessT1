@@ -1,8 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2876.76 1503.48 71.42 68.31">
-<g transform="matrix(0.94386747,0,0,0.75603059,-1258.3725,595.97707)">
-
-      <path d="m -447.32066,809.90778 -9.47136,25.36679 26.362,0.0554 -8.9934,-25.42234 h -7.89724 z" style="opacity:0.88399999;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.6062994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.53149605;stroke-opacity:1"/>
-      <path d="m -463.56923,840.42837 -13.09739,67.99123 66.70152,-0.1156 -13.11232,-67.87639 h -40.49181 z" style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.6062994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.53149605;stroke-opacity:1"/>
-    
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="11" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Body -->
+  <path d="M14 46 L16 30 L18 22 L22.5 14 L27 22 L29 30 L31 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Hat/Scout cap -->
+  <path d="M18 14 L22.5 4 L27 14 Z" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Eye/visor -->
+  <line x1="19" y1="13" x2="26" y2="13" stroke="#333" stroke-width="1.5"/>
+  <!-- Letter -->
+  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#333">Рк</text>
 </svg>

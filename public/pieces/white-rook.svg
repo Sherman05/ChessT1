@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1947.29 1340.77 64.28 65.75">
-<g transform="matrix(0.82471687,0,0,0.72177581,-605.65234,476.33356)">
-
-      <path d="m -1205.6853,1114.0501 -23.6524,-44.4532 v -26.2608 l 76.8572,-0.1122 v 27.4919 l -21.8439,43.3343 z" style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.78877;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
-      <path d="m -1199.531,1038.6253 v 0 l -11.5895,-8.5991 v -9.0442 h 0.2963 a 20.779818,12.897083 0 0 1 -0.061,-0.8735 20.779818,12.897083 0 0 1 6.2966,-9.2302 h 28.9923 a 20.779818,12.897083 0 0 1 6.2707,9.2302 20.779818,12.897083 0 0 1 -0.07,0.8491 h 0.1926 v 9.4354 l -10.5117,8.2335 h -19.8158 z" style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.78877;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"/>
-      <g transform="translate(-719.99999,560.87794)" style="stroke-width:1.03961">
-        <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.89387;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -480.47883,488.89602 v 57.78952"/>
-        <path style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.89387;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -469.11713,488.89602 v 57.78952"/>
-      </g>
-    
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 45 50">
+  <!-- Base -->
+  <ellipse cx="22.5" cy="46" rx="12" ry="3" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Body -->
+  <path d="M13 46 L15 28 L17 20 L28 20 L30 28 L32 46 Z" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Head - horse-like for Konnet -->
+  <path d="M17 20 L15 14 L17 10 L22 7 L28 10 L30 14 L28 20 Z" fill="white" stroke="#333" stroke-width="1.5"/>
+  <!-- Ear -->
+  <path d="M19 10 L20 5 L23 7" fill="white" stroke="#333" stroke-width="1.2"/>
+  <!-- Letter -->
+  <text x="22.5" y="41" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="bold" fill="#333">Кт</text>
 </svg>
