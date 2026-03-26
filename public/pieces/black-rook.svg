@@ -1,13 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
-  <!-- Коннет / Connet - tower/rook shape with triple lines -->
-  <!-- Base -->
-  <path d="M13 52 Q13 49 17 48 L33 48 Q37 49 37 52 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Body -->
-  <path d="M17 48 L19 30 L31 30 L33 48 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Tower top with battlements -->
-  <path d="M16 30 L16 18 L18 18 L18 22 L21 22 L21 18 L23 18 L23 22 L27 22 L27 18 L29 18 L29 22 L32 22 L32 18 L34 18 L34 30 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Triple vertical lines (III) -->
-  <line x1="22" y1="32" x2="21.5" y2="46" stroke="#555" stroke-width="1.8"/>
-  <line x1="25" y1="32" x2="25" y2="46" stroke="#555" stroke-width="1.8"/>
-  <line x1="28" y1="32" x2="28.5" y2="46" stroke="#555" stroke-width="1.8"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     viewBox="-1368.20 1196.86 79.52 97.25"
+     width="100" height="122">
+<g xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" transform="matrix(0.82472257,0,0,0.72490576,-940.72962,886.39819)" id="g8202" style="stroke-width:1.03939">
+      <path inkscape:connector-curvature="0" id="path8171-7-7-6-40-8-64" d="m -485.68535,553.17214 -23.6524,-44.45319 v -26.26076 l 76.85729,-0.11227 v 27.4919 l -21.84392,43.33432 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.78775;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path inkscape:connector-curvature="0" id="path8397-1-4-6-9" d="m -479.53103,478.17285 v -0.002 l -11.58948,-8.59908 v -9.04416 h 0.29632 a 20.779818,12.897083 0 0 1 -0.0612,-0.87351 20.779818,12.897083 0 0 1 6.29662,-9.23015 h 28.99223 a 20.779818,12.897083 0 0 1 6.27069,9.23015 20.779818,12.897083 0 0 1 -0.0703,0.84914 h 0.1926 v 9.43538 l -10.51165,8.23351 h -19.81584 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.78775;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <g id="g8341" style="stroke-width:1.03939">
+        <path style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.89262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -480.47883,488.89602 v 57.78952" id="path4178-6-55-4-7-7" inkscape:connector-curvature="0" />
+        <path style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.89262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -469.11713,488.89602 v 57.78952" id="path4178-6-55-6-5-9" inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    
 </svg>

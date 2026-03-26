@@ -1,11 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
-  <!-- Кнехт / Knecht (pawn) - simple rounded shape with single line -->
-  <!-- Base -->
-  <path d="M15 52 Q15 49 19 48 L31 48 Q35 49 35 52 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Body - simple bell -->
-  <path d="M19 48 L18 34 Q17 26 25 18 Q33 26 32 34 L31 48 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Round head -->
-  <circle cx="25" cy="15" r="4" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Single vertical line -->
-  <line x1="25" y1="24" x2="25" y2="46" stroke="#555" stroke-width="1.5"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     viewBox="-1364.16 1113.27 69.36 86.45"
+     width="100" height="125">
+<g xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="g962" transform="matrix(0.90937699,0,0,0.79284843,149.70137,506.81994)" style="stroke-width:0.95306">
+      <path inkscape:export-ydpi="465" inkscape:export-xdpi="465" inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД3.png" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.39006;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" d="m -1639.2304,866.41267 -20.2341,-40.86784 v -24.14272 l 65.7498,-0.10321 v 25.27456 l -18.687,39.83921 z" id="path8461-0-5" inkscape:connector-curvature="0" />
+      <path inkscape:export-ydpi="465" inkscape:export-xdpi="465" inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД3.png" id="path8171-4-0-7" d="m -1632.0929,772.41591 -11.2704,24.21325 31.3693,0.0529 -10.7016,-24.26628 h -9.3973 z" style="opacity:0.904;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.39006;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" inkscape:connector-curvature="0" />
+      <path inkscape:export-ydpi="465" inkscape:export-xdpi="465" inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД3.png" inkscape:connector-curvature="0" id="path4178-6-55-2-3" d="M -1634.099,806.49671 V 859.7212" style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.40316;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    
 </svg>

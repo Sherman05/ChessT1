@@ -1,15 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
-  <!-- Base platform -->
-  <path d="M12 52 Q12 49 16 48 L34 48 Q38 49 38 52 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Body -->
-  <path d="M16 48 L18 32 L17 28 L33 28 L32 32 L34 48 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Crown top with crenellations -->
-  <path d="M17 28 L15 18 L15 14 L18 14 L18 18 L21 14 L21 18 L25 12 L29 18 L29 14 L32 14 L32 18 L35 14 L35 18 L33 28 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Cross on top -->
-  <line x1="25" y1="12" x2="25" y2="6" stroke="#555" stroke-width="2.5"/>
-  <line x1="22" y1="9" x2="28" y2="9" stroke="#555" stroke-width="2.5"/>
-  <!-- Vertical lines on body -->
-  <line x1="22" y1="30" x2="21" y2="46" stroke="#555" stroke-width="1.2"/>
-  <line x1="25" y1="30" x2="25" y2="46" stroke="#555" stroke-width="1.2"/>
-  <line x1="28" y1="30" x2="29" y2="46" stroke="#555" stroke-width="1.2"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     viewBox="-1360.83 1316.31 80.16 87.24"
+     width="100" height="109">
+<g xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="g1011" transform="matrix(0.899116,0,0,0.65742075,52.206693,395.9431)" style="stroke-width:1.0207">
+      <path id="path8397-1-4-6-7-2-3-3" d="m -1544.8852,1449.2655 -0.9182,-0.3299 v -3.9345 h 0.2654 a 18.668625,5.6105578 0 0 1 -0.054,-0.3802 18.668625,5.6105578 0 0 1 5.6566,-4.0152 h 26.0473 a 18.668625,5.6105578 0 0 1 5.6333,4.0152 18.668625,5.6105578 0 0 1 -0.063,0.3697 h 0.1728 v 4.1047 l -0.4487,0.1703 h -36.2914 z" style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.97833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" inkscape:connector-curvature="0" />
+      <path inkscape:export-ydpi="465" inkscape:export-xdpi="465" inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png" inkscape:connector-curvature="0" id="path8171-7-7-6-40-8-6-8-2" d="m -1541.7793,1523.5149 -23.6524,-44.4532 v -26.2608 l 76.8572,-0.1123 v 27.4919 l -21.8439,43.3344 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.34;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path inkscape:export-ydpi="465" inkscape:export-xdpi="465" inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png" inkscape:connector-curvature="0" id="path4178-6-55-1-7-0-2-97-1-7" d="m -1526.2426,1459.5056 v 57.7625" style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.78664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path inkscape:export-ydpi="465" inkscape:export-xdpi="465" inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png" inkscape:connector-curvature="0" id="path4178-6-55-1-7-0-9-7-0-5" d="m -1536.8606,1459.6111 v 57.7625" style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.78664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path inkscape:export-ydpi="465" inkscape:export-xdpi="465" inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png" inkscape:connector-curvature="0" id="path4178-6-55-1-7-0-2-9-7-9-0" d="m -1515.713,1459.6579 v 57.7625" style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.78664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path id="path8397-1-4-6-7-5-4-1-8" d="m -1539.0719,1438.4709 -7.1993,-6.7851 v -11.12 l 10.4779,-11.4419 v -10e-4 h 17.9158 l 9.5035,10.9579 v 11.712 l -7.087,6.6793 h -23.6108 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.97833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" inkscape:connector-curvature="0" />
+    </g>
+    
 </svg>

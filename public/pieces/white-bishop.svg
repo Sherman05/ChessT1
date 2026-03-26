@@ -1,14 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
-  <!-- Разведчик / Scout - tall narrow shape -->
-  <!-- Base -->
-  <path d="M15 52 Q15 49 19 48 L31 48 Q35 49 35 52 Z" fill="white" stroke="#222" stroke-width="1.8"/>
-  <!-- Body - narrow tall -->
-  <path d="M19 48 L21 28 L29 28 L31 48 Z" fill="white" stroke="#222" stroke-width="1.8"/>
-  <!-- Head - pointed hood -->
-  <path d="M21 28 Q20 20 25 12 Q30 20 29 28 Z" fill="white" stroke="#222" stroke-width="1.8"/>
-  <!-- Top ball -->
-  <circle cx="25" cy="11" r="2" fill="white" stroke="#222" stroke-width="1.5"/>
-  <!-- Diagonal cross on body -->
-  <line x1="22" y1="32" x2="28" y2="44" stroke="#222" stroke-width="1.2"/>
-  <line x1="28" y1="32" x2="22" y2="44" stroke="#222" stroke-width="1.2"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     viewBox="-1713.32 1202.33 73.03 86.39"
+     width="100" height="118">
+<g xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="g8429" inkscape:export-filename="C:\Users\User\Desktop\КиМ\g8429.png" inkscape:export-xdpi="465" inkscape:export-ydpi="465" transform="matrix(0.94386747,0,0,0.75603059,-1258.3725,595.97707)">
+      <path inkscape:export-ydpi="465" inkscape:export-xdpi="465" inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД5.png" id="path8171-4-9-7-0-9-9" d="m -447.32066,809.90778 -9.47136,25.36679 26.362,0.0554 -8.9934,-25.42234 h -7.89724 z" style="opacity:0.88399999;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.6062994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.53149605;stroke-opacity:1" inkscape:connector-curvature="0" />
+      <path inkscape:connector-curvature="0" id="path8422" d="m -463.56923,840.42837 -13.09739,67.99123 66.70152,-0.1156 -13.11232,-67.87639 h -40.49181 z" style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.6062994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.53149605;stroke-opacity:1" />
+    </g>
+    
 </svg>

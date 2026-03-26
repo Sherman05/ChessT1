@@ -1,13 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 56">
-  <!-- Принц / Prince - bell/dome shape with small crown -->
-  <!-- Base -->
-  <path d="M14 52 Q14 49 18 48 L32 48 Q36 49 36 52 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Body - bell shape -->
-  <path d="M18 48 L16 36 Q15 28 25 20 Q35 28 34 36 L32 48 Z" fill="#1a1a1a" stroke="#000" stroke-width="1.8"/>
-  <!-- Small crown on top -->
-  <path d="M20 20 L22 14 L25 17 L28 14 L30 20" fill="#1a1a1a" stroke="#555" stroke-width="1.8"/>
-  <!-- Small ball on top -->
-  <circle cx="25" cy="12" r="2.5" fill="#1a1a1a" stroke="#555" stroke-width="1.5"/>
-  <!-- Single vertical line -->
-  <line x1="25" y1="26" x2="25" y2="46" stroke="#555" stroke-width="1.5"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+     xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+     viewBox="-1468.35 1317.09 80.49 87.04"
+     width="100" height="108">
+<g xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" id="g8199" transform="matrix(0.95621533,0,0,0.68219951,-462.55013,911.82785)" inkscape:export-xdpi="465" inkscape:export-ydpi="465" style="stroke-width:1.00783">
+      <path inkscape:connector-curvature="0" id="path8397-1-4-6-7-0-6-3" d="m -1016.4114,635.82308 v -0.002 l -8.9208,-5.45406 v -5.73637 h 0.2281 a 15.9945,8.1801357 0 0 1 -0.049,-0.55405 15.9945,8.1801357 0 0 1 4.8468,-5.85435 h 22.31553 a 15.9945,8.1801357 0 0 1 4.8267,5.85435 15.9945,8.1801357 0 0 1 -0.0541,0.53858 h 0.14825 v 5.9845 l -8.09098,5.2222 h -15.2524 z" style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.9281;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path id="path8194-0-1" d="m -1012.2545,602.85368 -9.0447,14.27083 23.59164,0.0336 -9.00074,-14.30433 h -5.5462 z" style="opacity:0.904;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.9281;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" inkscape:connector-curvature="0" />
+      <path style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.6423;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" d="m -1022.5464,712.83705 -20.2341,-40.86784 v -24.14272 l 65.74972,-0.10321 v 25.27456 l -18.687,39.83921 z" id="path8461-6-5-9" inkscape:connector-curvature="0" />
+      <path inkscape:connector-curvature="0" id="path4178-6-55-30-6-0" d="m -1014.4527,653.64218 v 52.24696" style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.71359;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.71359;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m -1025.4151,653.91311 v 26.63344" id="path8245-3-0" inkscape:connector-curvature="0" />
+      <path id="path8397-1-4-6-7-2-3-2-5-5" d="m -1027.219,645.67606 -0.8923,-0.2894 v -3.45154 h 0.2579 a 18.141581,4.9218645 0 0 1 -0.053,-0.33356 18.141581,4.9218645 0 0 1 5.497,-3.52232 h 25.31189 a 18.141581,4.9218645 0 0 1 5.47427,3.52232 18.141581,4.9218645 0 0 1 -0.0612,0.32433 h 0.16792 v 3.60085 l -0.43602,0.14935 h -35.26686 z" style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.9281;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" inkscape:connector-curvature="0" />
+    </g>
+    
 </svg>

@@ -6,15 +6,13 @@ import {
   Square,
   PromotionContext,
   squareKey,
-  isCastleSquare,
   CASTLE_WHITE,
   CASTLE_BLACK,
 } from '../types/chess';
-import { BoardMap, createInitialBoard, createEmptyBoard, cloneBoard, createPiece, boardPositionKey } from '../logic/board';
-import { validateMove } from '../logic/moves';
+import { BoardMap, createInitialBoard, createEmptyBoard, cloneBoard, createPiece } from '../logic/board';
+
 import { checkPromotion, PromotionState } from '../logic/promotion';
 import { HistoryState, createHistory, addMove, goBack, goForward, canGoBack, canGoForward } from '../logic/history';
-import { checkGameEnd, checkDraw } from '../logic/gameEnd';
 
 export type GameMode = 'party' | 'analysis';
 export type AnalysisStage = 'setup' | 'play';
@@ -38,10 +36,6 @@ interface GameStoreState {
   gameOverReason: string | null;
   isDraw: boolean;
 
-  // Draw tracking
-  movesSinceCapture: number;
-  positionHistory: string[];
-
   // Promotion tracking
   whitePrinceToConnetUsed: boolean;
   blackPrinceToConnetUsed: boolean;
@@ -64,7 +58,6 @@ interface GameStoreState {
   clearBoard: () => void;
   placePieceFromTray: (kind: PieceKind, color: Color, to: Square) => void;
   removePieceFromBoard: (sq: Square) => void;
-  offerDraw: () => void;
   toggleDeletePieceMode: () => void;
   selectForDelete: (key: string | null) => void;
   confirmDelete: () => void;
@@ -89,8 +82,6 @@ function initialState() {
     winner: null as Color | null,
     gameOverReason: null as string | null,
     isDraw: false,
-    movesSinceCapture: 0,
-    positionHistory: [boardPositionKey(board) + '|white'] as string[],
     whitePrinceToConnetUsed: false,
     blackPrinceToConnetUsed: false,
     deletePieceMode: false,
@@ -115,15 +106,19 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
     const piece = state.board[fromKey];
     if (!piece) return false;
 
-    // Validate the move using full Chess-T1 rules
-    const validation = validateMove(
-      state.board, piece, from.file, from.rank, to.file, to.rank, state.turn,
-      { white: state.whitePrinceToConnetUsed, black: state.blackPrinceToConnetUsed }
-    );
-    if (!validation.valid) return false;
+    // Level 1 TZ: NO move validation by piece movement rules.
+    // Only: turn order, can't land on own piece, can't stay on same square.
+    if (piece.color !== state.turn) return false;
+    const targetPiece = state.board[toKey];
+    if (targetPiece && targetPiece.color === piece.color) return false;
+    if (fromKey === toKey) return false;
 
-    const captured = validation.captured;
-    const scoutExchange = validation.scoutExchange;
+    const captured = targetPiece || null;
+
+    // Scout exchange on castle squares (п.8 B9)
+    const allCastle = [...CASTLE_WHITE, ...CASTLE_BLACK];
+    const scoutExchange = piece.kind === 'bishop' && captured && captured.color !== piece.color
+      && allCastle.includes(toKey);
 
     // Check for promotions
     const promoState: PromotionState = {
@@ -165,15 +160,6 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       else bPtC = true;
     }
 
-    // Check game end
-    const endResult = checkGameEnd(newBoard, state.turn, captured, scoutExchange);
-    const newMovesSinceCapture = captured ? 0 : state.movesSinceCapture + 1;
-    const newPosKey = boardPositionKey(newBoard) + '|' + nextTurn;
-    const newPosHistory = [...state.positionHistory, newPosKey];
-    const drawResult = endResult.gameOver
-      ? { isDraw: false, reason: null }
-      : checkDraw(newBoard, nextTurn, newMovesSinceCapture, newPosHistory);
-
     set({
       board: newBoard,
       turn: nextTurn,
@@ -182,19 +168,6 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       lastMoveTo: toKey,
       whitePrinceToConnetUsed: wPtC,
       blackPrinceToConnetUsed: bPtC,
-      movesSinceCapture: newMovesSinceCapture,
-      positionHistory: newPosHistory,
-      ...(endResult.gameOver ? {
-        gameOver: true,
-        winner: endResult.winner,
-        gameOverReason: endResult.reason,
-        isDraw: false,
-      } : drawResult.isDraw ? {
-        gameOver: true,
-        isDraw: true,
-        winner: null,
-        gameOverReason: drawResult.reason,
-      } : {}),
     });
 
     return true;
@@ -214,15 +187,6 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
 
     const nextTurn: Color = state.turn === 'white' ? 'black' : 'white';
 
-    // Check game end after promotion
-    const endResult = checkGameEnd(newBoard, state.turn, ctx.captured, false);
-    const newMovesSinceCapture = ctx.captured ? 0 : state.movesSinceCapture + 1;
-    const newPosKey = boardPositionKey(newBoard) + '|' + nextTurn;
-    const newPosHistory = [...state.positionHistory, newPosKey];
-    const drawResult = endResult.gameOver
-      ? { isDraw: false, reason: null }
-      : checkDraw(newBoard, nextTurn, newMovesSinceCapture, newPosHistory);
-
     set({
       board: newBoard,
       turn: nextTurn,
@@ -231,19 +195,6 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
       boardBeforePromotion: null,
       lastMoveFrom: squareKey(ctx.from.file, ctx.from.rank),
       lastMoveTo: squareKey(ctx.to.file, ctx.to.rank),
-      movesSinceCapture: newMovesSinceCapture,
-      positionHistory: newPosHistory,
-      ...(endResult.gameOver ? {
-        gameOver: true,
-        winner: endResult.winner,
-        gameOverReason: endResult.reason,
-        isDraw: false,
-      } : drawResult.isDraw ? {
-        gameOver: true,
-        isDraw: true,
-        winner: null,
-        gameOverReason: drawResult.reason,
-      } : {}),
     });
   },
 
