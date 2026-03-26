@@ -98,7 +98,6 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
 
   makeMove: (from: Square, to: Square) => {
     const state = get();
-    if (state.gameOver || state.isDraw) return false;
     if (state.promotionContext) return false;
 
     const fromKey = squareKey(from.file, from.rank);
@@ -295,17 +294,6 @@ export const useGameStore = create<GameStoreState>((set, get) => ({
     const newBoard = cloneBoard(state.board);
     delete newBoard[key];
     set({ board: newBoard });
-  },
-
-  offerDraw: () => {
-    const state = get();
-    if (state.gameOver || state.isDraw) return;
-    set({
-      gameOver: true,
-      isDraw: true,
-      gameOverReason: 'Ничья по соглашению сторон.',
-      winner: null,
-    });
   },
 
   toggleDeletePieceMode: () => {

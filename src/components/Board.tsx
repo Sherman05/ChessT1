@@ -5,7 +5,6 @@ import { BoardLabels } from './BoardLabels';
 import { useGameStore } from '../store/gameStore';
 import { useDragStore } from '../store/dragStore';
 import { squareKey } from '../types/chess';
-import { getLegalMovesForPiece } from '../logic/moves';
 import './Board.css';
 
 export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
@@ -43,8 +42,8 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
     if (promotionContext) return;
     if (gameOver) return;
 
-    // In delete mode (analysis setup), select piece for deletion
-    if (isSetup && deletePieceMode) {
+    // In delete mode, select piece for deletion
+    if (deletePieceMode) {
       selectForDelete(squareKey(file, rank));
       return;
     }
@@ -52,10 +51,8 @@ export const Board = forwardRef<HTMLDivElement>((_props, ref) => {
     // In setup mode, allow dragging any piece; in play mode, only current turn
     if (!isSetup && piece.color !== turn) return;
 
-    // Compute legal moves for highlighting
-    const legalMoves = isSetup ? [] : getLegalMovesForPiece(board, piece, file, rank, turn);
-    startDrag(piece, { file, rank }, e.clientX, e.clientY, undefined, legalMoves);
-  }, [promotionContext, gameOver, isSetup, deletePieceMode, turn, board, startDrag, selectForDelete]);
+    startDrag(piece, { file, rank }, e.clientX, e.clientY, undefined, undefined);
+  }, [promotionContext, gameOver, isSetup, deletePieceMode, turn, startDrag, selectForDelete]);
 
   // Build grid cells
   const ranks = isFlipped ? [0, 1, 2, 3, 4, 5, 6, 7] : [7, 6, 5, 4, 3, 2, 1, 0];

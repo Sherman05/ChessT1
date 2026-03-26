@@ -50,8 +50,6 @@ export const TopBar: React.FC = () => {
           Начальная<br/>расстановка
         </button>
 
-        <span className="tab-separator">К</span>
-
         <button
           className={`tab-btn ${mode === 'party' ? 'tab-active' : ''}`}
           onClick={() => setMode('party')}

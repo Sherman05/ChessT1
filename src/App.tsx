@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState, useEffect } from 'react';
+import React, { useRef, useCallback, useState } from 'react';
 import { Board } from './components/Board';
 import { TopBar } from './components/TopBar';
 import { BottomBar } from './components/BottomBar';
@@ -6,11 +6,9 @@ import { IntroPage } from './components/IntroPage';
 import { MenuPanel } from './components/MenuPanel';
 import { PieceTray } from './components/PieceTray';
 import { PromotionDialog } from './components/PromotionDialog';
-import { ChessClock } from './components/ChessClock';
 import { useGameStore } from './store/gameStore';
 import { useUIStore } from './store/uiStore';
 import { useDragStore } from './store/dragStore';
-import { useChessClock } from './hooks/useChessClock';
 import { Color, squareKey } from './types/chess';
 import { FloatingPiece } from './components/Piece';
 import './App.css';
@@ -21,45 +19,18 @@ function App() {
   const mode = useGameStore(s => s.mode);
   const analysisStage = useGameStore(s => s.analysisStage);
   const isFlipped = useGameStore(s => s.isFlipped);
-  const turn = useGameStore(s => s.turn);
   const promotionContext = useGameStore(s => s.promotionContext);
   const placePieceFromTray = useGameStore(s => s.placePieceFromTray);
   const makeMove = useGameStore(s => s.makeMove);
   const removePieceFromBoard = useGameStore(s => s.removePieceFromBoard);
   const board = useGameStore(s => s.board);
-  const gameOver = useGameStore(s => s.gameOver);
-  const winner = useGameStore(s => s.winner);
-  const gameOverReason = useGameStore(s => s.gameOverReason);
-  const isDraw = useGameStore(s => s.isDraw);
-  const setInitialPosition = useGameStore(s => s.setInitialPosition);
-
   const drag = useDragStore(s => s.drag);
   const updateDrag = useDragStore(s => s.updateDrag);
   const endDrag = useDragStore(s => s.endDrag);
 
-  const clock = useChessClock(10);
-  const historyState = useGameStore(s => s.historyState);
-
   const boardRef = useRef<HTMLDivElement>(null);
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
-  const isPartyPlay = mode === 'party' && !gameOver && !isDraw;
 
-  // Start/switch clock on turn change in party mode
-  useEffect(() => {
-    if (isPartyPlay && historyState.moveIndex >= 0) {
-      clock.switchTo(turn);
-    }
-    if (gameOver || isDraw) {
-      clock.stop();
-    }
-  }, [turn, isPartyPlay, gameOver, isDraw, historyState.moveIndex]);
-
-  // Reset clock when game resets
-  useEffect(() => {
-    if (historyState.moveIndex === -1) {
-      clock.reset(10);
-    }
-  }, [historyState.moveIndex]);
   const [outOfBoundsArrow, setOutOfBoundsArrow] = useState<{ x: number; y: number; side: string } | null>(null);
 
   const getSquareFromPoint = useCallback((clientX: number, clientY: number) => {
@@ -165,49 +136,10 @@ function App() {
             />
           )}
 
-          {mode === 'party' && (
-            <ChessClock
-              whiteTime={clock.whiteTime}
-              blackTime={clock.blackTime}
-              activeSide={clock.activeSide}
-              isFlipped={isFlipped}
-            />
-          )}
-
           <div style={{ position: 'relative' }}>
             <Board ref={boardRef} />
             {showMenu && <MenuPanel />}
             {promotionContext && <PromotionDialog />}
-            {gameOver && (
-              <div className="game-over-overlay">
-                <div className="game-over-panel">
-                  <h2>{isDraw ? 'Ничья' : (winner === 'white' ? 'Белые победили!' : 'Чёрные победили!')}</h2>
-                  <p>{gameOverReason}</p>
-                  <button onClick={setInitialPosition}>Новая партия</button>
-                </div>
-              </div>
-            )}
-            {/* Turn indicator with circles (Q29) */}
-            <div className="turn-indicator">
-              {isSetup ? (
-                <span>Расстановка фигур</span>
-              ) : (
-                <div className="turn-lamps">
-                  <div className={`turn-lamp ${turn === 'white' ? 'active' : ''}`}>
-                    <div className="lamp-inner white" />
-                  </div>
-                  <span className="turn-text">
-                    {gameOver
-                      ? (isDraw ? 'Ничья' : (winner === 'white' ? 'Победа белых' : 'Победа чёрных'))
-                      : (turn === 'white' ? 'Ход белых' : 'Ход чёрных')
-                    }
-                  </span>
-                  <div className={`turn-lamp ${turn === 'black' ? 'active' : ''}`}>
-                    <div className="lamp-inner black" />
-                  </div>
-                </div>
-              )}
-            </div>
           </div>
 
           {isSetup && (

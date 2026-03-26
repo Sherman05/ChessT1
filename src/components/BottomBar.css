@@ -49,27 +49,39 @@
   height: 36px;
 }
 
-.turn-dot-container {
+.turn-lamps {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 6px;
   padding: 0 6px;
 }
 
-.turn-dot {
+.turn-lamp {
   width: 18px;
   height: 18px;
   border-radius: 50%;
   border: 2px solid #333;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.2s;
 }
 
-.turn-dot.white {
-  background: #f0f0f0;
+.turn-lamp.white {
+  background: #d0d0d0;
 }
 
-.turn-dot.black {
-  background: #222;
+.turn-lamp.white.active {
+  background: #f8f8f8;
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
+  border-color: #666;
+}
+
+.turn-lamp.black {
+  background: #444;
+}
+
+.turn-lamp.black.active {
+  background: #111;
+  box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+  border-color: #000;
 }
 
 .nav-buttons {
@@ -83,11 +95,6 @@
   min-width: 34px;
   height: 34px;
   border-radius: 50%;
-}
-
-.draw-btn {
-  font-size: 16px !important;
-  font-weight: bold;
 }
 
 .confirm-btn {

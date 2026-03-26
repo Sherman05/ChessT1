@@ -12,8 +12,6 @@ export const BottomBar: React.FC = () => {
   const goToPreviousMove = useGameStore(s => s.goToPreviousMove);
   const goToNextMove = useGameStore(s => s.goToNextMove);
   const flipBoard = useGameStore(s => s.flipBoard);
-  const offerDraw = useGameStore(s => s.offerDraw);
-  const gameOver = useGameStore(s => s.gameOver);
   const toggleMenu = useUIStore(s => s.toggleMenu);
   const deletePieceMode = useGameStore(s => s.deletePieceMode);
   const toggleDeletePieceMode = useGameStore(s => s.toggleDeletePieceMode);
@@ -23,7 +21,6 @@ export const BottomBar: React.FC = () => {
   const canBack = canGoBack(historyState);
   const canForward = canGoForward(historyState);
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
-  const isPlaying = !isSetup && !gameOver;
 
   return (
     <div className="bottom-bar">
@@ -36,9 +33,10 @@ export const BottomBar: React.FC = () => {
         </svg>
       </button>
 
-      {/* Turn indicator */}
-      <div className="turn-dot-container">
-        <div className={`turn-dot ${turn}`} />
+      {/* Two turn indicator lamps */}
+      <div className="turn-lamps">
+        <div className={`turn-lamp white ${turn === 'white' ? 'active' : ''}`} title="Белые" />
+        <div className={`turn-lamp black ${turn === 'black' ? 'active' : ''}`} title="Чёрные" />
       </div>
 
       {/* Navigation arrows */}
@@ -77,30 +75,22 @@ export const BottomBar: React.FC = () => {
         </button>
       </div>
 
-      {isPlaying && (
-        <button className="bar-btn draw-btn" onClick={offerDraw} title="Ничья по соглашению">½</button>
-      )}
-
       <div className="spacer" />
 
-      {/* Delete piece button in analysis setup mode */}
-      {isSetup && (
-        <>
-          <button
-            className={`bar-btn ${deletePieceMode ? 'active' : ''}`}
-            onClick={toggleDeletePieceMode}
-            title="Удалить фигуру"
-          >
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14"/>
-              <line x1="10" y1="11" x2="10" y2="17"/>
-              <line x1="14" y1="11" x2="14" y2="17"/>
-            </svg>
-          </button>
-          {deletePieceMode && selectedForDelete && (
-            <button className="bar-btn confirm-btn" onClick={confirmDelete} title="Подтвердить удаление">✓</button>
-          )}
-        </>
+      {/* Delete piece button — available in both party and analysis modes */}
+      <button
+        className={`bar-btn ${deletePieceMode ? 'active' : ''}`}
+        onClick={toggleDeletePieceMode}
+        title="Удалить фигуру"
+      >
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14"/>
+          <line x1="10" y1="11" x2="10" y2="17"/>
+          <line x1="14" y1="11" x2="14" y2="17"/>
+        </svg>
+      </button>
+      {deletePieceMode && selectedForDelete && (
+        <button className="bar-btn confirm-btn" onClick={confirmDelete} title="Подтвердить удаление">✓</button>
       )}
 
       {/* Reverse button */}
