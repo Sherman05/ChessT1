@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg3509"
+   version="1.1"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   sodipodi:docname="ФигурыWhiteBlack chess-T1 для ГИ 2026.svg"
+   inkscape:export-filename="C:\Users\User\Desktop\КиМ\ФигурыС2.png"
+   inkscape:export-xdpi="465"
+   inkscape:export-ydpi="465"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs3511">
+    <linearGradient
+       id="linearGradient4363"
+       inkscape:swatch="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4365" />
+    </linearGradient>
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 526.1811 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="744.09449 : 526.1811 : 1"
+       inkscape:persp3d-origin="372.04724 : 350.7874 : 1"
+       id="perspective3531" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect3529"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#877c7c"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.78"
+     inkscape:cx="-1487.8205"
+     inkscape:cy="1645.5128"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer2"
+     showgrid="true"
+     showguides="false"
+     inkscape:snap-global="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:snap-nodes="false"
+     inkscape:snap-grids="true"
+     inkscape:window-width="1440"
+     inkscape:window-height="821"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     objecttolerance="20"
+     inkscape:bbox-nodes="true"
+     inkscape:showpageshadow="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050">
+    <inkscape:grid
+       type="xygrid"
+       id="grid8077"
+       empspacing="5"
+       units="mm"
+       spacingx="3.5433071"
+       spacingy="3.5433072"
+       empcolor="#0c0c13"
+       empopacity="0.25098039"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3514">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;line-height:0%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.708661;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       x="114.64747"
+       y="563.80658"
+       id="text4162"><tspan
+         sodipodi:role="line"
+         id="tspan4164"
+         x="114.64747"
+         y="563.80658"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:160px;line-height:129%;font-family:Courier;-inkscape-font-specification:Courier"> </tspan></text>
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2">
+    <g
+       id="g8188"
+       transform="matrix(0.90970135,0,0,0.79278724,-1262.2713,746.4603)"
+       inkscape:export-filename="C:\Users\User\Desktop\Каср\1.png"
+       inkscape:export-xdpi="465"
+       inkscape:export-ydpi="465"
+       style="stroke-width:0.953035">
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД3.png"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.38994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         d="m -366.30846,553.68453 -20.23412,-40.86784 v -24.14272 l 65.74975,-0.10321 v 25.27456 l -18.687,39.83921 z"
+         id="path8461"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД3.png"
+         id="path8171-4"
+         d="m -359.17101,459.71093 -11.27037,24.21325 31.36927,0.0529 -10.70163,-24.26628 h -9.39727 z"
+         style="opacity:0.904;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.38994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД3.png"
+         inkscape:connector-curvature="0"
+         id="path4178-6-55"
+         d="m -361.17712,493.76857 v 53.22449"
+         style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.403;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="g8158"
+       inkscape:export-filename="C:\Users\User\Desktop\Каср\1.png"
+       inkscape:export-xdpi="465"
+       inkscape:export-ydpi="465"
+       transform="matrix(0.90913873,0,0,0.79484868,-1446.5193,653.79939)"
+       style="stroke-width:0.953317">
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД5.png"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.39128;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         d="m -263.27905,664.75205 -20.23412,-40.86784 v -24.14272 l 65.74975,-0.10321 v 25.27456 l -18.687,39.83921 z"
+         id="path8461-4-6-8"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД5.png"
+         id="path8171-4-9-7-0"
+         d="m -254.1416,571.03631 -11.27037,24.21325 31.36927,0.0529 -10.70163,-24.26628 h -9.39727 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.39128;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g8154"
+         style="stroke-width:0.953317">
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.40464;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -255.30378,604.8267 v 53.22449"
+           id="path4178-6-55-3-0-2"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД5.png"
+           inkscape:export-xdpi="465"
+           inkscape:export-ydpi="465" />
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.40464;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -244.24233,604.8599 v 26.61225"
+           id="path4178-6-55-3-4-6-5"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД5.png"
+           inkscape:export-xdpi="465"
+           inkscape:export-ydpi="465" />
+      </g>
+    </g>
+    <g
+       transform="matrix(0.82472257,0,0,0.72490576,-940.72962,886.39819)"
+       id="g8202"
+       style="stroke-width:1.03939">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8171-7-7-6-40-8-64"
+         d="m -485.68535,553.17214 -23.6524,-44.45319 v -26.26076 l 76.85729,-0.11227 v 27.4919 l -21.84392,43.33432 z"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.78775;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path8397-1-4-6-9"
+         d="m -479.53103,478.17285 v -0.002 l -11.58948,-8.59908 v -9.04416 h 0.29632 a 20.779818,12.897083 0 0 1 -0.0612,-0.87351 20.779818,12.897083 0 0 1 6.29662,-9.23015 h 28.99223 a 20.779818,12.897083 0 0 1 6.27069,9.23015 20.779818,12.897083 0 0 1 -0.0703,0.84914 h 0.1926 v 9.43538 l -10.51165,8.23351 h -19.81584 z"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.78775;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <g
+         id="g8341"
+         style="stroke-width:1.03939">
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.89262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -480.47883,488.89602 v 57.78952"
+           id="path4178-6-55-4-7-7"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.89262;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -469.11713,488.89602 v 57.78952"
+           id="path4178-6-55-6-5-9"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       transform="matrix(0.90938074,0,0,0.79512097,-1191.5252,751.61886)"
+       id="g8125"
+       inkscape:export-filename="C:\Users\User\Desktop\КиМ\BlaclШерКнехт1.png"
+       inkscape:export-xdpi="465"
+       inkscape:export-ydpi="465"
+       style="stroke-width:0.953034">
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\BlackШкн.png"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.38995;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         d="m -262.20158,553.89801 -20.23412,-40.86784 v -24.14272 l 65.74975,-0.10321 v 25.27456 l -18.687,39.83921 z"
+         id="path8461-4-6-9"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\BlackШкн.png"
+         id="path8171-4-9-7-3"
+         d="m -253.06413,460.18227 -11.27037,24.21325 31.36927,0.0529 -10.70163,-24.26628 h -9.39727 z"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.38995;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <g
+         id="g8121"
+         style="stroke-width:0.953034">
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.40303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -254.22631,493.97266 v 53.22449"
+           id="path4178-6-55-3-0-6"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД5.png"
+           inkscape:export-xdpi="465"
+           inkscape:export-ydpi="465" />
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.40303;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -242.93655,494.14587 v 26.61224"
+           id="path4178-6-55-3-4-6-8"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД5.png"
+           inkscape:export-xdpi="465"
+           inkscape:export-ydpi="465" />
+      </g>
+    </g>
+    <g
+       id="g8168"
+       transform="matrix(0.89441102,0,0,0.60249695,-495.20887,1132.302)"
+       style="stroke-width:1.02938">
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\ФигурыRED.png"
+         inkscape:connector-curvature="0"
+         id="path8171-7-7-6-40-8-6"
+         d="m -1281.9653,553.93028 -23.6524,-44.45319 v -26.26076 l 76.8573,-0.11227 v 27.4919 l -21.8439,43.33432 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.74171;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         transform="matrix(0.30555935,0,0,0.28716596,-1136.8291,326.8755)"
+         inkscape:transform-center-y="1.4592426"
+         inkscape:transform-center-x="0.38677072"
+         d="m -387.04819,420.73569 -75.96984,-0.11469 38.08425,-65.73446 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="true"
+         sodipodi:arg2="1.572306"
+         sodipodi:arg1="0.52510855"
+         sodipodi:r2="12.291408"
+         sodipodi:r1="43.861256"
+         sodipodi:cy="398.74774"
+         sodipodi:cx="-425"
+         sodipodi:sides="3"
+         id="path8194"
+         style="opacity:0.904;fill:#ffffff;fill-opacity:0.941176;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:13.5448;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         sodipodi:type="star" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path8397-1-69-1"
+         d="m -1280.1861,449.01938 a 18.984688,14.334122 0 0 0 -5.5628,10.1252 18.984688,14.334122 0 0 0 5.7533,10.25945 h 26.4875 a 18.984688,14.334122 0 0 0 5.7293,-10.25945 18.984688,14.334122 0 0 0 -5.5627,-10.1252 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.01222;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <g
+         transform="translate(-541.15726,-0.19423693)"
+         id="g8153"
+         style="stroke-width:1.02938">
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.83595;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -731.04811,490.48201 v 57.7744"
+           id="path4178-6-55-1-7-0-9-7"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.83595;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -743.00664,490.72581 v 32.8808"
+           id="path4178-6-55-2-4"
+           inkscape:connector-curvature="0" />
+      </g>
+      <path
+         inkscape:connector-curvature="0"
+         id="rect8302-4-2-5-3-7"
+         d="m -1235.5024,508.23369 v -1.45934 l -8.1874,-6.77852 8.1874,-6.73169 v -1.50453 h -27.3327 v 16.47408 z"
+         style="opacity:0.884;fill:#aaaaaa;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:3.64748;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         id="path8397-1-4-6-7-2-3-2"
+         d="m -1284.8358,481.74714 -0.9182,-0.32991 v -3.93449 h 0.2654 a 18.668625,5.610559 0 0 1 -0.054,-0.38022 18.668625,5.610559 0 0 1 5.6566,-4.0152 h 26.0473 a 18.668625,5.610559 0 0 1 5.6333,4.0152 18.668625,5.610559 0 0 1 -0.063,0.3697 h 0.1728 v 4.1047 l -0.4487,0.17024 h -36.2914 z"
+         style="opacity:0.884;fill:#646464;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.01222;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g8189"
+       transform="matrix(0.95653878,0,0,0.68198305,-711.7683,1000.4397)"
+       style="stroke-width:1.0078">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8397-1-4-6-7-0-6"
+         d="m -1016.4682,476.62541 v -0.002 l -8.9208,-5.45406 v -5.73637 h 0.2281 a 15.9945,8.1801357 0 0 1 -0.049,-0.55405 15.9945,8.1801357 0 0 1 4.8468,-5.85435 h 22.31556 a 15.9945,8.1801357 0 0 1 4.8267,5.85435 15.9945,8.1801357 0 0 1 -0.0541,0.53858 h 0.14825 v 5.9845 l -8.09101,5.2222 h -15.2524 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:3.92805;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         id="path8194-0"
+         d="m -1012.3113,443.65601 -9.0447,14.27083 23.59167,0.0336 -9.00077,-14.30433 h -5.5462 z"
+         style="opacity:0.904;fill:#ffffff;fill-opacity:0.941176;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:3.92805;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <g
+         transform="translate(-407.55596,-0.11969572)"
+         id="g8420"
+         style="stroke-width:1.0078">
+        <path
+           inkscape:connector-curvature="0"
+           id="path8461-6-5"
+           d="m -615.04722,553.75908 -20.23413,-40.86784 v -24.14272 l 65.74976,-0.10321 v 25.27456 l -18.687,39.83921 z"
+           style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.64225;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+        <g
+           transform="translate(-1.901421,0.97417949)"
+           id="g8165-2"
+           style="stroke-width:1.0078">
+          <path
+             inkscape:connector-curvature="0"
+             id="path4178-6-55-30-6"
+             d="m -605.05214,493.59003 v 52.24696"
+             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.71353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+          <path
+             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.71353;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="M -616.01449,493.86096 V 520.4944"
+             id="path8245-3"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+      <path
+         id="path8397-1-4-6-7-2-3-2-5"
+         d="m -1027.2758,486.47839 -0.8923,-0.2894 v -3.45154 h 0.2579 a 18.141581,4.9218645 0 0 1 -0.053,-0.33356 18.141581,4.9218645 0 0 1 5.497,-3.52232 h 25.31192 a 18.141581,4.9218645 0 0 1 5.47427,3.52232 18.141581,4.9218645 0 0 1 -0.0612,0.32433 h 0.16792 v 3.60085 l -0.43602,0.14935 h -35.26689 z"
+         style="opacity:0.884;fill:#646464;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:3.92805;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g8215"
+       transform="matrix(0.89455297,0,0,0.60249703,-233.4097,1050.1652)"
+       style="stroke-width:1.0293">
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\ФигурыRED.png"
+         inkscape:connector-curvature="0"
+         id="path8171-7-7-6-40-8-6-6"
+         d="m -1282.7308,713.06779 -23.6524,-44.45318 v -26.26076 l 76.8573,-0.11227 v 27.4919 l -21.8439,43.33431 z"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.74132;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         transform="matrix(0.30555935,0,0,0.28716596,-1137.5946,486.01301)"
+         inkscape:transform-center-y="1.4592426"
+         inkscape:transform-center-x="0.38677072"
+         d="m -387.04819,420.73569 -75.96984,-0.11469 38.08425,-65.73446 z"
+         inkscape:randomized="0"
+         inkscape:rounded="0"
+         inkscape:flatsided="true"
+         sodipodi:arg2="1.572306"
+         sodipodi:arg1="0.52510855"
+         sodipodi:r2="12.291408"
+         sodipodi:r1="43.861256"
+         sodipodi:cy="398.74774"
+         sodipodi:cx="-425"
+         sodipodi:sides="3"
+         id="path8194-6"
+         style="opacity:0.904;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:13.5436;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         sodipodi:type="star" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path8397-1-69-1-4"
+         d="m -1280.9516,608.1569 a 18.984688,14.334122 0 0 0 -5.5628,10.1252 18.984688,14.334122 0 0 0 5.7533,10.25945 h 26.4875 a 18.984688,14.334122 0 0 0 5.7293,-10.25945 18.984688,14.334122 0 0 0 -5.5627,-10.1252 z"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.01189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4178-6-55-1-7-0-9-7-3"
+         d="m -1272.9709,649.42528 v 57.7744"
+         style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.83547;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4178-6-55-2-4-6"
+         d="m -1284.9294,649.66908 v 32.8808"
+         style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.83547;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="rect8302-4-2-5-3-7-6"
+         d="m -1236.2679,667.37121 v -1.45934 l -8.1874,-6.77852 8.1874,-6.73169 v -1.50453 h -27.3327 v 16.47408 z"
+         style="opacity:0.884;fill:#646464;fill-opacity:1;fill-rule:nonzero;stroke:#fffef7;stroke-width:3.64717;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         id="path8397-1-4-6-7-2-3-2-2"
+         d="m -1285.6013,640.8846 -0.9182,-0.3434 v -4.09551 h 0.2654 a 18.668625,5.8401113 0 0 1 -0.054,-0.39576 18.668625,5.8401113 0 0 1 5.6566,-4.17947 h 26.0473 a 18.668625,5.8401113 0 0 1 5.6333,4.17947 18.668625,5.8401113 0 0 1 -0.063,0.38481 h 0.1728 v 4.27264 l -0.4487,0.17725 h -36.2914 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.01189;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g1011"
+       transform="matrix(0.899116,0,0,0.65742075,52.206693,395.9431)"
+       style="stroke-width:1.0207">
+      <path
+         id="path8397-1-4-6-7-2-3-3"
+         d="m -1544.8852,1449.2655 -0.9182,-0.3299 v -3.9345 h 0.2654 a 18.668625,5.6105578 0 0 1 -0.054,-0.3802 18.668625,5.6105578 0 0 1 5.6566,-4.0152 h 26.0473 a 18.668625,5.6105578 0 0 1 5.6333,4.0152 18.668625,5.6105578 0 0 1 -0.063,0.3697 h 0.1728 v 4.1047 l -0.4487,0.1703 h -36.2914 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.97833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png"
+         inkscape:connector-curvature="0"
+         id="path8171-7-7-6-40-8-6-8-2"
+         d="m -1541.7793,1523.5149 -23.6524,-44.4532 v -26.2608 l 76.8572,-0.1123 v 27.4919 l -21.8439,43.3344 z"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.34;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png"
+         inkscape:connector-curvature="0"
+         id="path4178-6-55-1-7-0-2-97-1-7"
+         d="m -1526.2426,1459.5056 v 57.7625"
+         style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.78664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png"
+         inkscape:connector-curvature="0"
+         id="path4178-6-55-1-7-0-9-7-0-5"
+         d="m -1536.8606,1459.6111 v 57.7625"
+         style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.78664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png"
+         inkscape:connector-curvature="0"
+         id="path4178-6-55-1-7-0-2-9-7-9-0"
+         d="m -1515.713,1459.6579 v 57.7625"
+         style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.78664;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         id="path8397-1-4-6-7-5-4-1-8"
+         d="m -1539.0719,1438.4709 -7.1993,-6.7851 v -11.12 l 10.4779,-11.4419 v -10e-4 h 17.9158 l 9.5035,10.9579 v 11.712 l -7.087,6.6793 h -23.6108 z"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.97833;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g8199"
+       transform="matrix(0.95621533,0,0,0.68219951,-462.55013,911.82785)"
+       inkscape:export-xdpi="465"
+       inkscape:export-ydpi="465"
+       style="stroke-width:1.00783">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8397-1-4-6-7-0-6-3"
+         d="m -1016.4114,635.82308 v -0.002 l -8.9208,-5.45406 v -5.73637 h 0.2281 a 15.9945,8.1801357 0 0 1 -0.049,-0.55405 15.9945,8.1801357 0 0 1 4.8468,-5.85435 h 22.31553 a 15.9945,8.1801357 0 0 1 4.8267,5.85435 15.9945,8.1801357 0 0 1 -0.0541,0.53858 h 0.14825 v 5.9845 l -8.09098,5.2222 h -15.2524 z"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.9281;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         id="path8194-0-1"
+         d="m -1012.2545,602.85368 -9.0447,14.27083 23.59164,0.0336 -9.00074,-14.30433 h -5.5462 z"
+         style="opacity:0.904;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.9281;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <path
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.6423;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         d="m -1022.5464,712.83705 -20.2341,-40.86784 v -24.14272 l 65.74972,-0.10321 v 25.27456 l -18.687,39.83921 z"
+         id="path8461-6-5-9"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path4178-6-55-30-6-0"
+         d="m -1014.4527,653.64218 v 52.24696"
+         style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.71359;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+      <path
+         style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.71359;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         d="m -1025.4151,653.91311 v 26.63344"
+         id="path8245-3-0"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path8397-1-4-6-7-2-3-2-5-5"
+         d="m -1027.219,645.67606 -0.8923,-0.2894 v -3.45154 h 0.2579 a 18.141581,4.9218645 0 0 1 -0.053,-0.33356 18.141581,4.9218645 0 0 1 5.497,-3.52232 h 25.31189 a 18.141581,4.9218645 0 0 1 5.47427,3.52232 18.141581,4.9218645 0 0 1 -0.0612,0.32433 h 0.16792 v 3.60085 l -0.43602,0.14935 h -35.26686 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:3.9281;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g969"
+       transform="matrix(0.82471687,0,0,0.72177581,-605.65234,476.33356)"
+       style="stroke-width:1.03961">
+      <path
+         inkscape:connector-curvature="0"
+         id="path8171-7-7-6-40-8-7"
+         d="m -1205.6853,1114.0501 -23.6524,-44.4532 v -26.2608 l 76.8572,-0.1122 v 27.4919 l -21.8439,43.3343 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.78877;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path8397-1-4-6-5"
+         d="m -1199.531,1038.6253 v 0 l -11.5895,-8.5991 v -9.0442 h 0.2963 a 20.779818,12.897083 0 0 1 -0.061,-0.8735 20.779818,12.897083 0 0 1 6.2966,-9.2302 h 28.9923 a 20.779818,12.897083 0 0 1 6.2707,9.2302 20.779818,12.897083 0 0 1 -0.07,0.8491 h 0.1926 v 9.4354 l -10.5117,8.2335 h -19.8158 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.78877;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+      <g
+         transform="translate(-719.99999,560.87794)"
+         id="g8177-2"
+         style="stroke-width:1.03961">
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.89387;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -480.47883,488.89602 v 57.78952"
+           id="path4178-6-55-4-7-8"
+           inkscape:connector-curvature="0" />
+        <path
+           style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.89387;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           d="m -469.11713,488.89602 v 57.78952"
+           id="path4178-6-55-6-5-2"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+    <g
+       id="g997"
+       transform="matrix(0.89893884,0,0,0.6575237,-428.65936,397.73637)"
+       style="stroke-width:1.02071">
+      <path
+         id="path8397-1-4-6-7-2-3-9"
+         d="m -1296.5835,1421.4569 -0.9182,-0.3299 v -3.9345 h 0.2654 a 18.668625,5.6105578 0 0 1 -0.054,-0.3803 18.668625,5.6105578 0 0 1 5.6566,-4.0152 h 26.0473 a 18.668625,5.6105578 0 0 1 5.6333,4.0152 18.668625,5.6105578 0 0 1 -0.063,0.3697 h 0.1728 v 4.1047 l -0.4487,0.1703 h -36.2914 z"
+         style="opacity:0.884;fill:#646464;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:3.9784;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <g
+         transform="translate(-429.2885,941.82212)"
+         id="g8284-9"
+         style="stroke-width:1.02071">
+        <path
+           style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.34005;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+           d="m -864.16024,553.8841 -23.6524,-44.45319 v -26.26076 l 76.85729,-0.11227 v 27.4919 l -21.84392,43.33432 z"
+           id="path8171-7-7-6-40-8-6-8-4"
+           inkscape:connector-curvature="0"
+           inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png"
+           inkscape:export-xdpi="465"
+           inkscape:export-ydpi="465" />
+        <g
+           id="g8139-6"
+           style="stroke-width:1.02071">
+          <path
+             inkscape:export-ydpi="465"
+             inkscape:export-xdpi="465"
+             inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png"
+             inkscape:connector-curvature="0"
+             id="path4178-6-55-1-7-0-2-97-1-9"
+             d="m -848.62345,489.87485 v 57.76248"
+             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.78675;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+          <path
+             inkscape:export-ydpi="465"
+             inkscape:export-xdpi="465"
+             inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png"
+             inkscape:connector-curvature="0"
+             id="path4178-6-55-1-7-0-9-7-0-8"
+             d="m -859.24148,489.98039 v 57.7625"
+             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.78675;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+          <path
+             inkscape:export-ydpi="465"
+             inkscape:export-xdpi="465"
+             inkscape:export-filename="C:\Users\User\Desktop\КиМ\WhiteКг3.png"
+             inkscape:connector-curvature="0"
+             id="path4178-6-55-1-7-0-2-9-7-9-8"
+             d="m -838.09385,490.02715 v 57.7625"
+             style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:5.78675;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        </g>
+      </g>
+      <path
+         id="path8397-1-4-6-7-5-4-1-3"
+         d="m -1290.4218,1410.6623 -7.1993,-6.7852 v -11.12 l 10.4779,-11.4419 v 0 h 17.9158 l 9.5035,10.9579 v 11.712 l -7.087,6.6793 h -23.6109 z"
+         style="opacity:0.884;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:3.9784;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+    </g>
+    <g
+       id="g962"
+       transform="matrix(0.90937699,0,0,0.79284843,149.70137,506.81994)"
+       style="stroke-width:0.95306">
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД3.png"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.39006;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         d="m -1639.2304,866.41267 -20.2341,-40.86784 v -24.14272 l 65.7498,-0.10321 v 25.27456 l -18.687,39.83921 z"
+         id="path8461-0-5"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД3.png"
+         id="path8171-4-0-7"
+         d="m -1632.0929,772.41591 -11.2704,24.21325 31.3693,0.0529 -10.7016,-24.26628 h -9.3973 z"
+         style="opacity:0.904;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.39006;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД3.png"
+         inkscape:connector-curvature="0"
+         id="path4178-6-55-2-3"
+         d="M -1634.099,806.49671 V 859.7212"
+         style="fill:none;fill-rule:evenodd;stroke:#fffef7;stroke-width:5.40316;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+    <g
+       id="g8429"
+       inkscape:export-filename="C:\Users\User\Desktop\КиМ\g8429.png"
+       inkscape:export-xdpi="465"
+       inkscape:export-ydpi="465"
+       transform="matrix(0.94386747,0,0,0.75603059,-1258.3725,595.97707)">
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД5.png"
+         id="path8171-4-9-7-0-9-9"
+         d="m -447.32066,809.90778 -9.47136,25.36679 26.362,0.0554 -8.9934,-25.42234 h -7.89724 z"
+         style="opacity:0.88399999;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.6062994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.53149605;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path8422"
+         d="m -463.56923,840.42837 -13.09739,67.99123 66.70152,-0.1156 -13.11232,-67.87639 h -40.49181 z"
+         style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#0a0a0a;stroke-width:4.6062994;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.53149605;stroke-opacity:1" />
+    </g>
+    <g
+       id="g8462"
+       inkscape:export-filename="C:\Users\User\Desktop\КиМ\g8462.png"
+       inkscape:export-xdpi="465"
+       inkscape:export-ydpi="465"
+       transform="matrix(0.94386751,0,0,0.75592162,-6.4071751,630.95783)">
+      <path
+         inkscape:export-ydpi="465"
+         inkscape:export-xdpi="465"
+         inkscape:export-filename="C:\Users\User\Desktop\КиМ\РЕД5.png"
+         id="path8171-4-9-7-0-9-9-2"
+         d="m -1509.3546,773.47674 -9.4713,25.36679 26.362,0.0554 -8.9934,-25.42234 h -7.8973 z"
+         style="opacity:0.884;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.6063;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1"
+         inkscape:connector-curvature="0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path8422-1"
+         d="m -1525.6031,803.99733 -13.0974,67.99123 66.7015,-0.1156 -13.1123,-67.87639 h -40.4918 z"
+         style="opacity:1;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:#411b1a;stroke-width:4.6063;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.531496;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>
