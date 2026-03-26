@@ -61,10 +61,11 @@ const LeftControls: React.FC = () => {
       <button className="analysis-btn initial-btn" onClick={loadInitialPositionInSetup} title="Начальная расстановка">
         ⟲ Начальная
       </button>
+      {/* Ok button — from Символы 2 SVG g13: gray circle #999999 + "Ok" text #0028fa */}
       <button className="analysis-btn ok-btn" onClick={confirmAnalysisSetup} title="Готово/Ok">
-        <svg viewBox="0 0 110 110" width="20" height="20" style={{ verticalAlign: 'middle', marginRight: 4 }}>
-          <circle cx="55" cy="55" r="50" fill="#b3b3b3" fillOpacity="0.15" stroke="#1f1203" strokeWidth="3.3"/>
-          <text x="55" y="70" textAnchor="middle" fill="#0028fa" fontSize="50" fontFamily="serif">Ok</text>
+        <svg viewBox="0 0 110 110" width="28" height="28" style={{ verticalAlign: 'middle', marginRight: 4 }}>
+          <circle cx="55" cy="55" r="50" fill="#999999" stroke="#1f1203" strokeWidth="3.3"/>
+          <text x="55" y="73" textAnchor="middle" fill="#0028fa" fontSize="55" fontFamily="'Modern No. 20', serif" stroke="#0028fa" strokeWidth="1">Ok</text>
         </svg>
         Готово
       </button>

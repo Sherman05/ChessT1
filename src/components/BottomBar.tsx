@@ -24,12 +24,13 @@ export const BottomBar: React.FC = () => {
 
   return (
     <div className="bottom-bar">
-      {/* Hamburger menu */}
+      {/* Hamburger menu — from Символы SVG g4/g12: gray circle + 3 blue lines */}
       <button className="bar-btn menu-btn" onClick={toggleMenu} title="Меню">
-        <svg viewBox="0 0 24 24" width="22" height="22">
-          <line x1="4" y1="7" x2="20" y2="7" stroke="#0040cc" strokeWidth="2.5" strokeLinecap="round"/>
-          <line x1="4" y1="12" x2="20" y2="12" stroke="#0040cc" strokeWidth="2.5" strokeLinecap="round"/>
-          <line x1="4" y1="17" x2="20" y2="17" stroke="#0040cc" strokeWidth="2.5" strokeLinecap="round"/>
+        <svg viewBox="0 0 110 110" width="32" height="32">
+          <circle cx="55" cy="55" r="50" fill="#999999" fillOpacity="1" stroke="#1f1203" strokeWidth="3.3"/>
+          <line x1="22" y1="38" x2="88" y2="38" stroke="#0028fa" strokeWidth="6.7" strokeLinecap="butt"/>
+          <line x1="22" y1="55" x2="88" y2="55" stroke="#0028fa" strokeWidth="6.7" strokeLinecap="butt"/>
+          <line x1="22" y1="72" x2="88" y2="72" stroke="#0028fa" strokeWidth="6.7" strokeLinecap="butt"/>
         </svg>
       </button>
 
@@ -77,16 +78,26 @@ export const BottomBar: React.FC = () => {
 
       <div className="spacer" />
 
-      {/* Delete piece button — available in both party and analysis modes */}
+      {/* Delete piece button — from Символы 2 SVG g23: blue rounded rect with piece silhouettes + X */}
       <button
-        className={`bar-btn ${deletePieceMode ? 'active' : ''}`}
+        className={`bar-btn delete-btn ${deletePieceMode ? 'active' : ''}`}
         onClick={toggleDeletePieceMode}
         title="Удалить фигуру"
       >
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14"/>
-          <line x1="10" y1="11" x2="10" y2="17"/>
-          <line x1="14" y1="11" x2="14" y2="17"/>
+        <svg viewBox="0 0 114 94" width="34" height="28">
+          <rect x="2" y="2" width="110" height="90" rx="18" ry="18" fill="#00a5ff" stroke="#000" strokeWidth="3.6"/>
+          {/* Black piece silhouette */}
+          <g transform="translate(14,8) scale(0.55)">
+            <path d="m 0,120 -18.4,-32.4 v-19.1 l 59.8,-0.1 v 20 l-17,31.6 z" fill="#000" stroke="#411b1a" strokeWidth="3.7"/>
+            <path d="m 6.5,48.7 -10.2,19.2 28.5,0 -9.7,-19.2 z" fill="#000" stroke="#411b1a" strokeWidth="3.7"/>
+            <path d="m 4.7,73.9 v 42.2" fill="none" stroke="#fffef7" strokeWidth="4.6"/>
+          </g>
+          {/* White piece silhouette */}
+          <g transform="translate(48,8) scale(0.55)">
+            <path d="m 0,118.1 -18.4,-32.4 v-19.1 l 59.8,-0.1 v 20 l-17,31.6 z" fill="#fff" stroke="#0a0a0a" strokeWidth="3.7"/>
+            <path d="m 6.5,46.5 -10.3,19.2 28.5,0 -9.7,-19.2 h-8.5 z" fill="#fff" stroke="#0a0a0a" strokeWidth="3.7"/>
+            <path d="m 4.7,71.6 v 42.2" fill="none" stroke="#000" strokeWidth="4.6"/>
+          </g>
         </svg>
       </button>
       {deletePieceMode && selectedForDelete && (
