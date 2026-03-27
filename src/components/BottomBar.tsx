@@ -2,6 +2,7 @@ import React from 'react';
 import { useGameStore } from '../store/gameStore';
 import { useUIStore } from '../store/uiStore';
 import { canGoBack, canGoForward } from '../logic/history';
+import { saveBoardAsImage } from '../logic/saveDiagram';
 import './BottomBar.css';
 
 export const BottomBar: React.FC = () => {
@@ -22,6 +23,18 @@ export const BottomBar: React.FC = () => {
   const canForward = canGoForward(historyState);
   const isSetup = mode === 'analysis' && analysisStage === 'setup';
 
+  // Move number: moveIndex -1 = start, 0 = after move 1, etc.
+  const moveIndex = historyState.moveIndex;
+  const moveNumber = moveIndex >= 0 ? Math.floor(moveIndex / 2) + 1 : 0;
+  const totalMoves = historyState.history.length;
+
+  const handleSaveDiagram = () => {
+    const boardEl = document.querySelector('.board-grid') as HTMLElement | null;
+    if (boardEl) {
+      saveBoardAsImage(boardEl, moveNumber);
+    }
+  };
+
   return (
     <div className="bottom-bar">
       {/* Hamburger menu — from Символы SVG g4/g12: gray circle + 3 blue lines */}
@@ -38,6 +51,12 @@ export const BottomBar: React.FC = () => {
       <div className="turn-lamps">
         <div className={`turn-lamp white ${turn === 'white' ? 'active' : ''}`} title="Белые" />
         <div className={`turn-lamp black ${turn === 'black' ? 'active' : ''}`} title="Чёрные" />
+      </div>
+
+      {/* Move number indicator */}
+      <div className="move-counter" title={`Ход ${moveNumber} из ${Math.ceil(totalMoves / 2)}`}>
+        <span className="move-counter-label">Ход</span>
+        <span className="move-counter-number">{moveNumber}</span>
       </div>
 
       {/* Navigation arrows */}
@@ -103,6 +122,19 @@ export const BottomBar: React.FC = () => {
       {deletePieceMode && selectedForDelete && (
         <button className="bar-btn confirm-btn" onClick={confirmDelete} title="Подтвердить удаление">✓</button>
       )}
+
+      {/* Save diagram button */}
+      <button
+        className="bar-btn save-diagram-btn"
+        onClick={handleSaveDiagram}
+        title="Сохранить диаграмму"
+      >
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
+          <rect x="3" y="3" width="18" height="18" rx="2"/>
+          <path d="M8.5 3v4h7V3"/>
+          <path d="M12 12v6m0 0l-3-3m3 3l3-3"/>
+        </svg>
+      </button>
 
       {/* Reverse button */}
       <button className="bar-btn reverse-btn" onClick={flipBoard} title="Реверс">

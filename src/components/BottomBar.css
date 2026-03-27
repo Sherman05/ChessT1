@@ -136,3 +136,31 @@
   width: 36px;
   height: 36px;
 }
+
+.move-counter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 8px;
+  line-height: 1;
+  user-select: none;
+}
+
+.move-counter-label {
+  font-size: 9px;
+  color: #1a3a5c;
+  font-weight: 600;
+}
+
+.move-counter-number {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0a2a4c;
+  min-width: 20px;
+  text-align: center;
+}
+
+.save-diagram-btn {
+  width: 36px;
+  height: 36px;
+}
