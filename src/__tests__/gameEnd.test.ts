@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import { checkGameEnd, checkDraw } from '../logic/gameEnd';
-import { squareKey } from '../types/chess';
+import { squareKey, PieceKind, Color } from '../types/chess';
 import { BoardMap, createPiece, resetPieceCounter, boardPositionKey } from '../logic/board';
 
-function setupBoard(pieces: Array<{ kind: any; color: any; file: number; rank: number }>): BoardMap {
+function setupBoard(pieces: Array<{ kind: PieceKind; color: Color; file: number; rank: number }>): BoardMap {
   resetPieceCounter();
   const board: BoardMap = {};
   for (const p of pieces) {

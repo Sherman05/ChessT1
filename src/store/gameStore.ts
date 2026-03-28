@@ -1,6 +1,5 @@
 import { create } from 'zustand';
 import {
-  Piece,
   PieceKind,
   Color,
   Square,
@@ -12,7 +11,7 @@ import {
 import { BoardMap, createInitialBoard, createEmptyBoard, cloneBoard, createPiece } from '../logic/board';
 
 import { checkPromotion, PromotionState } from '../logic/promotion';
-import { HistoryState, createHistory, addMove, goBack, goForward, canGoBack, canGoForward } from '../logic/history';
+import { HistoryState, createHistory, addMove, goBack, goForward } from '../logic/history';
 
 export type GameMode = 'party' | 'analysis';
 export type AnalysisStage = 'setup' | 'play';

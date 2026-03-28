@@ -1,7 +1,7 @@
 import { Piece, Color, Square, squareKey, keyToSquare, isCastleSquare, isRoyalPiece, getCastleSquares } from '../types/chess';
 import { BoardMap } from './board';
 import { getMovementSquares } from './movement';
-import { computeForceMap, canCaptureByForce, ForceMap } from './force';
+import { computeForceMap, canCaptureByForce } from './force';
 
 export interface MoveValidation {
   valid: boolean;
@@ -20,6 +20,7 @@ export function validateMove(
   toFile: number,
   toRank: number,
   currentTurn: Color,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   princeToConnetUsed?: { white: boolean; black: boolean }
 ): MoveValidation {
   const invalid: MoveValidation = { valid: false, captured: null, scoutExchange: false };
@@ -131,6 +132,7 @@ export function getLegalMovesForPiece(
   piece: Piece,
   file: number,
   rank: number,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   turn: Color
 ): Square[] {
   const reachable = getMovementSquares(board, piece, file, rank);

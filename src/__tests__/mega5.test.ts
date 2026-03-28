@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { createInitialBoard, createPiece, resetPieceCounter, BoardMap, cloneBoard } from '../logic/board';
-import { validateMove, getLegalMovesForPiece, hasAnyLegalMove } from '../logic/moves';
+import { validateMove, getLegalMovesForPiece } from '../logic/moves';
 import { computeForceMap } from '../logic/force';
 import { getMovementSquares } from '../logic/movement';
 import { checkPromotion, PromotionState } from '../logic/promotion';

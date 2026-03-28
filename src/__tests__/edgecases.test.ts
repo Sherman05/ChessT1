@@ -1,13 +1,13 @@
 import { describe, it, expect } from 'vitest';
-import { BoardMap, createPiece, resetPieceCounter, createInitialBoard, cloneBoard } from '../logic/board';
-import { validateMove, getLegalMovesForPiece, hasAnyLegalMove } from '../logic/moves';
+import { BoardMap, createPiece, resetPieceCounter, createInitialBoard } from '../logic/board';
+import { validateMove } from '../logic/moves';
 import { getMovementSquares } from '../logic/movement';
-import { computeForceMap, isKingInCheck } from '../logic/force';
+import { isKingInCheck } from '../logic/force';
 import { checkPromotion, PromotionState } from '../logic/promotion';
 import { checkGameEnd } from '../logic/gameEnd';
-import { squareKey, keyToSquare } from '../types/chess';
+import { squareKey, PieceKind, Color } from '../types/chess';
 
-function setupBoard(pieces: Array<{ kind: any; color: any; file: number; rank: number }>): BoardMap {
+function setupBoard(pieces: Array<{ kind: PieceKind; color: Color; file: number; rank: number }>): BoardMap {
   resetPieceCounter();
   const board: BoardMap = {};
   for (const p of pieces) {
@@ -147,14 +147,14 @@ describe('Edge: Check with complex force', () => {
 
 describe('Edge: Pawn auto-promotion on capture', () => {
   it('white pawn captures on rank 5 and auto-promotes to veteran', () => {
-    const board = setupBoard([
+    setupBoard([
       { kind: 'pawn', color: 'white', file: 4, rank: 4 },
       { kind: 'pawn', color: 'black', file: 5, rank: 5 }, // enemy pawn on rank 5 (not directly forward)
     ]);
     // Wait, pawns don't capture diagonally in Chess-T1. They capture on movement squares.
     // Can pawn (4,4) reach (5,5)? No — pawns only move h/v, not diagonal.
     // So let's test sideways capture that lands on rank 5
-    const board2 = setupBoard([
+    setupBoard([
       { kind: 'pawn', color: 'white', file: 4, rank: 5 }, // already on rank 5? No, promotion is TO rank 5
     ]);
     // Actually: pawn at (4,4) can move forward to (4,5) = rank 5. If enemy there:

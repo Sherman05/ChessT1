@@ -1,4 +1,4 @@
-import { Piece, PieceKind, PromotionContext, Square, isCastleSquare, squareKey } from '../types/chess';
+import { Piece, PieceKind, PromotionContext, Square, isCastleSquare } from '../types/chess';
 import { BoardMap } from './board';
 
 export interface PromotionState {

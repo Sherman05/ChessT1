@@ -2,13 +2,13 @@ import { describe, it, expect } from 'vitest';
 import { createInitialBoard, createPiece, resetPieceCounter, BoardMap, cloneBoard } from '../logic/board';
 import { validateMove, getLegalMovesForPiece, hasAnyLegalMove } from '../logic/moves';
 import { checkPromotion, PromotionState } from '../logic/promotion';
-import { checkGameEnd, checkDraw } from '../logic/gameEnd';
-import { computeForceMap, isKingInCheck } from '../logic/force';
+import { checkGameEnd } from '../logic/gameEnd';
+import { isKingInCheck } from '../logic/force';
 import { getMovementSquares } from '../logic/movement';
-import { squareKey, keyToSquare, isCastleSquare, isRoyalPiece, PIECE_FORCE } from '../types/chess';
+import { squareKey, isCastleSquare, isRoyalPiece, PIECE_FORCE, PieceKind, Color } from '../types/chess';
 import { addMove, createHistory } from '../logic/history';
 
-function setupBoard(pieces: Array<{ kind: any; color: any; file: number; rank: number }>): BoardMap {
+function setupBoard(pieces: Array<{ kind: PieceKind; color: Color; file: number; rank: number }>): BoardMap {
   resetPieceCounter();
   const board: BoardMap = {};
   for (const p of pieces) {

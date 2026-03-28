@@ -4,8 +4,8 @@ import { validateMove, getLegalMovesForPiece, hasAnyLegalMove } from '../logic/m
 import { computeForceMap, canCaptureByForce } from '../logic/force';
 import { getMovementSquares } from '../logic/movement';
 import { checkPromotion, PromotionState } from '../logic/promotion';
-import { checkGameEnd, checkDraw } from '../logic/gameEnd';
-import { addMove, createHistory, goBack, goForward, canGoBack, canGoForward } from '../logic/history';
+import { checkGameEnd } from '../logic/gameEnd';
+import { addMove, createHistory, canGoBack, canGoForward } from '../logic/history';
 import { squareKey, keyToSquare, PieceKind, Color, Piece, PIECE_FORCE } from '../types/chess';
 
 function setupBoard(pieces: Array<{ kind: PieceKind; color: Color; file: number; rank: number }>): BoardMap {

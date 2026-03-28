@@ -1,4 +1,4 @@
-import React, { useRef, useCallback, useState } from 'react';
+import React, { useRef, useCallback, useState, useLayoutEffect } from 'react';
 import { Board } from './components/Board';
 import { TopBar } from './components/TopBar';
 import { BottomBar } from './components/BottomBar';
@@ -115,8 +115,16 @@ function App() {
   const rightTrayColor: Color = isFlipped ? 'white' : 'black';
 
   // Cell size for floating piece
-  const boardEl = boardRef.current;
-  const cellSize = boardEl ? boardEl.getBoundingClientRect().width / 8 : 60;
+  const [cellSize, setCellSize] = useState(60);
+  useLayoutEffect(() => {
+    const boardEl = boardRef.current;
+    if (!boardEl) return;
+    const update = () => setCellSize(boardEl.getBoundingClientRect().width / 8);
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(boardEl);
+    return () => ro.disconnect();
+  }, []);
 
   return (
     <div

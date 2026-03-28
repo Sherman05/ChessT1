@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { createInitialBoard, createEmptyBoard, cloneBoard, boardPositionKey } from '../logic/board';
-import { squareKey, keyToSquare } from '../types/chess';
+import { squareKey } from '../types/chess';
 
 describe('createInitialBoard', () => {
   const board = createInitialBoard();
@@ -66,7 +66,7 @@ describe('createInitialBoard', () => {
   });
 
   it('should not contain any queen pieces', () => {
-    const queens = Object.values(board).filter(p => p.kind === 'queen' as any);
+    const queens = Object.values(board).filter(p => p.kind === ('queen' as unknown as string));
     expect(queens.length).toBe(0);
   });
 

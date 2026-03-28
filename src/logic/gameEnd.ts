@@ -1,4 +1,4 @@
-import { Color, Piece, squareKey, keyToSquare, isRoyalPiece, getEnemyCastleSquares } from '../types/chess';
+import { Color, Piece, isRoyalPiece, getEnemyCastleSquares } from '../types/chess';
 import { BoardMap, boardPositionKey } from './board';
 import { hasAnyLegalMove } from './moves';
 

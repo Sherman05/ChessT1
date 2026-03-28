@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest';
-import { createInitialBoard, createPiece, resetPieceCounter, BoardMap, cloneBoard, boardPositionKey } from '../logic/board';
+import { createInitialBoard, createPiece, resetPieceCounter, BoardMap, cloneBoard } from '../logic/board';
 import { validateMove, getLegalMovesForPiece, hasAnyLegalMove } from '../logic/moves';
-import { computeForceMap, getEffectiveAttack, getEffectiveDefense } from '../logic/force';
+import { computeForceMap } from '../logic/force';
 import { getMovementSquares } from '../logic/movement';
 import { checkPromotion, PromotionState } from '../logic/promotion';
 import { checkGameEnd, checkDraw } from '../logic/gameEnd';
-import { squareKey, keyToSquare, PieceKind, Color, Piece, isCastleSquare, squareNotation, fileToLetter, rankToNumber } from '../types/chess';
+import { squareKey, keyToSquare, isCastleSquare, PieceKind, Color, Piece, squareNotation, fileToLetter, rankToNumber } from '../types/chess';
 import { formatTime } from '../hooks/useChessClock';
 
 function setupBoard(pieces: Array<{ kind: PieceKind; color: Color; file: number; rank: number }>): BoardMap {

@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { getMovementSquares } from '../logic/movement';
 import { Piece, Square, squareKey } from '../types/chess';
-import { BoardMap, createPiece, createEmptyBoard, resetPieceCounter } from '../logic/board';
+import { BoardMap, createPiece, resetPieceCounter } from '../logic/board';
 
 function makePiece(kind: Piece['kind'], color: Piece['color']): Piece {
   return createPiece(kind, color);

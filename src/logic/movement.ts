@@ -1,4 +1,4 @@
-import { Piece, PieceKind, Color, Square, squareKey } from '../types/chess';
+import { Piece, Color, Square, squareKey } from '../types/chess';
 import { BoardMap } from './board';
 
 function inBounds(f: number, r: number): boolean {

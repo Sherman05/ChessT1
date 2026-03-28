@@ -1,14 +1,14 @@
 import { describe, it, expect } from 'vitest';
 import { createInitialBoard, createPiece, resetPieceCounter, BoardMap, cloneBoard, boardPositionKey } from '../logic/board';
 import { validateMove, getLegalMovesForPiece, hasAnyLegalMove } from '../logic/moves';
-import { computeForceMap, isKingInCheck, getEffectiveAttack, getEffectiveDefense } from '../logic/force';
+import { computeForceMap, isKingInCheck } from '../logic/force';
 import { getMovementSquares } from '../logic/movement';
 import { checkPromotion, PromotionState } from '../logic/promotion';
-import { checkGameEnd, checkDraw } from '../logic/gameEnd';
-import { addMove, createHistory, goBack, goForward } from '../logic/history';
-import { squareKey, keyToSquare, isCastleSquare, PieceKind, Color, Piece, ALL_PIECE_KINDS, PIECE_FORCE } from '../types/chess';
+import { checkGameEnd } from '../logic/gameEnd';
+import { addMove, createHistory, goBack } from '../logic/history';
+import { squareKey, keyToSquare, PieceKind, Color, Piece, ALL_PIECE_KINDS, PIECE_FORCE } from '../types/chess';
 
-function setupBoard(pieces: Array<{ kind: any; color: any; file: number; rank: number }>): BoardMap {
+function setupBoard(pieces: Array<{ kind: PieceKind; color: Color; file: number; rank: number }>): BoardMap {
   resetPieceCounter();
   const board: BoardMap = {};
   for (const p of pieces) {
